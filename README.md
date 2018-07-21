@@ -6,4 +6,6 @@ May be used bfs
 array of function in order to save different libraries functions
 
 singleton instance for the library
+
+use patterns - gang of four;
 ​
