@@ -1,0 +1,281 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf200
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww30960\viewh14980\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 - SFML\
+\
+- this->_dl = dlopen("./lib_ncurses/lib_ncurses.so", RTLD_LAZY | RTLD_LOCAL); dynamic linking;\
+\
+- DLL;\
+\
+NAME 		=	lib_sdl.so\
+\
+COM			=	clang++\
+FLAGS		=	-Wall -Wextra -Werror\
+OPTIMA		=	-O3\
+\
+SDL_DIR		=	./SDL\
+SDL_FRM		=	-F $(SDL_DIR)\
+SDL_LINK	=	-framework SDL2 -framework SDL2_ttf\
+\
+PWD			= 	$(shell pwd)\
+LIB_FLAG	=	-shared -nostartfiles -dynamiclib\
+\
+SRC_FILES	=	DisplaySDL.cpp			\\\
+				../srcs/ApiDisplay.cpp	\\\
+				../srcs/menu.cpp		\\\
+				../srcs/obj.cpp			\\\
+				../srcs/snake.cpp\
+\
+INC_FILES	=	DisplaySDL.hpp\
+\
+INC_DIR		=	../includes\
+\
+OBJ_FILES	= 	$(SRC_FILES:.cpp=.cpp.o)\
+\
+GREEN		=	\\033[32m\
+YELLOW		=	\\033[33m\
+RED			=	\\033[31m\
+RESET		=	\\033[39m\
+\
+SDL2 		=	SDL2\
+SDL2_TTF 	=	SDL2_ttf\
+\
+all: sdl $(NAME)\
+\
+%.cpp.o:%.cpp\
+	@ $(COM) $(FLAGS) $(OPTIMA) $(SDL_FRM) -c -o $@ $< -I $(INC_DIR)\
+\
+$(NAME): $(OBJ_FILES)\
+	@ $(COM) $(FLAGS) $(OPTIMA) $(SDL_FRM) $(SDL_LINK) $(LIB_FLAG) $(OBJ_FILES) -o $(NAME)\
+\
+sdl:\
+	@ mkdir -p $(SDL_DIR)\
+\
+	@ test -f SDL/SDL2.framework/SDL2 && echo "$(YELLOW)File $(SDL2) already exist$(RESET)" || make sdl2_download\
+	@ test -f SDL/SDL2_ttf.framework/SDL2_ttf && echo "$(YELLOW)File $(SDL2_TTF) already exist$(RESET)" || make sdl2_ttf_download\
+\
+sdl2_download:\
+	@ echo "$(GREEN)SDL: download SDL2.framework$(RESET)"\
+	@ curl -o sdl2.dmg https://www.libsdl.org/release/SDL2-2.0.8.dmg\
+	@ hdiutil attach sdl2.dmg;\
+	@ cd ; cp -R -i ../../../Volumes/SDL2/SDL2.framework $(PWD)/$(SDL_DIR)/SDL2.framework; hdiutil eject ../../../Volumes/SDL2;\
+	@ rm -rf sdl2.dmg\
+\
+sdl2_ttf_download:\
+	@ echo "$(GREEN)SDL: download SDL2_ttf.framework$(RESET)"\
+	@ curl -o sdl2_ttf.dmg https://www.libsdl.org/projects/SDL_ttf/release/SDL2_ttf-2.0.14.dmg\
+	@ hdiutil attach sdl2_ttf.dmg;\
+	@ cd ; cp -R -i ../../../Volumes/SDL2_ttf/SDL2_ttf.framework $(PWD)/$(SDL_DIR)/SDL2_ttf.framework; hdiutil eject ../../../Volumes/SDL2_ttf;\
+	@ rm -rf sdl2_ttf.dmg\
+\
+\
+clean:\
+	@ rm -rf $(OBJ_FILES)\
+	@ echo "$(RED)SDL: Object removed$(RESET)"\
+\
+	@ rm -fr $(SDL_DIR)\
+	@ echo "$(RED)SDL: Directory removed$(RESET)"\
+\
+fclean:	clean\
+	@ rm -rf $(NAME)\
+	@ echo "$(RED)SDL: Binary file removed$(RESET)"\
+	\
+re:	fclean all\
+\
+.PHONY: all sdl clean fclean re\
+\
+- DisplaySDL::~DisplaySDL(void)\
+\{\
+	// SDL_Quit(); fuck this shit because it leaks\
+\}\
+\
+NAME 		=	lib_ncurses.so\
+\
+COM			=	clang++\
+FLAGS		=	-Wall -Wextra -Werror\
+OPTIMA		=	-O3\
+\
+LIB_FLAG	=	-shared -nostartfiles -dynamiclib\
+LINK_NC		=	-lncurses\
+\
+SRC_FILES	=	DisplayNcurses.cpp		\\\
+				../srcs/ApiDisplay.cpp	\\\
+				../srcs/menu.cpp		\\\
+				../srcs/obj.cpp			\\\
+				../srcs/snake.cpp\
+\
+INC_FILES	=	DisplayNcurses.hpp\
+\
+INC_DIR		=	../includes/\
+\
+OBJ_FILES	= $(SRC_FILES:.cpp=.cpp.o)\
+\
+all: $(NAME)\
+\
+%.cpp.o:%.cpp\
+	$(COM) $(FLAGS) $(OPTIMA) -c $< -o $@ -I $(INC_DIR)\
+\
+$(NAME): $(OBJ_FILES) $(INC_FILES)\
+		@$(COM) $(FLAGS) $(OPTIMA) $(LINK_NC) $(LIB_FLAG) $(OBJ_FILES) -o $(NAME)\
+\
+clean:\
+	@rm -rf $(OBJ_FILES)\
+\
+fclean:	clean\
+	@rm -rf $(NAME)\
+\
+re:		fclean all\
+\
+.PHONY: all clean fclean re\
+\
+NAME 		=	lib_sfml.so\
+\
+COM 		=	clang++\
+FLAGS 		=	-Wall -Wextra -Werror\
+OPTIMA		=	-O3\
+\
+SFML_DIR 	=	./SFML\
+SFML_INC 	=	$(SFML_DIR)/SFML-2.5.0-macOS-clang/include\
+SFML_FRM	=	$(SFML_DIR)/SFML-2.5.0-macOS-clang/Frameworks\
+SFML_LINK 	=	-F$(SFML_FRM) -framework SFML -framework sfml-graphics -framework sfml-window -framework sfml-system\
+\
+PWD 		=	$(shell pwd)\
+LIB_FLAG	=	-shared -rpath $(PWD)/$(SFML_FRM) -nostartfiles -dynamiclib\
+\
+SRC_FILES	=	DisplaySFML.cpp			\\\
+				../srcs/ApiDisplay.cpp	\\\
+				../srcs/menu.cpp		\\\
+				../srcs/obj.cpp			\\\
+				../srcs/snake.cpp\
+\
+INC_FILES	=	DisplaySFML.hpp\
+\
+INC_DIR		=	../includes\
+\
+OBJ_FILES 	=	$(SRC_FILES:.cpp=.cpp.o)\
+\
+GREEN		=	\\033[32m\
+YELLOW		=	\\033[33m\
+RED			=	\\033[31m\
+RESET		=	\\033[39m\
+\
+all: sfml $(NAME)\
+\
+%.cpp.o:%.cpp\
+	@ $(COM) $(FLAGS) $(OPTIMA) -c -o $@ $< -I $(INC_DIR) -I $(SFML_INC)\
+\
+$(NAME): $(OBJ_FILES)\
+	@ $(COM) $(FLAGS) $(OPTIMA) -o $@ $(OBJ_FILES) $(SFML_LINK) $(LIB_FLAG) -I $(SFML_INC)\
+\
+sfml:\
+	@ mkdir -p $(SFML_DIR)\
+	@ test -d SFML/SFML-2.5.0-macOS-clang && echo "$(YELLOW)File SFML already exist$(RESET)" || make sfml_download\
+\
+sfml_download:\
+	@ echo "$(GREEN)SFML: download SFML files$(RESET)"\
+\
+	@ curl -OL http://www.sfml-dev.org/files/SFML-2.5.0-macOS-clang.tar.gz\
+	@ tar zxvfC SFML-2.5.0-macOS-clang.tar.gz $(SFML_DIR)\
+	@ rm -rf SFML-2.5.0-macOS-clang.tar.gz\
+	@ cd $(SFML_FRM) && ln -s ../extlibs/freetype.framework\
+\
+clean:\
+	@ rm -rf $(OBJ_FILES)\
+	@ echo "$(RED)SFML: Object removed$(RESET)"\
+\
+	@ rm -rf $(SFML_DIR)\
+	@ echo "$(RED)SFML: Directory removed$(RESET)"\
+\
+fclean: clean\
+	@ rm -rf $(NAME)\
+	@ echo "$(RED)SFML: Binary file removed$(RESET)"\
+\
+re: fclean all\
+\
+.PHONY: all sfml clean fclean re\
+\
+NAME		=	nibbler\
+\
+COM			=	clang++\
+FLAGS		=	-Wall -Wextra -Werror\
+OPTIMA		=	-O3\
+\
+DL_FLAG		=	-rdynamic\
+DL_LINK		=	-ldl\
+\
+SRC_DIR		=	./srcs/\
+INC_DIR		=	./includes/\
+OBJ_DIR		=	./objs/\
+\
+SRC_FILES	= 	ApiDisplay.cpp \\\
+				snake.cpp \\\
+				obj.cpp \\\
+				menu.cpp \\\
+				nibbler.cpp \\\
+				main.cpp\
+\
+INC_FILES 	= 	ApiDisplay.hpp \\\
+				snake.hpp \\\
+				obj.hpp \\\
+				menu.hpp \\\
+				nibbler.hpp\
+\
+OBJ_FILES 	=	$(SRC_FILES:.cpp=.cpp.o)\
+\
+SRCS 		=	$(addprefix $(SRC_DIR), $(SRC_FILES))\
+HDRS 		=	$(addprefix $(INC_DIR), $(INC_FILES))\
+OBJS 		= 	$(addprefix $(OBJ_DIR), $(OBJ_FILES))\
+\
+GREEN		=	\\033[32m\
+RESET		=	\\033[39m\
+YELLOW		=	\\033[33m\
+RED 		=	\\033[31m\
+\
+all: obj $(NAME)\
+\
+obj:\
+	@mkdir -p $(OBJ_DIR)\
+\
+$(OBJ_DIR)%.cpp.o:$(SRC_DIR)%.cpp\
+	$(COM) $(FLAGS) $(OPTIMA) -c $< -o $@ -I $(INC_DIR)\
+\
+$(NAME): ncurses sdl sfml $(OBJS) $(HDRS)\
+	@$(COM) $(FLAGS) $(OPTIMA) $(DL_FLAG) $(OBJS) -o $(NAME) $(DL_LINK)\
+\
+ncurses:\
+	@make -C ./lib_ncurses/\
+	@echo "$(GREEN)Build Ncurses: OK$(RESET)"\
+\
+sdl:\
+	@make -C ./lib_sdl/\
+	@echo "$(GREEN)Build SDL: OK$(RESET)"\
+\
+sfml:\
+	@make -C ./lib_sfml/\
+	@echo "$(GREEN)Build SFML: OK$(RESET)"\
+\
+clean:\
+	@make -C lib_ncurses clean\
+	@make -C lib_sdl clean\
+	@make -C lib_sfml clean\
+	@rm -rf $(OBJ)\
+	@rm -rf $(OBJ_DIR)\
+\
+fclean: clean\
+	@make -C lib_ncurses fclean\
+	@make -C lib_sdl fclean\
+	@make -C lib_sfml fclean\
+	@rm -rf $(NAME)\
+	@echo "$(RED)Attention: $(RESET)$(NAME) was removed"\
+\
+re:		fclean all\
+\
+.PHONY: all ncurses sdl sfml clean fclean re\
+\
+Kshyshki\
+\
+}
