@@ -1,7 +1,11 @@
+~ The purpose of this project is to create your own version of the game Snake, with at least 3 different GUIs. These GUIs being shared libraries.
+
+
+
 ~ watch youtube tutorials:
 https://www.youtube.com/watch?v=xL3NF_V_Hzg
 https://www.youtube.com/watch?v=E_-lMZDi7Uw&t=519s
-https://www.youtube.com/watch?v=6qaAZTwemXY
+ru: https://www.youtube.com/watch?v=6qaAZTwemXY
 https://www.youtube.com/watch?v=OBBrp43TX3A
 https://www.youtube.com/watch?v=KTyemy82Zqk
 https://www.youtube.com/watch?v=esHgm12sNVI
@@ -21,3 +25,20 @@ https://www.youtube.com/watch?v=E_-lMZDi7Uw&t=519s
 https://www.youtube.com/watch?v=MEjaEBv3rQ0
 https://www.youtube.com/watch?v=RmBGYRAY0js
 - some patterns
+
+
+~ ideas:
+Динамические библиотеки
+Загрузка Runtime
+Обозначение имени и ключевое слово «extern» в C ++
+https://elearning.intra.42.fr/notions/nibbler/subnotions/nibbler-bibliotheques-dynamiques/videos/bibliotheques-dynamiques
+dynamic libraries used at runtime
+a main executable and 3 dynamic libraries that your main executable will load and use at runtime. Each library will embed everything your main executable might need to display the game and to get the player’s inputs. The main executable will only focus on the game logic and interact with your dynamic libraries. The main executable must interact in a identical way with any of your libraries.
+Last but not least, you MUST NOT push any library that you did not write yourself on your repository ! Doing so equals zero at the defense. For instance, if one of your dynamic libraries uses OpenGL, you MUST NOT push OpenGL and/or its sources on your repository. Same for Boost or anything else. To ensure that you will be able to compile your work during the defense, you must provide a script or run a tool to set up your environment, and download and install your dependencies if needed. You should have a look at CMake for instance, or any other tool you like, or do that work yourself. 
+
+Your main executable must at least accept as parameters the game area’s width and height. When run, your main executable uses one of your dynamic libraries to display the game. The choice can be random if you like, or always the same if you prefer. Anyway, once in game, it must be possible to switch from one dynamic library to one another by using 1, 2 and 3, thus changing the GUI.
+Also, You must handle the following cases:
+• If the number of argument passed to your program is wrong, your program must display a usage message and exit neatly.
+• If the size of the area is impossible (Negative values, non numerical, too big, too small etc.) your program must display a relevant error message and then exit neatly. Too big and too small are up to you.
+• If a dynamic library does not exist or is not compatible, your program must display a relevant error message and exit neatly.
+• There must be a way to quit the game neatly. For instance by using the esc key or through a menu.
