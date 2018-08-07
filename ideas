@@ -39,6 +39,8 @@ https://www.youtube.com/watch?v=RmBGYRAY0js
 
 ~ DL (shared libraries) creating building / use of the shared library:
 https://www.youtube.com/watch?v=yT46zoyy6v4
+https://www.ibm.com/developerworks/aix/library/au-aix-symbol-visibility/index.html
+https://medium.com/@meghamohan/everything-you-need-to-know-about-libraries-in-c-e8ad6138cbb4
 https://www.youtube.com/watch?v=eW5he5uFBNM
 https://www.google.com/search?q=extern+C
 http://www.bogotobogo.com/cplusplus/libraries.php
@@ -63,6 +65,45 @@ https://www.youtube.com/watch?v=gLcO-tgi-mU
 https://www.youtube.com/watch?v=A76ruWsUSIY
 https://www.youtube.com/watch?v=CJQ1ybhP7Tw
 https://www.youtube.com/watch?v=aQkBDvoA3PU
+https://stackoverflow.com/questions/7626526/load-shared-library-by-path-at-runtime
+https://amir.rachum.com/blog/2016/09/17/shared-libraries/
+https://stackoverflow.com/questions/48770958/why-do-we-need-the-shared-library-during-compile-time
+https://stackoverflow.com/questions/37142301/rdynamic-for-select-symbols-only
+https://stackoverflow.com/questions/8835108/how-to-specify-non-default-shared-library-path-in-gcc-linux-getting-error-whil
+https://stackoverflow.com/questions/2649334/difference-between-static-and-shared-libraries
+https://stackoverflow.com/questions/678254/what-should-i-do-if-two-libraries-provide-a-function-with-the-same-name-generati
+https://stackoverflow.com/questions/1706370/dynamic-shared-library-loading-framework
+https://stackoverflow.com/questions/47508140/linking-shared-objects-at-runtime-depending-on-user-configuration
+https://stackoverflow.com/questions/3839756/how-do-applications-resolve-to-different-versions-of-shared-libraries-at-run-tim
+https://stackoverflow.com/questions/4422493/how-to-force-linker-to-use-shared-library-instead-of-static-library
+https://stackoverflow.com/questions/2726993/how-to-specify-preference-of-library-path
+https://stackoverflow.com/questions/6538501/linking-two-shared-libraries-with-some-of-the-same-symbols
+https://stackoverflow.com/questions/3384897/how-to-link-a-specific-version-of-a-shared-library-in-makefile-without-using-ld
+https://stackoverflow.com/questions/28898246/why-are-shared-and-static-libraries-different-things
+https://stackoverflow.com/questions/2954387/can-i-mix-static-and-shared-object-libraries-when-linking
+https://stackoverflow.com/questions/10582366/how-do-i-use-a-dynamic-shared-library-in-a-c-xcode-project
+https://stackoverflow.com/questions/44428552/symbol-addresses-during-load-time-linking-vs-run-time-linking-in-linux
+https://stackoverflow.com/questions/4307429/visual-studio-how-to-specify-different-runtime-libraries-for-the-linker-mtd
+https://stackoverflow.com/questions/2356168/force-gcc-to-notify-about-undefined-references-in-shared-libraries
+https://stackoverflow.com/questions/10268858/why-should-i-recompile-an-entire-program-just-for-a-library-update
+https://stackoverflow.com/questions/16466489/how-can-i-check-a-running-process-to-see-what-shared-libraries-it-is-using
+https://stackoverflow.com/questions/756174/how-to-export-symbols-from-a-shared-library
+https://stackoverflow.com/questions/2338708/skip-compile-time-symbol-resolution-when-building-linux-shared-libraries-with-de
+https://stackoverflow.com/questions/47902194/qt-application-cannot-find-shared-library-at-runtime
+https://stackoverflow.com/questions/42702678/how-do-i-choose-desired-symbol-when-linking-2-different-versions-of-the-same-lib
+https://stackoverflow.com/questions/23403848/how-to-make-a-shared-library-delay-loaded-on-linux
+https://stackoverflow.com/questions/40853899/how-to-have-static-linkage-in-a-shared-library-in-qt-creator
+https://stackoverflow.com/questions/847179/multiple-glibc-libraries-on-a-single-host
+https://stackoverflow.com/questions/12709955/how-does-linker-select-dynamic-library-among-those-compiled-with-different-compi
+https://stackoverflow.com/questions/32298174/combining-the-concept-of-exporting-an-interface-with-crtp
+https://stackoverflow.com/questions/45917816/is-there-an-elegant-way-to-avoid-dlsym-when-using-dlopen-in-c/47221180
+https://stackoverflow.com/questions/25923590/selecting-library-at-runtime-in-c
+https://stackoverflow.com/questions/44387575/building-c-dynamic-shared-library-gives-undefined-symbol
+https://stackoverflow.com/questions/15345543/when-to-use-dynamic-option-in-nm
+https://stackoverflow.com/questions/2055840/difference-between-load-time-dynamic-linking-and-run-time-dynamic-linking
+https://unix.stackexchange.com/questions/22926/where-do-executables-look-for-shared-objects-at-runtime
+https://downloads.haskell.org/~ghc/7.6.3/docs/html/users_guide/using-shared-libs.html
+https://stackoverflow.com/questions/34027468/can-i-make-shared-library-constructors-execute-before-relocations
 
 ~ some patterns
 
