@@ -5,12 +5,19 @@
 ~ action / calculations -> rendering;
 ~ analyzer on each step;
 ~ score: quantity of eaten fruits;
+~ coordinates == size of the map;
+~ output of head and then output of the tail
+~ head
+~ get clear with logic coordinates;
 
+
+~ watched:
+ru: https://www.youtube.com/watch?v=6qaAZTwemXY <- have videos on git
 
 ~ watch youtube tutorials:
 https://www.youtube.com/watch?v=xL3NF_V_Hzg
 https://www.youtube.com/watch?v=E_-lMZDi7Uw&t=519s
-ru: https://www.youtube.com/watch?v=6qaAZTwemXY
+https://www.youtube.com/watch?v=-vp9cFQCQCo
 https://www.youtube.com/watch?v=OBBrp43TX3A
 https://www.youtube.com/watch?v=KTyemy82Zqk
 https://www.youtube.com/watch?v=esHgm12sNVI
@@ -29,7 +36,35 @@ https://www.youtube.com/watch?v=cc5BVdY7L9U
 https://www.youtube.com/watch?v=E_-lMZDi7Uw&t=519s
 https://www.youtube.com/watch?v=MEjaEBv3rQ0
 https://www.youtube.com/watch?v=RmBGYRAY0js
-- some patterns
+
+~ DL (shared libraries) creating building / use of the shared library:
+https://www.youtube.com/watch?v=yT46zoyy6v4
+https://www.youtube.com/watch?v=eW5he5uFBNM
+https://www.google.com/search?q=extern+C
+http://www.bogotobogo.com/cplusplus/libraries.php
+https://www.youtube.com/watch?v=pLy69V2F_8M
+https://www.youtube.com/watch?v=H8fwLdWigI0
+https://www.youtube.com/watch?v=Jzh4ZULXsvo
+https://stackoverflow.com/questions/496664/c-dynamic-shared-library-on-linux
+https://msdn.microsoft.com/en-us/library/ms235636.aspx
+http://www.learncpp.com/cpp-tutorial/a1-static-and-dynamic-libraries/
+https://www.geeksforgeeks.org/working-with-shared-libraries-set-2/
+http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html
+http://edoren.me/blog/dynamic_library_loading_cpp/
+https://msdn.microsoft.com/en-us/library/windows/desktop/ms684175(v=vs.85).aspx
+https://gist.github.com/gubatron/32f82053596c24b6bec6
+http://gernotklingler.com/blog/creating-using-shared-libraries-different-compilers-different-operating-systems/
+https://www.fayewilliams.com/2015/07/07/creating-a-shared-library/
+https://www.safaribooksonline.com/library/view/c-cookbook/0596007612/ch01s05.html
+https://en.wikipedia.org/wiki/Dynamic-link_library
+https://www.youtube.com/watch?v=XzVdQDvLbCQ
+https://www.youtube.com/watch?v=CqUuNCZMGJU
+https://www.youtube.com/watch?v=gLcO-tgi-mU
+https://www.youtube.com/watch?v=A76ruWsUSIY
+https://www.youtube.com/watch?v=CJQ1ybhP7Tw
+https://www.youtube.com/watch?v=aQkBDvoA3PU
+
+~ some patterns
 
 Подключи windows.h и пропиши в конце функции main "Sleep(200);"﻿
 
@@ -84,6 +119,8 @@ Lesson # 2 ru:
 
 Lesson # 3 ru:
 
-1.
+1. tail <- buf of the coordinates values;
+2. do not eat your tail;
+3. touch the wall -> go to other part of our game;
 
 
