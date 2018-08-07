@@ -38,14 +38,18 @@ https://www.youtube.com/watch?v=MEjaEBv3rQ0
 https://www.youtube.com/watch?v=RmBGYRAY0js
 
 ~ DL (shared libraries) creating building / use of the shared library:
+https://www.youtube.com/watch?v=pLy69V2F_8M
 https://www.youtube.com/watch?v=yT46zoyy6v4
 https://www.ibm.com/developerworks/aix/library/au-aix-symbol-visibility/index.html
 https://medium.com/@meghamohan/everything-you-need-to-know-about-libraries-in-c-e8ad6138cbb4
 https://www.youtube.com/watch?v=eW5he5uFBNM
+https://opensourceforu.com/2011/12/loading-library-files-in-cpp/
+http://tldp.org/HOWTO/Program-Library-HOWTO/shared-libraries.html
 https://www.google.com/search?q=extern+C
 http://www.bogotobogo.com/cplusplus/libraries.php
 https://www.youtube.com/watch?v=pLy69V2F_8M
 https://www.youtube.com/watch?v=H8fwLdWigI0
+http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2002/n1418.html
 https://www.youtube.com/watch?v=Jzh4ZULXsvo
 https://stackoverflow.com/questions/496664/c-dynamic-shared-library-on-linux
 https://msdn.microsoft.com/en-us/library/ms235636.aspx
@@ -68,6 +72,8 @@ https://www.youtube.com/watch?v=aQkBDvoA3PU
 https://stackoverflow.com/questions/7626526/load-shared-library-by-path-at-runtime
 https://amir.rachum.com/blog/2016/09/17/shared-libraries/
 https://stackoverflow.com/questions/48770958/why-do-we-need-the-shared-library-during-compile-time
+https://stackoverflow.com/questions/7626526/load-shared-library-by-path-at-runtime
+https://www.mathworks.com/help/matlab/matlab_external/calling-functions-in-shared-libraries.html
 https://stackoverflow.com/questions/37142301/rdynamic-for-select-symbols-only
 https://stackoverflow.com/questions/8835108/how-to-specify-non-default-shared-library-path-in-gcc-linux-getting-error-whil
 https://stackoverflow.com/questions/2649334/difference-between-static-and-shared-libraries
@@ -104,6 +110,13 @@ https://stackoverflow.com/questions/2055840/difference-between-load-time-dynamic
 https://unix.stackexchange.com/questions/22926/where-do-executables-look-for-shared-objects-at-runtime
 https://downloads.haskell.org/~ghc/7.6.3/docs/html/users_guide/using-shared-libs.html
 https://stackoverflow.com/questions/34027468/can-i-make-shared-library-constructors-execute-before-relocations
+http://www.drdobbs.com/dynamically-loaded-c-objects/184401900
+https://www.cs.swarthmore.edu/~newhall/unixhelp/howto_C_libraries.html
+https://www.codeproject.com/Articles/85391/Microsoft-Visual-C-Static-and-Dynamic-Libraries
+https://www.ibm.com/support/knowledgecenter/en/ssw_aix_72/com.ibm.aix.genprogc/create_shared_lib.htm
+https://pocoproject.org/slides/120-SharedLibraries.pdf
+
+https://djinni.co/jobs/36459-c-developer-trainee-junior-/
 
 ~ some patterns
 
