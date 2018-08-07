@@ -1,5 +1,6 @@
 ~ The purpose of this project is to create your own version of the game Snake, with at least 3 different GUIs. These GUIs being shared libraries.
 
+~ action / calculations -> rendering 
 
 
 ~ watch youtube tutorials:
@@ -39,6 +40,46 @@ Last but not least, you MUST NOT push any library that you did not write yoursel
 Your main executable must at least accept as parameters the game area’s width and height. When run, your main executable uses one of your dynamic libraries to display the game. The choice can be random if you like, or always the same if you prefer. Anyway, once in game, it must be possible to switch from one dynamic library to one another by using 1, 2 and 3, thus changing the GUI.
 Also, You must handle the following cases:
 • If the number of argument passed to your program is wrong, your program must display a usage message and exit neatly.
-• If the size of the area is impossible (Negative values, non numerical, too big, too small etc.) your program must display a relevant error message and then exit neatly. Too big and too small are up to you.
+• If the size of the area is impossible (Negative valus, non numerical, too big, too small etc.) your program must display a relevant error message and then exit neatly. Too big and too small are up to you.
 • If a dynamic library does not exist or is not compatible, your program must display a relevant error message and exit neatly.
 • There must be a way to quit the game neatly. For instance by using the esc key or through a menu.
+
+Also, you will soon discover that the ABI used to load and use dynamic libraries at runtime is C, not C++. As a consequence, you will need to use a special construct called extern C. This is NOT an excuse to use C instead of C++ in your dynamic libraries. You will need extern C to create entry points, but apart from these entry points, you must handle class instances. This may seem obvious, but soon you’ll discover that creating an instance from a class defined in a dynamic library and using that instance in you main executable is not trivial.
+
+II.4.2 The game rules
+• The unit of measure is the square. The size of a square is up to you, but it must be reasonable and can vary from one graphic library to another.
+• The game area is a finite plane of squares. The edges of the plane can’t be passed through.
+• The snake starts with a size of 4 squares in the middle of the game area. The direction does not matter.
+• The snake progresses forward automatically at a constant speed. That speed is up to you. Each section of its tail follows the exact same path than the head.
+• The snake can’t move backwards.
+• The snake must be able to turn left or right using the keyboard.
+• The goal of this game is to feed your snake to help it grow. The game area must never have less that one element of food. The food position can be random or pseudo-random if you want some control on where it spawns.
+• One food element fills one and only one square of the area.
+• When the head of the snake is over a square occupied by food, the food disappears, and one section is added to the tail of the snake on the next move on the same square as the previous last section.
+• If the snake hits a wall or one of its own sections, the game is over.
+
+~ stage 1: set all parameters
+~ draw
+~ input: from user
+~ logic
+
+Lesson # 1 ru:
+
+1. draw a map
+2. place a snake
+
+1) цикл for(i=0;i<=width;i++) в asm вдвое быстрее, чем аналог с допсложением "i<width+1";
+2) Циклическая проверка в цикле j на первую и последнюю позиции - вообще суперстранно! Очевидное решение хорошего программиста - перед циклом печать символа первой позиции, затем for(j=1;j<width;j++), затем печать последнего символа в строке. Это на порядок быстрее при выполнении.
+3) И ключевой вопрос: а зачем, вообще, перерисовывать статическую рамку, а не только ее динмическое содержимое? Даже в учебном примере?
+Рендер идет после вычислений. Везде и всегда, во всех приложениях.
+
+Lesson # 2 ru:
+
+1. input from the user (? some pattern) <- listener (lambda from vova)
+2. fruits
+
+1) цикл for(i=0;i<=width;i++) в asm вдвое быстрее, чем аналог с допсложением "i<width+1";
+2) Циклическая проверка в цикле j на первую и последнюю позиции - вообще суперстранно! Очевидное решение хорошего программиста - перед циклом печать символа первой позиции, затем for(j=1;j<width;j++), затем печать последнего символа в строке. Это на порядок быстрее при выполнении.
+3) И ключевой вопрос: а зачем, вообще, перерисовывать статическую рамку, а не только ее динмическое содержимое? Даже в учебном примере?
+Рендер идет после вычислений. Везде и всегда, во всех приложениях.
+
