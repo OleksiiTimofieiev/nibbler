@@ -1,6 +1,10 @@
 ~ The purpose of this project is to create your own version of the game Snake, with at least 3 different GUIs. These GUIs being shared libraries.
 
-~ action / calculations -> rendering 
+?: patterns 
+
+~ action / calculations -> rendering;
+~ analyzer on each step;
+~ score: quantity of eaten fruits;
 
 
 ~ watch youtube tutorials:
@@ -26,6 +30,8 @@ https://www.youtube.com/watch?v=E_-lMZDi7Uw&t=519s
 https://www.youtube.com/watch?v=MEjaEBv3rQ0
 https://www.youtube.com/watch?v=RmBGYRAY0js
 - some patterns
+
+Подключи windows.h и пропиши в конце функции main "Sleep(200);"﻿
 
 
 ~ ideas:
@@ -58,10 +64,6 @@ II.4.2 The game rules
 • When the head of the snake is over a square occupied by food, the food disappears, and one section is added to the tail of the snake on the next move on the same square as the previous last section.
 • If the snake hits a wall or one of its own sections, the game is over.
 
-~ stage 1: set all parameters
-~ draw
-~ input: from user
-~ logic
 
 Lesson # 1 ru:
 
@@ -75,11 +77,13 @@ Lesson # 1 ru:
 
 Lesson # 2 ru:
 
-1. input from the user (? some pattern) <- listener (lambda from vova)
+1. detect input from the user (? some pattern) <- listener (lambda from vova)
 2. fruits
+3. logic of directions ( when we push the button, we change our coordinates in some kind of structure)
+4. limits of the map (if over the map coordinates -> stop the game)
 
-1) цикл for(i=0;i<=width;i++) в asm вдвое быстрее, чем аналог с допсложением "i<width+1";
-2) Циклическая проверка в цикле j на первую и последнюю позиции - вообще суперстранно! Очевидное решение хорошего программиста - перед циклом печать символа первой позиции, затем for(j=1;j<width;j++), затем печать последнего символа в строке. Это на порядок быстрее при выполнении.
-3) И ключевой вопрос: а зачем, вообще, перерисовывать статическую рамку, а не только ее динмическое содержимое? Даже в учебном примере?
-Рендер идет после вычислений. Везде и всегда, во всех приложениях.
+Lesson # 3 ru:
+
+1.
+
 
