@@ -177,4 +177,12 @@ Lesson # 3 ru:
 2. do not eat your tail;
 3. touch the wall -> go to other part of our game;
 
+Algo:
 
+1. draw the map;
+2. place snake in the middle of the map and start moving;
+3. detect input from the user
+4. add some fruits / obstackles in the beginning
+5. logic of movments
+6. logic of tail
+7. logic of game stop ( obstacles, tail, etc.)
