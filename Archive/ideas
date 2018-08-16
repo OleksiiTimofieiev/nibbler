@@ -1,0 +1,188 @@
+~ The purpose of this project is to create your own version of the game Snake, with at least 3 different GUIs. These GUIs being shared libraries.
+
+?: patterns 
+
+~ action / calculations -> rendering;
+~ analyzer on each step;
+~ score: quantity of eaten fruits;
+~ coordinates == size of the map;
+~ output of head and then output of the tail
+~ head
+~ get clear with logic coordinates;
+
+
+~ watched:
+ru: https://www.youtube.com/watch?v=6qaAZTwemXY <- have videos on git
+
+~ watch youtube tutorials:
+https://www.youtube.com/watch?v=xL3NF_V_Hzg
+https://www.youtube.com/watch?v=E_-lMZDi7Uw&t=519s
+https://www.youtube.com/watch?v=-vp9cFQCQCo
+https://www.youtube.com/watch?v=OBBrp43TX3A
+https://www.youtube.com/watch?v=KTyemy82Zqk
+https://www.youtube.com/watch?v=esHgm12sNVI
+https://www.youtube.com/watch?v=nK_sT12h22s
+https://www.youtube.com/watch?v=U59RLO4yymw
+https://www.youtube.com/watch?v=6Miai_t_ksw&list=PLWzp0Bbyy_3gXc0YBxiIR9Tb5KfmLSL_C
+https://www.youtube.com/watch?v=TexCVhcyJtQ
+https://www.youtube.com/watch?v=zDwcDsZRpLU
+https://www.youtube.com/watch?v=8ntEQpg7gck
+https://www.youtube.com/watch?v=ERN9UhUvjkI
+https://www.youtube.com/watch?v=OAv2QsOZ4l4
+https://www.youtube.com/watch?v=4HgyStstIhw
+https://www.youtube.com/watch?v=I-HkG0_LY68
+https://www.youtube.com/watch?v=qvggyqc_fu8
+https://www.youtube.com/watch?v=cc5BVdY7L9U
+https://www.youtube.com/watch?v=E_-lMZDi7Uw&t=519s
+https://www.youtube.com/watch?v=MEjaEBv3rQ0
+https://www.youtube.com/watch?v=RmBGYRAY0js
+
+~ DL (shared libraries) creating building / use of the shared library:
+https://www.youtube.com/watch?v=pLy69V2F_8M
+https://www.youtube.com/watch?v=yT46zoyy6v4
+https://www.ibm.com/developerworks/aix/library/au-aix-symbol-visibility/index.html
+https://medium.com/@meghamohan/everything-you-need-to-know-about-libraries-in-c-e8ad6138cbb4
+https://www.youtube.com/watch?v=eW5he5uFBNM
+https://opensourceforu.com/2011/12/loading-library-files-in-cpp/
+http://tldp.org/HOWTO/Program-Library-HOWTO/shared-libraries.html
+https://www.google.com/search?q=extern+C
+http://www.bogotobogo.com/cplusplus/libraries.php
+https://www.youtube.com/watch?v=pLy69V2F_8M
+https://www.youtube.com/watch?v=H8fwLdWigI0
+http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2002/n1418.html
+https://www.youtube.com/watch?v=Jzh4ZULXsvo
+https://stackoverflow.com/questions/496664/c-dynamic-shared-library-on-linux
+https://msdn.microsoft.com/en-us/library/ms235636.aspx
+http://www.learncpp.com/cpp-tutorial/a1-static-and-dynamic-libraries/
+https://www.geeksforgeeks.org/working-with-shared-libraries-set-2/
+http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html
+http://edoren.me/blog/dynamic_library_loading_cpp/
+https://msdn.microsoft.com/en-us/library/windows/desktop/ms684175(v=vs.85).aspx
+https://gist.github.com/gubatron/32f82053596c24b6bec6
+http://gernotklingler.com/blog/creating-using-shared-libraries-different-compilers-different-operating-systems/
+https://www.fayewilliams.com/2015/07/07/creating-a-shared-library/
+https://www.safaribooksonline.com/library/view/c-cookbook/0596007612/ch01s05.html
+https://en.wikipedia.org/wiki/Dynamic-link_library
+https://www.youtube.com/watch?v=XzVdQDvLbCQ
+https://www.youtube.com/watch?v=CqUuNCZMGJU
+https://www.youtube.com/watch?v=gLcO-tgi-mU
+https://www.youtube.com/watch?v=A76ruWsUSIY
+https://www.youtube.com/watch?v=CJQ1ybhP7Tw
+https://www.youtube.com/watch?v=aQkBDvoA3PU
+https://stackoverflow.com/questions/7626526/load-shared-library-by-path-at-runtime
+https://amir.rachum.com/blog/2016/09/17/shared-libraries/
+https://stackoverflow.com/questions/48770958/why-do-we-need-the-shared-library-during-compile-time
+https://stackoverflow.com/questions/7626526/load-shared-library-by-path-at-runtime
+https://www.mathworks.com/help/matlab/matlab_external/calling-functions-in-shared-libraries.html
+https://stackoverflow.com/questions/37142301/rdynamic-for-select-symbols-only
+https://stackoverflow.com/questions/8835108/how-to-specify-non-default-shared-library-path-in-gcc-linux-getting-error-whil
+https://stackoverflow.com/questions/2649334/difference-between-static-and-shared-libraries
+https://stackoverflow.com/questions/678254/what-should-i-do-if-two-libraries-provide-a-function-with-the-same-name-generati
+https://stackoverflow.com/questions/1706370/dynamic-shared-library-loading-framework
+https://stackoverflow.com/questions/47508140/linking-shared-objects-at-runtime-depending-on-user-configuration
+https://stackoverflow.com/questions/3839756/how-do-applications-resolve-to-different-versions-of-shared-libraries-at-run-tim
+https://stackoverflow.com/questions/4422493/how-to-force-linker-to-use-shared-library-instead-of-static-library
+https://stackoverflow.com/questions/2726993/how-to-specify-preference-of-library-path
+https://stackoverflow.com/questions/6538501/linking-two-shared-libraries-with-some-of-the-same-symbols
+https://stackoverflow.com/questions/3384897/how-to-link-a-specific-version-of-a-shared-library-in-makefile-without-using-ld
+https://stackoverflow.com/questions/28898246/why-are-shared-and-static-libraries-different-things
+https://stackoverflow.com/questions/2954387/can-i-mix-static-and-shared-object-libraries-when-linking
+https://stackoverflow.com/questions/10582366/how-do-i-use-a-dynamic-shared-library-in-a-c-xcode-project
+https://stackoverflow.com/questions/44428552/symbol-addresses-during-load-time-linking-vs-run-time-linking-in-linux
+https://stackoverflow.com/questions/4307429/visual-studio-how-to-specify-different-runtime-libraries-for-the-linker-mtd
+https://stackoverflow.com/questions/2356168/force-gcc-to-notify-about-undefined-references-in-shared-libraries
+https://stackoverflow.com/questions/10268858/why-should-i-recompile-an-entire-program-just-for-a-library-update
+https://stackoverflow.com/questions/16466489/how-can-i-check-a-running-process-to-see-what-shared-libraries-it-is-using
+https://stackoverflow.com/questions/756174/how-to-export-symbols-from-a-shared-library
+https://stackoverflow.com/questions/2338708/skip-compile-time-symbol-resolution-when-building-linux-shared-libraries-with-de
+https://stackoverflow.com/questions/47902194/qt-application-cannot-find-shared-library-at-runtime
+https://stackoverflow.com/questions/42702678/how-do-i-choose-desired-symbol-when-linking-2-different-versions-of-the-same-lib
+https://stackoverflow.com/questions/23403848/how-to-make-a-shared-library-delay-loaded-on-linux
+https://stackoverflow.com/questions/40853899/how-to-have-static-linkage-in-a-shared-library-in-qt-creator
+https://stackoverflow.com/questions/847179/multiple-glibc-libraries-on-a-single-host
+https://stackoverflow.com/questions/12709955/how-does-linker-select-dynamic-library-among-those-compiled-with-different-compi
+https://stackoverflow.com/questions/32298174/combining-the-concept-of-exporting-an-interface-with-crtp
+https://stackoverflow.com/questions/45917816/is-there-an-elegant-way-to-avoid-dlsym-when-using-dlopen-in-c/47221180
+https://stackoverflow.com/questions/25923590/selecting-library-at-runtime-in-c
+https://stackoverflow.com/questions/44387575/building-c-dynamic-shared-library-gives-undefined-symbol
+https://stackoverflow.com/questions/15345543/when-to-use-dynamic-option-in-nm
+https://stackoverflow.com/questions/2055840/difference-between-load-time-dynamic-linking-and-run-time-dynamic-linking
+https://unix.stackexchange.com/questions/22926/where-do-executables-look-for-shared-objects-at-runtime
+https://downloads.haskell.org/~ghc/7.6.3/docs/html/users_guide/using-shared-libs.html
+https://stackoverflow.com/questions/34027468/can-i-make-shared-library-constructors-execute-before-relocations
+http://www.drdobbs.com/dynamically-loaded-c-objects/184401900
+https://www.cs.swarthmore.edu/~newhall/unixhelp/howto_C_libraries.html
+https://www.codeproject.com/Articles/85391/Microsoft-Visual-C-Static-and-Dynamic-Libraries
+https://www.ibm.com/support/knowledgecenter/en/ssw_aix_72/com.ibm.aix.genprogc/create_shared_lib.htm
+https://pocoproject.org/slides/120-SharedLibraries.pdf
+
+https://djinni.co/jobs/36459-c-developer-trainee-junior-/
+
+~ some patterns
+
+Подключи windows.h и пропиши в конце функции main "Sleep(200);"﻿
+
+
+~ ideas:
+Динамические библиотеки
+Загрузка Runtime
+Обозначение имени и ключевое слово «extern» в C ++
+https://elearning.intra.42.fr/notions/nibbler/subnotions/nibbler-bibliotheques-dynamiques/videos/bibliotheques-dynamiques
+dynamic libraries used at runtime
+a main executable and 3 dynamic libraries that your main executable will load and use at runtime. Each library will embed everything your main executable might need to display the game and to get the player’s inputs. The main executable will only focus on the game logic and interact with your dynamic libraries. The main executable must interact in a identical way with any of your libraries.
+Last but not least, you MUST NOT push any library that you did not write yourself on your repository ! Doing so equals zero at the defense. For instance, if one of your dynamic libraries uses OpenGL, you MUST NOT push OpenGL and/or its sources on your repository. Same for Boost or anything else. To ensure that you will be able to compile your work during the defense, you must provide a script or run a tool to set up your environment, and download and install your dependencies if needed. You should have a look at CMake for instance, or any other tool you like, or do that work yourself. 
+
+Your main executable must at least accept as parameters the game area’s width and height. When run, your main executable uses one of your dynamic libraries to display the game. The choice can be random if you like, or always the same if you prefer. Anyway, once in game, it must be possible to switch from one dynamic library to one another by using 1, 2 and 3, thus changing the GUI.
+Also, You must handle the following cases:
+• If the number of argument passed to your program is wrong, your program must display a usage message and exit neatly.
+• If the size of the area is impossible (Negative valus, non numerical, too big, too small etc.) your program must display a relevant error message and then exit neatly. Too big and too small are up to you.
+• If a dynamic library does not exist or is not compatible, your program must display a relevant error message and exit neatly.
+• There must be a way to quit the game neatly. For instance by using the esc key or through a menu.
+
+Also, you will soon discover that the ABI used to load and use dynamic libraries at runtime is C, not C++. As a consequence, you will need to use a special construct called extern C. This is NOT an excuse to use C instead of C++ in your dynamic libraries. You will need extern C to create entry points, but apart from these entry points, you must handle class instances. This may seem obvious, but soon you’ll discover that creating an instance from a class defined in a dynamic library and using that instance in you main executable is not trivial.
+
+II.4.2 The game rules
+• The unit of measure is the square. The size of a square is up to you, but it must be reasonable and can vary from one graphic library to another.
+• The game area is a finite plane of squares. The edges of the plane can’t be passed through.
+• The snake starts with a size of 4 squares in the middle of the game area. The direction does not matter.
+• The snake progresses forward automatically at a constant speed. That speed is up to you. Each section of its tail follows the exact same path than the head.
+• The snake can’t move backwards.
+• The snake must be able to turn left or right using the keyboard.
+• The goal of this game is to feed your snake to help it grow. The game area must never have less that one element of food. The food position can be random or pseudo-random if you want some control on where it spawns.
+• One food element fills one and only one square of the area.
+• When the head of the snake is over a square occupied by food, the food disappears, and one section is added to the tail of the snake on the next move on the same square as the previous last section.
+• If the snake hits a wall or one of its own sections, the game is over.
+
+
+Lesson # 1 ru:
+
+1. draw a map
+2. place a snake
+
+1) цикл for(i=0;i<=width;i++) в asm вдвое быстрее, чем аналог с допсложением "i<width+1";
+2) Циклическая проверка в цикле j на первую и последнюю позиции - вообще суперстранно! Очевидное решение хорошего программиста - перед циклом печать символа первой позиции, затем for(j=1;j<width;j++), затем печать последнего символа в строке. Это на порядок быстрее при выполнении.
+3) И ключевой вопрос: а зачем, вообще, перерисовывать статическую рамку, а не только ее динмическое содержимое? Даже в учебном примере?
+Рендер идет после вычислений. Везде и всегда, во всех приложениях.
+
+Lesson # 2 ru:
+
+1. detect input from the user (? some pattern) <- listener (lambda from vova)
+2. fruits
+3. logic of directions ( when we push the button, we change our coordinates in some kind of structure)
+4. limits of the map (if over the map coordinates -> stop the game)
+
+Lesson # 3 ru:
+
+1. tail <- buf of the coordinates values;
+2. do not eat your tail;
+3. touch the wall -> go to other part of our game;
+
+Algo:
+
+1. draw the map;
+2. place snake in the middle of the map and start moving;
+3. detect input from the user
+4. add some fruits / obstackles in the beginning
+5. logic of movments
+6. logic of tail
+7. logic of game stop ( obstacles, tail, etc.)
