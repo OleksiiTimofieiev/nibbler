@@ -1,0 +1,8 @@
+- game class
+- for each graphical -> separate instance which inherits from the interface class(attributes: x, y):
+	~ border;
+	~ obstacles;
+	~ fruits;
+	~ snake (head and tail);
+	~ logic;
+- one interface with child object for each graphics library;
