@@ -1,0 +1,35 @@
+//
+
+button.addListener(new ButtonListener() {
+	    
+		    void click(Event evt) {
+				        doSmth();
+						    }
+});
+
+
+
+
+button.addListener((Event evt) -> doSmth());
+
+
+Function<Object> func = (Event evt) -> doSmth();
+Runnable =
+
+
+run(func);
+
+
+
+
+////
+
+
+
+void run(Function func) {
+	    
+		//
+		    func.apply();
+
+			//
+}
