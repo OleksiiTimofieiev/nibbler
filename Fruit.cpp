@@ -12,9 +12,7 @@ Fruit::Fruit(int x, int y)
 Fruit &Fruit::operator=(Fruit const &rhs)
 {
     if (this != &rhs)
-    {
         _coords = rhs._coords;
-    }
     return *this;
 }
 
