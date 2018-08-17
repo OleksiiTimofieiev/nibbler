@@ -4,9 +4,7 @@
 
 int     main(void)
 {
-    Game _game;
-
-    _game.gameplay();
+    Game().gameplay();
 
     return (0);
 }
