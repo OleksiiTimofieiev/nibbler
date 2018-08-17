@@ -1,6 +1,7 @@
 #include "Init.hpp" //TODO: add a separate defin for the classes;
 #include "Border.hpp"
 #include "Score.hpp"
+#include "Fruit.hpp"
 
 #ifndef GAME_HPP
 #define GAME_HPP
@@ -19,10 +20,9 @@ class Game
     private:
         Init    _init;
         Border  _border;
-        Score   _score;
+        Score   _stat;
+        Fruit   _fruits;
         // Snake   _snake(x,y); // reference for class;
-        // Fruit _fruits;
-        // Score _stat;
 
         
         // direction   _dir; // to the logic or visu;
