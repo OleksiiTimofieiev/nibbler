@@ -7,7 +7,6 @@ void    Game::gameplay()
 {
     IncGraphics inc;
 
-
     while(!_init.getGameOver())
     {
         inc.DrawMap(_border);
