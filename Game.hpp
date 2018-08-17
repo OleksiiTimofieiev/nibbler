@@ -29,10 +29,12 @@ class Game
     public:
         Game();
         ~Game();
+        Game &operator=(Game const &rhs);
+        Game(Game const &src);
 
-    void gameplay();
+        void gameplay();
 
-      //TODO:copl form;
+        //TODO:copl form;
         
 };
 
