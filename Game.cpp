@@ -9,8 +9,8 @@ void    Game::gameplay()
 
     while(!_init.getGameOver())
     {
-        inc.DrawMap(_init.getHeight(), _init.getWidth());
-        //draw
+        inc.DrawMap(_border);
+        inc.Draw(_fruits, _stat, _init);
         // input
         // logic
     }

@@ -1,7 +1,7 @@
 #include "Border.hpp"
 
 Border::~Border(){};
-Border::Border() : _width(20), _height(20){};
+Border::Border() : _width(125), _height(40){};
 
 Border &Border::operator=(Border const &rhs)
 {
