@@ -1,15 +1,13 @@
-#include "IObject.hpp"
-
 #ifndef SNAKE_HPP
 #define SNAKE_HPP
 
+#include <vector>
 
 class Snake
 {
-    int     x;
-    int     y
-
-    vector< pair<int, int> > tail;
+    std::pair<int, int> _head_coords;
+    
+    std::vector<std::pair<int, int> > tail;
 };
 
 #endif
