@@ -29,19 +29,11 @@ class Game
         
         enum bla = STOP;
 
-            public : Game(int graphic module);
+        public : Game(int graphic module);
         void    gameplay()
         {
             GraphicModules[lib]->draw(Snake & snake, Fruit & fruit, wall)
-            {
-
-                bla = GraphicModules[lib]->get_ivent(Snake & snake, Fruit & fruit, wall))
-                    snake.change x and y
-                
-                logic
-                
-                drawSnake(snake)
-            }
+            bla = GraphicModules[lib]->get_ivent();
         }
         
 }
