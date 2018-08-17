@@ -3,7 +3,7 @@
 #include <iostream>
 
 Snake::Snake(){}
-Snake::~Snake() {}
+Snake::~Snake(){}
 
 Snake &Snake::operator=(Snake const &rhs)
 {
