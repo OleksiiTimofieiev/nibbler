@@ -12,7 +12,7 @@ IncGraphics::IncGraphics() {
 	init_pair (2, COLOR_MAGENTA, COLOR_BLACK);
 	init_pair (3, COLOR_WHITE, COLOR_WHITE);
 	init_pair (4, COLOR_YELLOW, COLOR_YELLOW);
-	init_pair (5, COLOR_RED, COLOR_RED);
+	init_pair (5, COLOR_RED, COLOR_BLACK);
 	init_pair (6, COLOR_GREEN, COLOR_GREEN);
 	init_pair (7, COLOR_MAGENTA, COLOR_MAGENTA);
 	init_pair (8, COLOR_GREEN, COLOR_BLACK);
@@ -27,8 +27,22 @@ IncGraphics &IncGraphics::operator=(IncGraphics const &ref)
     return *this;
 }
 
-void IncGraphics::DrawMap(int height, int width) const
+void IncGraphics::Draw(Fruit &fruit, Score &score, Init &init) const
 {
+	int height = init.getHeight();
+	int width = init.getWidth();
+
+	attron(COLOR_PAIR (5));
+	mvprintw(height + 1, 0, "Score: ");
+	mvprintw(height + 1, 7, std::to_string(score.getScore()).c_str());
+	attroff(COLOR_PAIR (5));	
+}
+
+void IncGraphics::DrawMap(Border &border) const
+{
+	int height = border.getHeight();
+	int width = border.getWidth();
+
     for (int j = 0; j < width; j++) {
 
 		attron(COLOR_PAIR (3));

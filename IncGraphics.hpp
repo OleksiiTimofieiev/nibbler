@@ -1,6 +1,7 @@
 #ifndef INCGRAPHICS_HPP
 # define INCGRAPHICS_HPP
 
+# include "Game.hpp"
 # include "IGraphics.hpp"
 # include <iostream>
 # include <unistd.h>
@@ -19,12 +20,12 @@ class IncGraphics : public IGraphics
 
         IncGraphics &operator=(IncGraphics const &ref);
 
-        // void Draw(std::vector<const IObject> &) const;
+        void Draw(Fruit &fruit, Score &score, Init &init) const;
         // void DrawSnake(const IObject &) const;
         // void DrawFruit(const IObject &) const;
         // void DrawWall(const IObject &) const;
 
-        void DrawMap(int height, int width) const;
+        void DrawMap(Border &border) const;
 };
 
 #endif
