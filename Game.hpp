@@ -5,6 +5,9 @@
 #include "Snake.hpp"
 #include "IncGraphics.hpp"
 
+//TODO:comp form in every class;
+//TODO:delete comments;
+
 #ifndef GAME_HPP
 # define GAME_HPP
 
