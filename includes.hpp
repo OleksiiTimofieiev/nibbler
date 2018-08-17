@@ -1,8 +1,6 @@
 #ifndef INCLUDES_HPP
-# define INCLUDES_HPP
+#define INCLUDES_HPP
 
-#include <iostream>
-
-# include "Game.hpp"
+#include "Game.hpp"
 
 #endif
