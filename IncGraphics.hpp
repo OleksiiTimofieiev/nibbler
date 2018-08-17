@@ -20,8 +20,8 @@ class IncGraphics : public IGraphics
 
         IncGraphics &operator=(IncGraphics const &ref);
 
-        void Draw(Fruit &fruit, Score &score, Init &init) const;
-        // void DrawSnake(const IObject &) const;
+        void Draw(Snake &snake, Fruit &fruit, Score &score, Init &init) const;
+        void DrawSnake(Snake &snake, Init &init) const;
         // void DrawFruit(const IObject &) const;
         // void DrawWall(const IObject &) const;
 

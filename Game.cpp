@@ -10,7 +10,7 @@ void    Game::gameplay()
     while(!_init.getGameOver())
     {
         inc.DrawMap(_border);
-        inc.Draw(_fruits, _stat, _init);
+        inc.Draw(_snake, _fruits, _stat, _init);
         // input
         // logic
     }
