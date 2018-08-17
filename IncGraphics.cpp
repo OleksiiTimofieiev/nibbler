@@ -27,19 +27,16 @@ IncGraphics &IncGraphics::operator=(IncGraphics const &ref)
     return *this;
 }
 
-void IncGraphics::DrawMap() const
+void IncGraphics::DrawMap(int height, int width) const
 {
-    float height = 40;
-	float width = 125;
-
-    for (float j = 0; j < width; j++) {
+    for (int j = 0; j < width; j++) {
 
 		attron(COLOR_PAIR (3));
 		mvprintw(0, j, "#");
 		attroff(COLOR_PAIR (3));
 	}
 
-	for (float i = 0; i < height; i++) {
+	for (int i = 0; i < height; i++) {
 
 		attron(COLOR_PAIR (3));
 		mvprintw(i, 0, "#");
@@ -47,7 +44,7 @@ void IncGraphics::DrawMap() const
 		attroff(COLOR_PAIR (3));
 	}
     
-    for (float j = 0; j < width + 1; j++) {
+    for (int j = 0; j < width + 1; j++) {
 
 		attron(COLOR_PAIR (3));
 		mvprintw(height, j, "#");

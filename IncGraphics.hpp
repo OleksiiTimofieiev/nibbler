@@ -24,7 +24,7 @@ class IncGraphics : public IGraphics
         // void DrawFruit(const IObject &) const;
         // void DrawWall(const IObject &) const;
 
-        void DrawMap() const;
+        void DrawMap(int height, int width) const;
 };
 
 #endif

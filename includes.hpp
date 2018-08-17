@@ -4,7 +4,6 @@
 #include <iostream>
 
 # include "Game.hpp"
-# include "IncGraphics.hpp"
 
 // macroses:
 

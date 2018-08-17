@@ -5,12 +5,8 @@
 int     main(void)
 {
     Game _game;
-    IncGraphics inc;
 
-    while (1)
-    {
-        inc.DrawMap();
-    }
+    _game.gameplay();
     // OUTPUT(_game._init.getWidth());
     return (0);
 }

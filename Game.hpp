@@ -3,6 +3,7 @@
 #include "Score.hpp"
 #include "Fruit.hpp"
 #include "Snake.hpp"
+#include "IncGraphics.hpp"
 
 #ifndef GAME_HPP
 # define GAME_HPP
@@ -18,6 +19,8 @@ class Game
     public:
         Game();
         ~Game();
+
+    void    gameplay();
 
     //TODO:copl form;
         

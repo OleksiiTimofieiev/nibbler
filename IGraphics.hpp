@@ -9,7 +9,7 @@ class IGraphics
         // virtual void DrawFruit(const IObject &) const = 0;        
         // virtual void DrawWall(const IObject &) const = 0;
 
-        virtual void DrawMap() const = 0;
+        virtual void DrawMap(int height, int width) const = 0;
 
         virtual ~IGraphics(void) {}
 };
