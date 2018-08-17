@@ -30,3 +30,4 @@ Snake::Snake(int x, int y)
 
 std::pair<int, int> Snake::getHeadCoords() { return _head_coords; }
 std::vector<std::pair<int, int> > Snake::getTailCoords() { return _tail; }
+Direction Snake::getDir() {return _dir;}

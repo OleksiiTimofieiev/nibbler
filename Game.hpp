@@ -5,6 +5,8 @@
 #include "Snake.hpp"
 #include "IncGraphics.hpp"
 
+#define OUTPUT(x) std::cout << (x) << std::endl;
+
 //TODO:comp form in every class;
 //TODO:delete comments;
 
@@ -18,8 +20,8 @@ class Game
         Border  _border;
         Score   _stat;
         Fruit   _fruits{_init.getWidth(), _init.getHeight()};
-        Snake   _snake{_init.getWidth() / 2, _init.getHeight() / 2};
     public:
+        Snake   _snake{_init.getWidth() / 2, _init.getHeight() / 2};
         Game();
         ~Game();
 
