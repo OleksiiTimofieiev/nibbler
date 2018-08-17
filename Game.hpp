@@ -10,11 +10,6 @@
 //TODO:comp form in every class;
 //TODO:delete comments;
 
-// game features:
-
-//TODO:input;
-//TODO:logic;
-
 #ifndef GAME_HPP
 #define GAME_HPP
 

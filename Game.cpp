@@ -11,8 +11,8 @@ void    Game::gameplay()
     {
         inc.DrawMap(_border);
         inc.Draw(_snake, _fruits, _stat, _init);
-        // input
-        // logic
+        // TODO:input
+        // TODO:logic
     }
 }
 
