@@ -38,6 +38,8 @@ class Game
     public:
         Game();
         ~Game();
+
+    //TODO:copl form;
         
 };
 
