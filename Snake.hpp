@@ -11,6 +11,8 @@ class Snake
 
     public:
         Snake();
+        ~Snake();
+        Snake(int x, int y);
 };
 
 #endif

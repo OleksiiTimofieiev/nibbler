@@ -14,15 +14,15 @@ class Game
         Init    _init;
         Border  _border;
         Score   _stat;
-        Fruit   _fruits;
-        Snake   _snake;
+        Fruit   _fruits; //pseudo random;
+        Snake   _snake{_init.getWidth() / 2, _init.getHeight() / 2};
     public:
         Game();
         ~Game();
 
-    void    gameplay();
+    void gameplay();
 
-    //TODO:copl form;
+      //TODO:copl form;
         
 };
 
