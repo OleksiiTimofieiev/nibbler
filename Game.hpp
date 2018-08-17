@@ -25,8 +25,8 @@ class Game
         Border  _border;
         Score   _stat;
         Fruit   _fruits{_init.getWidth(), _init.getHeight()};
-    public:
         Snake   _snake{_init.getWidth() / 2, _init.getHeight() / 2};
+    public:
         Game();
         ~Game();
 
