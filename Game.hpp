@@ -10,7 +10,7 @@
 //TODO:comp form in every class;
 //TODO:delete comments;
 
-// game features;
+// game features:
 
 //TODO:input;
 //TODO:logic;
@@ -31,11 +31,7 @@ class Game
         ~Game();
         Game &operator=(Game const &rhs);
         Game(Game const &src);
-
-        void gameplay();
-
-        //TODO:copl form;
-        
+        void gameplay(); 
 };
 
 #endif
