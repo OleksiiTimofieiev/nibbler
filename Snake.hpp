@@ -12,6 +12,8 @@ class Snake
     public:
         Snake();
         ~Snake();
+        Snake &operator=(Snake const &rhs);
+        Snake(Snake const &src);
         Snake(int x, int y);
         std::pair<int, int>               getHeadCoords();
         std::vector<std::pair<int, int> > getTailCoords();

@@ -5,6 +5,21 @@
 Snake::Snake(){}
 Snake::~Snake() {}
 
+Snake &Snake::operator=(Snake const &rhs)
+{
+    if (this != &rhs)
+    {
+        _head_coords = rhs._head_coords;
+        _tail = rhs._tail;
+    }
+    return *this;
+}
+
+Snake::Snake(Snake const &src)
+{
+    *this = src;
+}
+
 Snake::Snake(int x, int y)
 {
     _head_coords.first = x;
