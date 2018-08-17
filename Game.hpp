@@ -25,17 +25,21 @@ class Game
         
         direction   _dir; // to the logic or visu;
 
+        vector<GraphicModules> // 3 instances of the class with a concretemethods; functions
+        
+        enum bla = STOP;
 
-        vector<GraphicModules> // 3 instances of the class with a concretemethods; functions 
-
-
-      public:
-        Game(int graphic module);
+            public : Game(int graphic module);
         void    gameplay()
         {
             GraphicModules[lib]->draw(Snake & snake, Fruit & fruit, wall)
             {
 
+                bla = GraphicModules[lib]->get_ivent(Snake & snake, Fruit & fruit, wall))
+                    snake.change x and y
+                
+                logic
+                
                 drawSnake(snake)
             }
         }
