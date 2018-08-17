@@ -9,7 +9,7 @@ class Snake
     int     x;
     int     y
 
-    vector< pair<tail> > tail;
+    vector< pair<int, int> > tail;
 };
 
 #endif
