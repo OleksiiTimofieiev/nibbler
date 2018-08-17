@@ -1,18 +1,18 @@
 #ifndef FRUIT_HPP
 #define FRUIT_HPP
 
+#include <utility>
+
 class Fruit
 {
-    int _width;
-    int _height;
+    std::pair<int, int> _coords;
 
     public:
         Fruit();
         ~Fruit();
         Fruit &operator=(Fruit const &rhs);
         Fruit(Fruit const &src);
-        int getWidth();
-        int getHeight();
+        std::pair<int, int> getCoords();
 };
 
 #endif

@@ -1,14 +1,16 @@
 #include "Fruit.hpp"
 
 Fruit::~Fruit(){};
-Fruit::Fruit() : _width(20), _height(20){};
+Fruit::Fruit(){
+    _coords.first = 0;
+    _coords.second = 0;
+};
 
 Fruit &Fruit::operator=(Fruit const &rhs)
 {
     if (this != &rhs)
     {
-        _width = rhs._width;
-        _height = rhs._height;
+        _coords = rhs._coords;
     }
     return *this;
 }
@@ -18,5 +20,4 @@ Fruit::Fruit(Fruit const &src)
     *this = src;
 }
 
-int Fruit::getWidth() { return _width; }
-int Fruit::getHeight() { return _height; }
+std::pair<int,int> Fruit::getCoords() { return _coords; }
