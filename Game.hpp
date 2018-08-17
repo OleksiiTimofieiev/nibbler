@@ -19,8 +19,8 @@ class Game
         Init _init(x, y); // bool _gameOver; const int width; const int _height;
         Snake   _snake(x,y);
         Border  _border(x,y);
-        vector<Fruit> fruits;
-        Score _score;
+        Fruit _fruits;
+        Score _stat;
 
         
         direction   _dir; // to the logic or visu;
