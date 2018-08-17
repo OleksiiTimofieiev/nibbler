@@ -5,6 +5,4 @@
 
 # include "Game.hpp"
 
-// macroses:
-
 #endif
