@@ -15,10 +15,7 @@ Snake &Snake::operator=(Snake const &rhs)
     return *this;
 }
 
-Snake::Snake(Snake const &src)
-{
-    *this = src;
-}
+Snake::Snake(Snake const &src) {*this = src;}
 
 Snake::Snake(int x, int y)
 {
