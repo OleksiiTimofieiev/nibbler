@@ -11,6 +11,7 @@ Snake &Snake::operator=(Snake const &rhs)
     {
         _head_coords = rhs._head_coords;
         _tail = rhs._tail;
+        _dir = rhs._dir;
     }
     return *this;
 }
@@ -21,6 +22,7 @@ Snake::Snake(int x, int y)
 {
     _head_coords.first = x;
     _head_coords.second = y;
+    _dir = stop;
 
     for (int i = 1; i <= 3; i++)
         _tail.push_back(std::make_pair(x, y + i));

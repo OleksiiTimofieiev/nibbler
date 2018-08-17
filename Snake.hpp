@@ -3,10 +3,19 @@
 
 #include <vector>
 
+enum Direction
+{
+    stop = 0,
+    left,
+    right,
+    down
+};
+
 class Snake
 {
     std::pair<int, int> _head_coords;
     std::vector<std::pair<int, int> > _tail;
+    Direction _dir;
 
     public:
         Snake();
