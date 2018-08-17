@@ -12,6 +12,9 @@ class   Init
         ~Init();
         Init &operator=(Init const &rhs);
         Init(Init const &src);
+        bool getGameOver();
+        int  getWidth();
+        int  getHeight();
 };
 
 #endif

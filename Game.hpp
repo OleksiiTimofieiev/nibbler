@@ -34,6 +34,9 @@ class Game
         //     GraphicModules[lib]->draw(Snake & snake, Fruit & fruit, wall)
         //     bla = GraphicModules[lib]->get_ivent();
         // }
+    public:
+        Game();
+        ~Game();
         
 };
 

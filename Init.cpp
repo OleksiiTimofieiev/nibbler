@@ -18,3 +18,7 @@ Init::Init(Init const &src)
 {
     *this = src;
 }
+
+bool Init::getGameOver() {return _gameOver;}
+int Init::getWidth() { return _width; }
+int Init::getHeight() { return _height; }

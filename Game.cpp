@@ -1,18 +1,15 @@
 #include "Game.hpp"
 
+Game::Game(){}
+Game::~Game() {}
 
-Game::Game()
-{
-    _gameOver = false;
-}
-
-void    Game::gameplay()
-{
-    while(!_gameOver)
-    {
-        //draw
-        // input
-        // logic
-    }
+// void    Game::gameplay()
+// {
+//     while(!_gameOver)
+//     {
+//         //draw
+//         // input
+//         // logic
+//     }
     
-}
+// }
