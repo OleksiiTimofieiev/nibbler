@@ -2,6 +2,7 @@
 #define FRUIT_HPP
 
 #include <utility>
+#include <iostream>
 
 class Fruit
 {
@@ -9,6 +10,7 @@ class Fruit
 
     public:
         Fruit();
+        Fruit(int x, int y);
         ~Fruit();
         Fruit &operator=(Fruit const &rhs);
         Fruit(Fruit const &src);

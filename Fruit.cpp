@@ -1,9 +1,12 @@
 #include "Fruit.hpp"
 
+Fruit::Fruit(){};
 Fruit::~Fruit(){};
-Fruit::Fruit(){
-    _coords.first = 0;
-    _coords.second = 0;
+
+Fruit::Fruit(int x, int y)
+{
+    _coords.first = rand() % x;
+    _coords.second = rand() % y;
 };
 
 Fruit &Fruit::operator=(Fruit const &rhs)

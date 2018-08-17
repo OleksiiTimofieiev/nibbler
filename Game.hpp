@@ -14,7 +14,7 @@ class Game
         Init    _init;
         Border  _border;
         Score   _stat;
-        Fruit   _fruits; //pseudo random;
+        Fruit   _fruits{_init.getWidth(), _init.getHeight()};
         Snake   _snake{_init.getWidth() / 2, _init.getHeight() / 2};
     public:
         Game();
