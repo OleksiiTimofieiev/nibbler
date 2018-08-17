@@ -16,9 +16,9 @@
 class Game
 {
     private:
-        Init _init;
-        // Snake   _snake(x,y); // reference for class;
+        Init    _init;
         Border  _border;
+        // Snake   _snake(x,y); // reference for class;
         // Fruit _fruits;
         // Score _stat;
 
