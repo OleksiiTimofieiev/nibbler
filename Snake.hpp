@@ -13,6 +13,8 @@ class Snake
         Snake();
         ~Snake();
         Snake(int x, int y);
+        std::pair<int, int>               getHeadCoords();
+        std::vector<std::pair<int, int> > getTailCoords();
 };
 
 #endif

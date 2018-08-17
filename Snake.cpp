@@ -13,3 +13,6 @@ Snake::Snake(int x, int y)
     for (int i = 1; i <= 3; i++)
         _tail.push_back(std::make_pair(x, y + i));
 }
+
+std::pair<int, int> Snake::getHeadCoords() { return _head_coords; }
+std::vector<std::pair<int, int> > Snake::getTailCoords() { return _tail; }
