@@ -16,7 +16,7 @@ class Game
         
 
 
-        Init _init(x, y); // bool _gameOver; const int    _width; const int _height;
+        Init _init(x, y); // bool _gameOver; const int width; const int _height;
         Snake   _snake(x,y);
         Border  _border(x,y);
 
