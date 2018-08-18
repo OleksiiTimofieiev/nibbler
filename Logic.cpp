@@ -2,8 +2,6 @@
 
 //TODO: logic main;
 
-
-
 void    Logic::setDir(Direction dir,  Snake & snake)
 { 
     snake.setDir(dir); 

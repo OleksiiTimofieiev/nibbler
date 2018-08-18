@@ -15,6 +15,4 @@ class Logic
         void    logic(Fruit & fruit, Snake & snake, Score & score, Direction dir);
 };
 
-
-
 #endif
