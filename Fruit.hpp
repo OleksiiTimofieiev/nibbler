@@ -15,6 +15,8 @@ class Fruit
         Fruit &operator=(Fruit const &rhs);
         Fruit(Fruit const &src);
         std::pair<int, int> getCoords();
+        void setCoords(int x, int y);
+        
 };
 
 #endif
