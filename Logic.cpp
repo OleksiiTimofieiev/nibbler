@@ -28,7 +28,7 @@ void    Logic::setTail(Snake & snake)
 
 void Logic::setHead(Snake & snake)
 {
-    snake.setPrevHead(snake.getHeadCoords());
+    snake.setPrevHead(snake.getPrevHeadCoords());
     snake.setPrevDir(snake.getPrevDir());
 
     if ( snake.getDir() == left )
@@ -53,10 +53,13 @@ void    Logic::checkFruit(Fruit & fruit, Snake & snake, Score & score)
 
 void    Logic::checkCollision(Snake &snake, Init &init)
 {
-    //TODO: better handling;
+    // better handling;
     if (snake.getHeadCoords().first > init.getWidth() || snake.getHeadCoords().first < 0 ||
         snake.getHeadCoords().second > init.getHeight() || snake.getHeadCoords().second < 0)
-        init.setGameStatus();
+        {
+            system("clear");
+            init.setGameStatus();
+        }
 }
 
 void    Logic::logic(Init & init, Fruit & fruit, Snake & snake, Score & score, Direction dir)
