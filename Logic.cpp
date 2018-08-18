@@ -7,6 +7,15 @@ void    Logic::setDir(Direction dir,  Snake & snake)
     snake.setDir(dir); 
 }
 
+void    Logic::setTail(Snake & snake)
+{
+    std::pair<int, int> prev{snake.getTailCoords()[0].first, snake.getTailCoords()[0].second};
+
+    // prev.first = ;
+    // prev.second = ;
+    
+}
+
 void Logic::setHead(Snake & snake)
 {
     if ( snake.getDir() == left )
