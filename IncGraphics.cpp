@@ -59,13 +59,14 @@ void IncGraphics::Draw(Snake &snake, Fruit &fruit, Score &score, Init &init) con
 
 	DelSnake(snake);
 	DrawSnake(snake);
+	DrawFruit(fruit);
 	// refresh();
 	// erase();
 }
 void IncGraphics::DelSnake(Snake &snake) const
 {
-	std::pair<int, int> head = snake.getHeadCoords();
-	std::vector<std::pair<int, int>> tail = snake.getTailCoords();
+	std::pair<int, int> head = snake.getPrevHeadCoords();
+	std::vector<std::pair<int, int>> tail = snake.getPrevTailCoords();
 
 	mvprintw(head.second, head.first, "  ");
 	for (size_t i = 0; i < snake.getTailLen(); i++)
@@ -79,14 +80,19 @@ void IncGraphics::DrawSnake(Snake &snake) const
 	std::pair<int, int> head = snake.getHeadCoords();
 	std::vector<std::pair<int, int> > tail = snake.getTailCoords();
 
-	attron(COLOR_PAIR (1));
+	attron(COLOR_PAIR(1));
 	mvprintw(head.second, head.first, "XX");
 	attroff(COLOR_PAIR (1));
 	for (size_t i = 0; i < snake.getTailLen(); i++)
 	{
-		attron(COLOR_PAIR (2));
-		mvprintw(tail[i].second, tail[i].first, "00");
-		attroff(COLOR_PAIR (2));
+		attron(COLOR_PAIR(2));
+		if (snake.getDir() == left)
+			mvprintw(tail[i].second, tail[i].first + 1, "00");
+		else if (snake.getDir() == right)
+			mvprintw(tail[i].second, tail[i].first - 1, "00");
+		else
+			mvprintw(tail[i].second, tail[i].first, "00");
+		attroff(COLOR_PAIR(2));
 	}
 }
 
@@ -94,9 +100,9 @@ void IncGraphics::DrawFruit(Fruit &fruit) const
 {
 	std::pair<int, int> crd = fruit.getCoords();
 
-	attron(COLOR_PAIR(3));
+	attron(COLOR_PAIR(4));
 	mvprintw(crd.second, crd.first, "XX");
-	attroff(COLOR_PAIR(3));
+	attroff(COLOR_PAIR(4));
 }
 
 void IncGraphics::DrawMap(Border &border) const

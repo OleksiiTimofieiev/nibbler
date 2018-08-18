@@ -8,7 +8,7 @@
 #include <ctime>
 #include <sys/time.h>
 
-#define FPS 30
+#define FPS 10
 #define OUTPUT(x) std::cout << (x) << std::endl;
 
 //TODO:comp form in every class;
@@ -36,3 +36,14 @@ class Game
 
 #endif
 
+// int x = 0;
+// int y = 0;
+
+// if (dr == up)
+//     y = -1;
+// else if (dr == down)
+//     y = 1;
+// else if (dr == left)
+//     x = -1;
+// else if (dr == right)
+//     x = 1;
