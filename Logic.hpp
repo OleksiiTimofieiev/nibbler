@@ -6,9 +6,6 @@
 #include "Score.hpp"
 #include "Init.hpp"
 
-
-
-
 class Logic
 {
     public:
