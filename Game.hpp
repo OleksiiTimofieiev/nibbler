@@ -5,6 +5,8 @@
 #include "Snake.hpp"
 #include "IncGraphics.hpp"
 #include "Logic.hpp"
+#include <ctime>
+#include <sys/time.h>
 
 #define OUTPUT(x) std::cout << (x) << std::endl;
 

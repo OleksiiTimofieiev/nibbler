@@ -7,7 +7,6 @@ IncGraphics::IncGraphics() {
 	curs_set(0);
 	keypad(stdscr, true);
 	start_color();
-	timeout(1);
 	init_pair (1, COLOR_CYAN, COLOR_CYAN);
 	init_pair (2, COLOR_MAGENTA, COLOR_MAGENTA);
 	init_pair (3, COLOR_WHITE, COLOR_WHITE);
@@ -15,7 +14,7 @@ IncGraphics::IncGraphics() {
 	init_pair (5, COLOR_RED, COLOR_RED);
 	init_pair (6, COLOR_GREEN, COLOR_GREEN);
 	init_pair (7, COLOR_RED, COLOR_BLACK);
-
+	timeout(1);
 }
 IncGraphics::IncGraphics(IncGraphics const &ref) { *this = ref; }
 IncGraphics::~IncGraphics() {}
@@ -24,6 +23,28 @@ IncGraphics &IncGraphics::operator=(IncGraphics const &ref)
 {
     (void)ref;
     return *this;
+}
+
+Direction IncGraphics::CheckEvent(Direction &dr) const
+{
+	int key = 0;
+
+	key = getch();
+	// if (key == 113)
+	// {
+	// 	refresh();
+	// 	system("reset");
+	// 	exit(1);
+	// }
+	if (key == 115) // key W
+		dr = down;
+	if (key == 119) // key S
+		dr = up;
+	if (key == 97) 	// key D
+		dr = left;
+	if (key == 100) // key A
+		dr = right;
+	return (dr);
 }
 
 void IncGraphics::Draw(Snake &snake, Fruit &fruit, Score &score, Init &init) const
