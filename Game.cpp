@@ -14,12 +14,13 @@ void    Game::gameplay()
     inc.DrawMap(_border);
     while(!_init.getGameOver())
     {
-        inc.Draw(_snake, _fruits, _stat, _init);
         t1 = clock() / (CLOCKS_PER_SEC / FPS);
         if (t1 > t2)
         {
+            inc.Draw(_snake, _fruits, _stat, _init);
             dr = inc.CheckEvent(dr);
-            _logic.logic(_init, _fruits, _snake, _stat, dr);
+            if (dr != stop)
+                _logic.logic(_init, _fruits, _snake, _stat, dr);
             // TODO:input
             // TODO:logic <- input;
             t2 = clock() / (CLOCKS_PER_SEC / FPS);
