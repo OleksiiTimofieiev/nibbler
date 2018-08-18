@@ -11,7 +11,7 @@ Snake::Snake(int x, int y)
     _head_coords.second = y;
     
     _dir = stop;
-    _tail_len = 0;
+    _tail_len = 3;
 
     for (int i = 0; i < 3; i++)
         _tail[i] = std::make_pair(x, y + (i + 1));
