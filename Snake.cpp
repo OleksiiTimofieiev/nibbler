@@ -48,3 +48,6 @@ void Snake::setPrevTail(std::vector<std::pair<int, int>> prev_tail) { _prev_tail
 
 void Snake::setPrevHead(std::pair<int, int> _prev_head) { _prev_head_coords = _prev_head; };
 std::pair<int, int> Snake::getPrevHeadCoords() { return _prev_head_coords;}
+
+Direction Snake::getPrevDir() { return _prev_dir; }
+void Snake::setPrevDir(Direction dir) { _prev_dir = dir; }
