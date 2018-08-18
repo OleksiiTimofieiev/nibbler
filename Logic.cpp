@@ -24,4 +24,4 @@ void    Logic::checkFruit(Fruit & fruit, Snake & snake, Score & score)
     if (fruit.getCoords() == snake.getHeadCoords())
         fruit.setCoords(rand() % 125, rand() % 40);
     score.setScore();
-}u
+}
