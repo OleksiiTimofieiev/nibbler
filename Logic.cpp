@@ -23,7 +23,6 @@ void    Logic::setTail(Snake & snake)
         _tail[i] = prev;
         prev = prev2;
     }
-
     snake.setTail(_tail);
 }
 
