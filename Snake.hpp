@@ -28,7 +28,6 @@ class Snake
         std::pair<int, int>               getHeadCoords();
         std::vector<std::pair<int, int> > getTailCoords();
         Direction                         getDir();
-
         void                              setHeadCoords(int x, int y);
         void                              setDir(Direction dir);
 };
