@@ -6,7 +6,6 @@
 #include "IncGraphics.hpp"
 #include "Logic.hpp"
 
-
 #define OUTPUT(x) std::cout << (x) << std::endl;
 
 //TODO:comp form in every class;
