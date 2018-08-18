@@ -4,6 +4,8 @@
 #include "Snake.hpp"
 #include "Fruit.hpp"
 #include "Score.hpp"
+#include "Init.hpp"
+
 
 
 
