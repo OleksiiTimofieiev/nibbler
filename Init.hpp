@@ -15,6 +15,7 @@ class   Init
         bool getGameOver();
         int  getWidth();
         int  getHeight();
+        void setGameStatus();
 };
 
 #endif
