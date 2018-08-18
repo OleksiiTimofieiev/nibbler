@@ -2,17 +2,17 @@
 
 //TODO: logic main;
 
-void    Logic::setDir(Direction dir,  Snake & snake)
-{ 
-    snake.setDir(dir); 
-}
+void    Logic::setDir(Direction dir,  Snake & snake) { snake.setDir(dir); }
 
 void    Logic::setTail(Snake & snake)
 {
     std::pair<int, int> prev{snake.getTailCoords()[0].first, snake.getTailCoords()[0].second};
     std::pair<int, int> prev2{0, 0};
 
+
     std::vector<std::pair<int, int> > _tail = snake.getTailCoords();
+
+    snake.setPrevTail(_tail);
 
     _tail[0].first = snake.getHeadCoords().first;
     _tail[0].second = snake.getHeadCoords().second;
@@ -23,12 +23,13 @@ void    Logic::setTail(Snake & snake)
         _tail[i] = prev;
         prev = prev2;
     }
-
     snake.setTail(_tail);
 }
 
 void Logic::setHead(Snake & snake)
 {
+    snake.setPrevHead(snake.getPrevHeadCoords());
+
     if ( snake.getDir() == left )
         snake.setHeadCoords(snake.getHeadCoords().first - 1, snake.getHeadCoords().second);
     else if ( snake.getDir() == right)

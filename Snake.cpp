@@ -41,4 +41,10 @@ void                 Snake::setHeadCoords(int x, int y)
 
 void                 Snake::setTailLen() { _tail_len++; }
 int                  Snake::getTailLen() { return _tail_len; }
-void                 Snake::setTail(std::vector<std::pair<int, int>> tail) { _tail = tail;};
+void                 Snake::setTail(std::vector<std::pair<int, int> > tail) { _tail = tail; };
+
+std::vector<std::pair<int, int> > Snake::getPrevTailCoords() { return _prev_tail; }
+void Snake::setPrevTail(std::vector<std::pair<int, int>> prev_tail) { _prev_tail = prev_tail; };
+
+void Snake::setPrevHead(std::pair<int, int> _prev_head) { _prev_head_coords = _prev_head; };
+std::pair<int, int> Snake::getPrevHeadCoords() { return _prev_head_coords;}

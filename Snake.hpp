@@ -18,6 +18,9 @@ class Snake
 {
     std::pair<int, int> _head_coords;
     std::vector<std::pair<int, int> > _tail{(WIDTH * HEIGHT) - 1};
+    std::pair<int, int> _prev_head_coords;
+    std::vector<std::pair<int, int> > _prev_tail{(WIDTH * HEIGHT) - 1};
+
     int _tail_len;
     Direction _dir;
 
@@ -35,7 +38,13 @@ class Snake
         void                              setTailLen();
         void                              setTail();
         int                               getTailLen();
-        void                               setTail(std::vector<std::pair<int, int> > tail);
+        void                              setTail(std::vector<std::pair<int, int> > tail);
+
+        std::vector<std::pair<int, int> > getPrevTailCoords();
+        void                              setPrevTail(std::vector<std::pair<int, int>> tail);
+
+        void                              setPrevHead(std::pair<int, int> _prev_head);
+        std::pair<int, int>               getPrevHeadCoords();
 };
 
 #endif
