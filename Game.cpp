@@ -26,6 +26,7 @@ void    Game::gameplay()
             t2 = clock() / (CLOCKS_PER_SEC / FPS);
         }
     }
+    
 }
 
 Game &Game::operator=(Game const &rhs)

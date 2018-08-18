@@ -84,7 +84,6 @@ void IncGraphics::DrawSnake(Snake &snake) const
 	{
 		attron(COLOR_PAIR(2));
 		mvprintw(tail[i].second, tail[i].first, "0");
-		// std::cout << "x: " << tail[i].second << " y: " << tail[i].second << std::endl;
 		attroff(COLOR_PAIR(2));
 	}
 	attron(COLOR_PAIR(1));
@@ -113,8 +112,8 @@ void IncGraphics::DrawMap(Border &border) const
 	for (int i = 0; i < height; i++) {
 
 		attron(COLOR_PAIR (3));
-		mvaddstr(i, 0, "##");
-		mvaddstr(i, width, "##");
+		mvaddstr(i, 0, "#");
+		mvaddstr(i, width, "#");
 		attroff(COLOR_PAIR (3));
 	}
     
@@ -124,7 +123,4 @@ void IncGraphics::DrawMap(Border &border) const
 		mvaddstr(height, j, "#");
 		attroff(COLOR_PAIR (3));
 	}
-	attron(COLOR_PAIR(3));
-	mvaddstr(height, width + 1, "#");
-	attroff(COLOR_PAIR(3));
 }
