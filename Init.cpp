@@ -1,7 +1,7 @@
 #include "Init.hpp"
 
 Init::~Init(){};
-Init::Init() : _gameOver(false), _width(125), _height(40) {};
+Init::Init() : _gameOver(false), _width(WIDTH), _height(HEIGHT) {};
 
 Init &Init::operator=(Init const &rhs)
 {

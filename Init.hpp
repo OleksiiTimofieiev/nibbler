@@ -1,6 +1,9 @@
 #ifndef INIT_HPP
 #define INIT_HPP
 
+#define WIDTH 125
+#define HEIGHT 40
+
 class   Init
 {
     bool  _gameOver;
