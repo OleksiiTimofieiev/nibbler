@@ -33,7 +33,9 @@ class Snake
         void                              setHeadCoords(int x, int y);
         void                              setDir(Direction dir);
         void                              setTailLen();
+        void                              setTail();
         int                               getTailLen();
+        void                               setTail(std::vector<std::pair<int, int> > tail);
 };
 
 #endif
