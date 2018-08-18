@@ -28,7 +28,7 @@ void    Logic::setTail(Snake & snake)
 
 void Logic::setHead(Snake & snake)
 {
-    snake.setPrevHead(snake.getPrevHeadCoords());
+    snake.setPrevHead(snake.getHeadCoords());
     snake.setPrevDir(snake.getPrevDir());
 
     if ( snake.getDir() == left )
