@@ -12,8 +12,8 @@ Snake::Snake(int x, int y)
     _dir = stop;
     _tail_len = 0;
 
-    for (int i = 1; i <= 3; i++)
-        _tail.push_back(std::make_pair(x, y + i));
+    for (int i = 0; i < 3; i++)
+        _tail[i] = std::make_pair(x, y + i);
 }
 
 Snake &Snake::operator=(Snake const &rhs)
@@ -39,4 +39,4 @@ void                 Snake::setHeadCoords(int x, int y)
     _head_coords.second = y;
 }
 
-void                 Snake::setTailLen() { _tail_len++;}
+void                 Snake::setTailLen() { _tail_len++; }

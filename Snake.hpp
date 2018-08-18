@@ -15,7 +15,7 @@ enum Direction
 class Snake
 {
     std::pair<int, int> _head_coords;
-    std::vector<std::pair<int, int> > _tail;
+    std::vector<std::pair<int, int> > _tail{100};
     int _tail_len;
     Direction _dir;
 
