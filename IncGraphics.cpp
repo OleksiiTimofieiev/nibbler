@@ -66,14 +66,13 @@ void IncGraphics::DrawSnake(Snake &snake, Init &init) const
 	std::vector<std::pair<int, int> > tail = snake.getTailCoords();
 
 	attron(COLOR_PAIR (1));
-	mvprintw(head.second, head.first, "X");
-	// mvprintw(head.second, head.first + 1, "X");
+	mvprintw(head.second, head.first, "XX");
 	// mvprintw(head.second, head.first + 2, "X");		
 	attroff(COLOR_PAIR (1));
 	for (size_t i = 0; i < tail.size(); i++)
 	{
 		attron(COLOR_PAIR (2));		
-		mvprintw(tail[i].second, tail[i].first, "0");
+		mvprintw(tail[i].second, tail[i].first, "00");
 		// mvprintw(tail[i].second, tail[i].first + 1, "0");
 		// mvprintw(tail[i].second, tail[i].first + 2, "0");		
 		attroff(COLOR_PAIR (2));
