@@ -38,3 +38,5 @@ void                 Snake::setHeadCoords(int x, int y)
     _head_coords.first = x;
     _head_coords.second = y;
 }
+
+void                 Snake::setTailLen() { _tail_len++;}

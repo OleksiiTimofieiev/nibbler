@@ -25,6 +25,7 @@ void    Logic::checkFruit(Fruit & fruit, Snake & snake, Score & score)
     {
         fruit.setCoords(rand() % WIDTH, rand() % HEIGHT);
         score.setScore();
+        snake.setTailLen();
     }
 }
 
