@@ -10,6 +10,7 @@ Snake::Snake(int x, int y)
     _head_coords.first = x;
     _head_coords.second = y;
     _dir = stop;
+    _tail_len = 0;
 
     for (int i = 1; i <= 3; i++)
         _tail.push_back(std::make_pair(x, y + i));
