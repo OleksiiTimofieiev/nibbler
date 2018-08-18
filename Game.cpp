@@ -11,8 +11,10 @@ void    Game::gameplay()
     {
         inc.DrawMap(_border);
         inc.Draw(_snake, _fruits, _stat, _init);
+        // logic.main(class..., inc.checkEvent())
         // TODO:input
         // TODO:logic <- input;
+        
     }
 }
 

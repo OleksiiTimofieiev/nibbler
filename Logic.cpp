@@ -22,12 +22,16 @@ void Logic::setHead(Snake & snake)
 void    Logic::checkFruit(Fruit & fruit, Snake & snake, Score & score)
 {
     if (fruit.getCoords() == snake.getHeadCoords())
+    {
         fruit.setCoords(rand() % WIDTH, rand() % HEIGHT);
-    score.setScore();
+        score.setScore();
+    }
 }
 
 void    Logic::logic(Fruit & fruit, Snake & snake, Score & score, Direction dir)
 {
+    //TODO: if setdir < 4 ,else ...;
+    //TODO: asdfasdf;
     setDir(dir, snake);
     setHead(snake);
     checkFruit(fruit, snake, score);
