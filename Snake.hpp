@@ -30,7 +30,6 @@ class Snake
         Direction                         getDir();
 
         void                              setHeadCoords(int x, int y);
-        
         void                              setDir(Direction dir);
 };
 
