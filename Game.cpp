@@ -19,7 +19,7 @@ void    Game::gameplay()
         if (t1 > t2)
         {
             dr = inc.CheckEvent(dr);
-            _logic.logic(_fruits, _snake, _stat, dr);
+            _logic.logic(_init, _fruits, _snake, _stat, dr);
             // TODO:input
             // TODO:logic <- input;
             t2 = clock() / (CLOCKS_PER_SEC / FPS);
