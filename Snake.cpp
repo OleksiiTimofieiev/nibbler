@@ -41,4 +41,4 @@ void                 Snake::setHeadCoords(int x, int y)
 }
 
 void                 Snake::setTailLen() { _tail_len++; }
-int                 Snake::getTailLen() { return _tail_len; }
+int                  Snake::getTailLen() { return _tail_len; }
