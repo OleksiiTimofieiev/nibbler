@@ -21,10 +21,10 @@ class IncGraphics : public IGraphics
         IncGraphics &operator=(IncGraphics const &ref);
 
         void Draw(Snake &snake, Fruit &fruit, Score &score, Init &init) const;
-        void DrawSnake(Snake &snake, Init &init) const;
-        void DelSnake(Snake &snake, Init &init) const;
+        void DrawSnake(Snake &snake) const;
+        void DelSnake(Snake &snake) const;
         Direction CheckEvent(Direction &dr) const;
-        // void DrawFruit(const IObject &) const;
+        void DrawFruit(Fruit &fruit) const;
         // void DrawWall(const IObject &) const;
 
         void DrawMap(Border &border) const;
