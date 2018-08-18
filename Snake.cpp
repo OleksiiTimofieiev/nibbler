@@ -14,7 +14,7 @@ Snake::Snake(int x, int y)
     _tail_len = 0;
 
     for (int i = 0; i < 3; i++)
-        _tail[i] = std::make_pair(x, y + i);
+        _tail[i] = std::make_pair(x, y + (i + 1));
 }
 
 Snake &Snake::operator=(Snake const &rhs)
