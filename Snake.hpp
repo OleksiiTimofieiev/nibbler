@@ -3,6 +3,8 @@
 
 #include <vector>
 
+#include "Init.hpp"
+
 enum Direction
 {
     stop = 0,
@@ -15,7 +17,7 @@ enum Direction
 class Snake
 {
     std::pair<int, int> _head_coords;
-    std::vector<std::pair<int, int> > _tail{100};
+    std::vector<std::pair<int, int> > _tail{WIDTH * HEIGHT};
     int _tail_len;
     Direction _dir;
 
