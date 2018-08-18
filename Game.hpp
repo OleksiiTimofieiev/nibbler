@@ -4,6 +4,7 @@
 #include "Fruit.hpp"
 #include "Snake.hpp"
 #include "IncGraphics.hpp"
+#include "Logic.hpp"
 
 #define OUTPUT(x) std::cout << (x) << std::endl;
 
@@ -21,6 +22,7 @@ class Game
         Score   _stat;
         Fruit   _fruits{_init.getWidth(), _init.getHeight()};
         Snake   _snake{_init.getWidth() / 2, _init.getHeight() / 2};
+        Logic   _logic;
     public:
         Game();
         ~Game();

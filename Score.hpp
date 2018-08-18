@@ -11,6 +11,7 @@ class Score
         Score &operator=(Score const &rhs);
         Score(Score const &src);
         int getScore();
+        void    setScore();
 };
 
 #endif

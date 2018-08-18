@@ -18,3 +18,4 @@ Score::Score(Score const &src)
 }
 
 int Score::getScore() { return _score; }
+void    Score::setScore() { _score += 10;}

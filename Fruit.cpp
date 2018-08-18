@@ -22,3 +22,9 @@ Fruit::Fruit(Fruit const &src)
 }
 
 std::pair<int,int> Fruit::getCoords() { return _coords; }
+
+void Fruit::setCoords(int x, int y)
+{ 
+    _coords.first = x;
+    _coords.second = y;
+}

@@ -27,7 +27,13 @@ Snake &Snake::operator=(Snake const &rhs)
 }
 
 Snake::Snake(Snake const &src) {*this = src;}
-
 std::pair<int, int> Snake::getHeadCoords() { return _head_coords; }
 std::vector<std::pair<int, int> > Snake::getTailCoords() { return _tail; }
 Direction Snake::getDir() {return _dir;}
+void      Snake::setDir(Direction dir) { _dir = dir;};
+
+void                 Snake::setHeadCoords(int x, int y)
+{ 
+    _head_coords.first = x;
+    _head_coords.second = y;
+}

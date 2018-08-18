@@ -8,6 +8,7 @@ enum Direction
     stop = 0,
     left,
     right,
+    up,
     down
 };
 
@@ -27,6 +28,8 @@ class Snake
         std::pair<int, int>               getHeadCoords();
         std::vector<std::pair<int, int> > getTailCoords();
         Direction                         getDir();
+        void                              setHeadCoords(int x, int y);
+        void                              setDir(Direction dir);
 };
 
 #endif
