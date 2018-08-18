@@ -13,7 +13,6 @@ void    Game::gameplay()
         inc.Draw(_snake, _fruits, _stat, _init);
         // TODO:input
         // TODO:logic
-        _logic.checkFruit(_fruits, _snake, _stat);
     }
 }
 
