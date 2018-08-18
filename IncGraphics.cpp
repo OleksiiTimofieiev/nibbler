@@ -2,7 +2,8 @@
 
 IncGraphics::IncGraphics() {
 
-    initscr();
+	setlocale(LC_ALL, "");
+	initscr();
 	noecho();
 	curs_set(0);
 	keypad(stdscr, true);
@@ -68,10 +69,10 @@ void IncGraphics::DelSnake(Snake &snake) const
 	std::pair<int, int> head = snake.getPrevHeadCoords();
 	std::vector<std::pair<int, int>> tail = snake.getPrevTailCoords();
 
-	mvprintw(head.second, head.first, "  ");
+	mvprintw(head.second, head.first, " ");
 	for (size_t i = 0; i < snake.getTailLen(); i++)
 	{
-		mvprintw(tail[i].second, tail[i].first, "  ");
+		mvprintw(tail[i].second, tail[i].first, " ");
 	}
 }
 
@@ -81,17 +82,12 @@ void IncGraphics::DrawSnake(Snake &snake) const
 	std::vector<std::pair<int, int> > tail = snake.getTailCoords();
 
 	attron(COLOR_PAIR(1));
-	mvprintw(head.second, head.first, "XX");
+	mvprintw(head.second, head.first, "X");
 	attroff(COLOR_PAIR (1));
 	for (size_t i = 0; i < snake.getTailLen(); i++)
 	{
 		attron(COLOR_PAIR(2));
-		if (snake.getDir() == left)
-			mvprintw(tail[i].second, tail[i].first + 1, "00");
-		else if (snake.getDir() == right)
-			mvprintw(tail[i].second, tail[i].first - 1, "00");
-		else
-			mvprintw(tail[i].second, tail[i].first, "00");
+		mvprintw(tail[i].second, tail[i].first, "0");
 		attroff(COLOR_PAIR(2));
 	}
 }
@@ -99,10 +95,7 @@ void IncGraphics::DrawSnake(Snake &snake) const
 void IncGraphics::DrawFruit(Fruit &fruit) const
 {
 	std::pair<int, int> crd = fruit.getCoords();
-
-	attron(COLOR_PAIR(4));
-	mvprintw(crd.second, crd.first, "XX");
-	attroff(COLOR_PAIR(4));
+	mvprintw(crd.second, crd.first, "%C", L'🍎');
 }
 
 void IncGraphics::DrawMap(Border &border) const

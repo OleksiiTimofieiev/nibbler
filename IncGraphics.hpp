@@ -10,6 +10,8 @@
 # include <ncurses.h>
 # include <sys/types.h>
 # include <sys/sysctl.h>
+#include <locale.h>
+#include <wchar.h>
 
 class IncGraphics : public IGraphics
 {
