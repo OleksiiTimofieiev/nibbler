@@ -7,6 +7,8 @@ class Logic
 {
     public:
         void    setDir(Direction dir,  Snake & snake);
+        void    setHead(Snake & snake);
+
 };
 
 
