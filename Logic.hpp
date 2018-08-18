@@ -12,8 +12,9 @@ class Logic
         void    setDir(Direction dir,  Snake & snake);
         void    setHead(Snake & snake);
         void    checkFruit(Fruit & fruit, Snake & snake, Score & score);
-        void    logic(Fruit & fruit, Snake & snake, Score & score, Direction dir);
+        void    logic(Init & init, Fruit & fruit, Snake & snake, Score & score, Direction dir);
         void    setTail(Snake & snake);
+        void    checkCollision(Snake & snake, Init & init);
 };
 
 #endif
