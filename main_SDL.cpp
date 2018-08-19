@@ -5,9 +5,10 @@ int main(int argc, char *args[])
 
     IGraphicsSDL * _hop = new IGraphicsSDL;
 
+    while(_hop->CheckEvent() != stop)
+    {
 
-
-    SDL_Delay(10000);
+    }
 
     return 0;
 }

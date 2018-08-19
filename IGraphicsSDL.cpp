@@ -30,6 +30,25 @@ IGraphicsSDL::IGraphicsSDL()
     SDL_Delay(2000);
 }
 
+//TODO: replace
+Direction IGraphicsSDL::CheckEvent(/*Direction &dr*/) const
+{
+    SDL_Event event;
+
+    if (SDL_PollEvent(&event))
+    {
+        switch (event.type)
+        {
+            case SDL_QUIT:
+            {
+                return stop; // TODO: remaster
+            }
+            default: break;
+        }
+    }
+    return up; //TODO:
+}
+
 IGraphicsSDL::~IGraphicsSDL()
 {
     SDL_DestroyWindow(_window); 
