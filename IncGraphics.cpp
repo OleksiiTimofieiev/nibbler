@@ -39,11 +39,11 @@ Direction IncGraphics::CheckEvent(Direction &dr) const
 	// }
 	if (key == 115) // key W
 		dr = down;
-	if (key == 119) // key S
+	else if (key == 119) // key S
 		dr = up;
-	if (key == 97) 	// key D
+	else if (key == 97) 	// key D
 		dr = left;
-	if (key == 100) // key A
+	else if (key == 100) // key A
 		dr = right;
 	return (dr);
 }

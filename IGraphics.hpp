@@ -9,9 +9,7 @@ class IGraphics
         virtual Direction CheckEvent(Direction &dr) const = 0;
         virtual void DrawFruit(Fruit &fruit) const = 0;
         // virtual void DrawWall(const IObject &) const = 0;
-
         virtual void DrawMap(Border &border) const = 0;
-
         virtual ~IGraphics(void) {}
 };
 

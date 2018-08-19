@@ -16,6 +16,7 @@
 //TODO:handle stop of the program;
 //TODO: better colors;
 //TODO: increase fps after fruit eating
+//TODO: APIBase + func to choose lib;
 
 #ifndef GAME_HPP
 #define GAME_HPP
