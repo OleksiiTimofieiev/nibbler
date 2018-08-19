@@ -1,7 +1,5 @@
 #include "Logic.hpp"
 
-//TODO: logic main;
-
 void    Logic::setDir(Direction dir,  Snake & snake) { snake.setDir(dir); }
 
 void    Logic::setTail(Snake & snake)
