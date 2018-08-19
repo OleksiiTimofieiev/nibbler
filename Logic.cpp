@@ -65,7 +65,6 @@ void    Logic::checkCollision(Snake &snake, Init &init)
 void    Logic::logic(Init & init, Fruit & fruit, Snake & snake, Score & score, Direction dir)
 {
     //TODO: if setdir < 4 ,else ...;
-    //TODO: asdfasdf;
     setDir(dir, snake);
     setTail(snake);
     setHead(snake);

@@ -1,4 +1,4 @@
-#include "Init.hpp" //TODO: add a separate defin for the classes;
+#include "Init.hpp"
 #include "Border.hpp"
 #include "Score.hpp"
 #include "Fruit.hpp"
@@ -14,6 +14,8 @@
 //TODO:comp form in every class;
 //TODO:delete all comments;
 //TODO:handle stop of the program;
+//TODO: better colors;
+//TODO: increase fps after fruit eating
 
 #ifndef GAME_HPP
 #define GAME_HPP

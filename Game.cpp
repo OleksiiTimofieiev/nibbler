@@ -21,8 +21,6 @@ void    Game::gameplay()
             dr = inc.CheckEvent(dr);
             if (dr != stop)
                 _logic.logic(_init, _fruits, _snake, _stat, dr);
-            // TODO:input
-            // TODO:logic <- input;
             t2 = clock() / (CLOCKS_PER_SEC / FPS);
         }
     }
