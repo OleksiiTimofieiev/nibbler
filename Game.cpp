@@ -6,7 +6,7 @@ Game::~Game() {}
 void    Game::gameplay()
 {
     //TODO: how the timing will work ?
-    std::cout << "Please, choose the library" << std::endl; //TODO: add the logic;
+    std::cout << "Please, choose the library" << std::endl; //TODO: add the logic + clear;
     IncGraphics *inc = new IncGraphics();
     Direction   dr = stop;
     clock_t t1;
