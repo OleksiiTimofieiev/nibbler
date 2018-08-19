@@ -1,6 +1,6 @@
 #include "IGraphicsSDL.hpp"
 
-int main(int argc, char *args[])
+int main()
 {
 
     IGraphicsSDL * _hop = new IGraphicsSDL;

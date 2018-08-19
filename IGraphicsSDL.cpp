@@ -40,9 +40,7 @@ Direction IGraphicsSDL::CheckEvent(/*Direction &dr*/) const
         switch (event.type)
         {
             case SDL_QUIT:
-            {
                 return stop; // TODO: remaster
-            }
             default: break;
         }
     }
