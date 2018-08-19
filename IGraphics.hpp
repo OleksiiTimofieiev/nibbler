@@ -1,6 +1,8 @@
 #ifndef IGRAPHICS_HPP
 # define IGRAPHICS_HPP
 
+
+
 class IGraphics
 {       
     public:

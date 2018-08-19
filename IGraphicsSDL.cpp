@@ -27,7 +27,6 @@ IGraphicsSDL::IGraphicsSDL()
     SDL_UpdateWindowSurface(_window);
 
     //Wait two seconds
-    SDL_Delay(2000);
 }
 
 //TODO: replace

@@ -6,9 +6,15 @@ Game::~Game() {}
 void    Game::gameplay()
 {
     //TODO: how the timing will work ?
-    std::cout << "Please, choose the library" << std::endl; //TODO: add the logic + clear;
+    //TODO: add the logic + clear;
+    //TODO: size of the map for the user;
+
+    std::cout << "Please, choose the library" << std::endl; 
+
     IncGraphics *inc = new IncGraphics();
+
     Direction   dr = stop;
+
     clock_t t1;
     clock_t t2;
 
