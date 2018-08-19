@@ -11,12 +11,13 @@
 #define FPS 10
 #define OUTPUT(x) std::cout << (x) << std::endl;
 
-//TODO:comp form in every class;
-//TODO:delete all comments;
-//TODO:handle stop of the program;
+//TODO: comp form in every class;
+//TODO: delete all comments;
+//TODO: handle stop of the program;
 //TODO: better colors;
 //TODO: increase fps after fruit eating
 //TODO: APIBase + func to choose lib;
+//TODO: exit handling;
 
 #ifndef GAME_HPP
 #define GAME_HPP
