@@ -3,25 +3,30 @@
 
 #include "Game.hpp"
 #include "IGraphics.hpp"
+#include "/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL.h"
+#include <stdio.h>
+#include <iostream>
 
 class IGraphicsSDL : public IGraphics
 {
     public:
         IGraphicsSDL();
-        IGraphicsSDL(IGraphicsSDL const & rhs);
         ~IGraphicsSDL();
+            // IGraphicsSDL(IGraphicsSDL const & rhs);
+            // ~IGraphicsSDL();
 
-        IGraphicsSDL &operator=(IGraphicsSDL const &ref);
+            // IGraphicsSDL &operator=(IGraphicsSDL const &ref);
 
-        void Draw(Snake &snake, Fruit &fruit, Score &score, Init &init) const;
+            // void Draw(Snake &snake, Fruit &fruit, Score &score, Init &init) const;
+            // void DrawSnake(Snake &snake) const;
+            // void DelSnake(Snake &snake) const;
+            // Direction CheckEvent(Direction &dr) const;
+            // void DrawFruit(Fruit &fruit) const;
+            //TODO: void DrawWall(const IObject &) const;
 
-        void DrawSnake(Snake &snake) const;
-        void DelSnake(Snake &snake) const;
-        Direction CheckEvent(Direction &dr) const;
-        void DrawFruit(Fruit &fruit) const;
-        //TODO: void DrawWall(const IObject &) const;
-
-        void DrawMap(Border &border) const;
+            // void DrawMap(Border &border) const;
+    private: 
+        SDL_Window *_window = nullptr;
     };
 
 #endif
