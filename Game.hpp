@@ -12,7 +12,8 @@
 #define OUTPUT(x) std::cout << (x) << std::endl;
 
 //TODO:comp form in every class;
-//TODO:delete comments;
+//TODO:delete all comments;
+//TODO:handle stop of the program;
 
 #ifndef GAME_HPP
 #define GAME_HPP
