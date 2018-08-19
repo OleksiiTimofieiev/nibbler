@@ -55,6 +55,11 @@ void    Logic::checkCollision(Snake &snake, Init &init)
     if (snake.getHeadCoords().first > init.getWidth() || snake.getHeadCoords().first < 0 ||
         snake.getHeadCoords().second > init.getHeight() || snake.getHeadCoords().second < 0)
             init.setGameStatus();
+    for (int i = 0; i < snake.getTailLen(); i++)
+    {
+        if (snake.getTailCoords()[i] == snake.getHeadCoords())
+            init.setGameStatus();
+    }
 }
 
 void    Logic::logic(Init & init, Fruit & fruit, Snake & snake, Score & score, Direction dir)
