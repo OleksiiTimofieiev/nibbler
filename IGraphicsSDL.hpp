@@ -19,11 +19,9 @@ class IGraphicsSDL : public IGraphics
 
             void Draw(Snake &snake, Fruit &fruit, Score &score, Init &init) ;
             void DrawSnake(Snake &snake) ;
-            // void DelSnake(Snake &snake) const;
+            void DelSnake(Snake &snake) const;
             Direction CheckEvent(Direction &dr) const;
             // void DrawFruit(Fruit &fruit) const;
-            //TODO: void DrawWall(const IObject &) const;
-
             void DrawMap(Border &border);
     private: 
         SDL_Window *_window = nullptr;

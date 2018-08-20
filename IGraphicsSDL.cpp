@@ -56,7 +56,7 @@ void IGraphicsSDL::DrawMap(Border &border)
 
     _renderer = SDL_CreateRenderer(_window, -1, 0);
 
-    // SDL_SetRenderDrawColor(_renderer, 0, 0, 0, 255); // backscreen color;
+
     
     // SDL_RenderClear(_renderer);
     // SDL_RenderPresent(_renderer);
@@ -108,15 +108,19 @@ void IGraphicsSDL::Draw(Snake &snake, Fruit &fruit, Score &score, Init &init)
     (void)init;
 
     SDL_SetRenderDrawColor(_renderer, 0, 0, 0, 255); // backscreen color;
-
     SDL_RenderClear(_renderer);
+    
+    if (snake.getDir() != stop)
+        DelSnake(snake);
     DrawSnake(snake);
-
+    // DrawFruit(fruit);
     SDL_RenderPresent(_renderer);
 }
 
 void IGraphicsSDL::DrawSnake(Snake &snake)
 {
+    SDL_RenderClear(_renderer);
+
     SDL_SetRenderDrawColor(_renderer, 200, 0, 200, 255);
 
     SDL_Rect rect;
@@ -140,4 +144,11 @@ void IGraphicsSDL::DrawSnake(Snake &snake)
     
     SDL_RenderFillRect(_renderer, &rect);
 
+}
+
+void IGraphicsSDL::DelSnake(Snake &snake) const
+{
+    (void)snake;
+    SDL_SetRenderDrawColor(_renderer, 0, 0, 0, 255); // backscreen color;
+    SDL_RenderClear(_renderer);
 }

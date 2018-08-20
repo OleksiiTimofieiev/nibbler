@@ -10,7 +10,6 @@ class IGraphics
         virtual void DrawSnake(Snake &snake)  = 0;
         virtual Direction CheckEvent(Direction &dr) const = 0;
         // virtual void DrawFruit(Fruit &fruit) const = 0;
-        // virtual void DrawWall(const IObject &) const = 0;
         virtual void DrawMap(Border &border) = 0;
 
 };
