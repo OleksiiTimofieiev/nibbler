@@ -9,9 +9,9 @@ void    Game::gameplay()
     //TODO: add the logic + clear;
     //TODO: size of the map for the user;
 
-    std::cout << "Please, choose the library" << std::endl; 
+    std::cout << "Please, choose the library" << std::endl;
 
-    IncGraphics *inc = new IncGraphics();
+    IGraphicsSDL *inc = new IGraphicsSDL();
 
     Direction   dr = stop;
 
@@ -25,10 +25,12 @@ void    Game::gameplay()
         t1 = clock() / (CLOCKS_PER_SEC / FPS);
         if (t1 > t2)
         {
-            inc->Draw(_snake, _fruits, _stat, _init);
+    //         inc->Draw(_snake, _fruits, _stat, _init);
             dr = inc->CheckEvent(dr);
-            if (dr != stop)
-                _logic.logic(_init, _fruits, _snake, _stat, dr);
+
+            
+    //         if (dr != stop)
+                // _logic.logic(_init, _fruits, _snake, _stat, dr);
             t2 = clock() / (CLOCKS_PER_SEC / FPS);
         }
     }

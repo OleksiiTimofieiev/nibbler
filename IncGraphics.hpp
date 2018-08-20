@@ -25,11 +25,11 @@ class IncGraphics : public IGraphics
         void Draw(Snake &snake, Fruit &fruit, Score &score, Init &init) const;
         void DrawSnake(Snake &snake) const;
         void DelSnake(Snake &snake) const;
-        Direction CheckEvent(/*Direction &dr*/) const; //TODO: for testing
+        Direction CheckEvent(Direction &dr) const; //TODO: for testing
         void DrawFruit(Fruit &fruit) const;
         //TODO: void DrawWall(const IObject &) const;
 
-        void DrawMap(Border &border) const;
+        void DrawMap(Border &border);
 };
 
 #endif

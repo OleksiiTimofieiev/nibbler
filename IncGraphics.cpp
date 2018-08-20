@@ -75,7 +75,7 @@ void IncGraphics::DelSnake(Snake &snake) const
 	mvprintw(head.second, head.first, " ");
 }
 
-void IncGraphics::DrawSnake(Snake &snake) const
+void IncGraphics::DrawSnake(Snake &snake)
 {
 	std::pair<int, int> head = snake.getHeadCoords();
 	std::vector<std::pair<int, int> > tail = snake.getTailCoords();

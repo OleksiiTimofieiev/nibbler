@@ -1,1 +1,1 @@
-clang++ -std=c++11 -Wall -Wextra -Werror IGraphicsSDL.cpp main_SDL.cpp -I/Library/Frameworks/SDL2.framework/Headers -F/Library/Frameworks -framework SDL2  && ./a.out
+clang++ -std=c++11 -Wall -Wextra -Werror Game.cpp Fruit.cpp Score.cpp Snake.cpp Init.cpp Border.cpp Logic.cpp IGraphicsSDL.cpp main.cpp -I/Library/Frameworks/SDL2.framework/Headers -F/Library/Frameworks -framework SDL2  && ./a.out

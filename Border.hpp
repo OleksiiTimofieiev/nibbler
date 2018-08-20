@@ -7,7 +7,7 @@ class Border
     int _height;
 
     public:
-        Border();
+        Border(); //TODO: redo constructor
         ~Border();
         Border &operator=(Border const &rhs);
         Border(Border const &src);
