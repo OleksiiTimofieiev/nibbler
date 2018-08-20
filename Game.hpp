@@ -33,7 +33,7 @@ class Game
         Score   _stat;
         Fruit   _fruits{_init.getWidth(), _init.getHeight()};
         Snake   _snake{_init.getWidth() / 2, _init.getHeight() / 2};
-        // Logic   _logic;
+        Logic   _logic;
     public:
         Game();
         ~Game();
