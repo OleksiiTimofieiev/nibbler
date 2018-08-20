@@ -117,32 +117,35 @@ void IGraphicsSDL::Draw(Snake &snake, Fruit &fruit, Score &score, Init &init)
 
 
     DrawSnake(snake);
+    SDL_RenderPresent(_renderer);
 
 }
 
 void IGraphicsSDL::DrawSnake(Snake &snake)
 {
+    SDL_SetRenderDrawColor(_renderer, 200, 0, 200, 255);
+
     SDL_Rect rect;
 
     std::pair<int, int> head = snake.getHeadCoords();
-    SDL_SetRenderDrawColor(_renderer, 200, 0, 200, 255);
-    // std::vector<std::pair<int, int> > tail = snake.getTailCoords();
+    std::vector<std::pair<int, int> > tail = snake.getTailCoords();
 
-    // for (int i = 0, j = 12; i < snake.getTailLen(); i++, j+=12)
-    // {
-    //     rect.w = 10;
-    //     rect.h = 10;
-    //     rect.x = tail[i].first;
-    //     rect.y = tail[i].second + j;
+    for (int i = 0, j = 10; i < snake.getTailLen(); i++, j += 10)
+    {
+        rect.w = 10;
+        rect.h = 10;
+        rect.x = tail[i].first;
+        rect.y = tail[i].second + j;
 
-    // }
+        SDL_RenderFillRect(_renderer, &rect);
+    }
     rect.w = 10;
     rect.h = 10;
     rect.x = head.first;
     rect.y = head.second;
-        SDL_RenderFillRect(_renderer, &rect);
+    
+    SDL_RenderFillRect(_renderer, &rect);
 
-    SDL_RenderPresent(_renderer);
 
 
     

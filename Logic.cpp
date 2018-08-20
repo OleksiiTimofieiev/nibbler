@@ -55,7 +55,7 @@ void    Logic::checkCollision(Snake &snake, Init &init)
     if (snake.getHeadCoords().first > init.getWidth() || snake.getHeadCoords().first < 0 ||
         snake.getHeadCoords().second > init.getHeight() || snake.getHeadCoords().second < 0)
         {
-            std::cout << "aha1\n"; //TODO: del;
+            std::cout << "borders collision\n"; //TODO: del;
 
             init.setGameStatus();
         }
@@ -63,7 +63,7 @@ void    Logic::checkCollision(Snake &snake, Init &init)
     {
         if (snake.getTailCoords()[i] == snake.getHeadCoords())
         {
-            std::cout << "aha2\n"; //TODO: del;
+            std::cout << "tail collision\n"; //TODO: del;
             init.setGameStatus();
         }
     }
