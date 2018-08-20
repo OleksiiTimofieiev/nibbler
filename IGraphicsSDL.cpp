@@ -123,20 +123,43 @@ void IGraphicsSDL::DrawSnake(Snake &snake)
     std::pair<int, int> head = snake.getHeadCoords();
     std::vector<std::pair<int, int> > tail = snake.getTailCoords();
 
-    for (int i = 0, j = 10; i < snake.getTailLen(); i++, j += 10)
-    {
-        rect.w = 10;
-        rect.h = 10;
-        rect.x = tail[i].first;
-        rect.y = tail[i].second + j;
+    int buf_x_coord = head.first;
+    int buf_y_coord = head.second;
 
-        SDL_RenderFillRect(_renderer, &rect);
-    }
     rect.w = 10;
     rect.h = 10;
+
+    for (int i = 0, buf_y = 11, buf_x = 11; i < snake.getTailLen(); i++, buf_y += 11, buf_x += 11)
+    {
+        if (tail[i].first == buf_x_coord) // for stop;
+        {
+            rect.x = tail[i].first;
+            rect.y = tail[i].second + buf_y;
+        }
+        if (tail[i].second == buf_y_coord) // for stop;
+        {
+            rect.x = tail[i].first + buf_x;
+            rect.y = tail[i].second + buf_y;
+        }
+
+        buf_x_coord = tail[i].first;
+        buf_y_coord = tail[i].second;
+
+        //TODO:del
+        // std::cout << rect.x << std::endl;
+        // std::cout << rect.y << std::endl;
+        // SDL_Delay(5000);
+
+        SDL_RenderFillRect(_renderer, &rect);
+        }
+    
+   
+
+    SDL_SetRenderDrawColor(_renderer, 0, 0, 200, 255);
+
     rect.x = head.first;
     rect.y = head.second;
-    
+
     SDL_RenderFillRect(_renderer, &rect);
 }
 
