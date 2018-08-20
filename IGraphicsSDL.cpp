@@ -105,8 +105,8 @@ void IGraphicsSDL::Draw(Snake &snake, Fruit &fruit, Score &score, Init &init)
     SDL_SetRenderDrawColor(_renderer, 0, 0, 0, 255); // backscreen color;
     SDL_RenderClear(_renderer);
 
-    if (snake.getDir() != stop)
-        DelSnake(snake);
+    // if (snake.getDir() != stop) //TODO: maybe do not need;
+    //     DelSnake(snake);
     DrawSnake(snake);
     // DrawFruit(fruit);
     SDL_RenderPresent(_renderer);
@@ -121,17 +121,17 @@ void IGraphicsSDL::DrawSnake(Snake &snake)
     SDL_Rect rect;
 
     std::pair<int, int> head = snake.getHeadCoords();
-    // std::vector<std::pair<int, int> > tail = snake.getTailCoords();
+    std::vector<std::pair<int, int> > tail = snake.getTailCoords();
 
-    // for (int i = 0, j = 10; i < snake.getTailLen(); i++, j += 10)
-    // {
-    //     rect.w = 10;
-    //     rect.h = 10;
-    //     rect.x = tail[i].first;
-    //     rect.y = tail[i].second + j;
+    for (int i = 0, j = 10; i < snake.getTailLen(); i++, j += 10)
+    {
+        rect.w = 10;
+        rect.h = 10;
+        rect.x = tail[i].first;
+        rect.y = tail[i].second + j;
 
-    //     SDL_RenderFillRect(_renderer, &rect);
-    // }
+        SDL_RenderFillRect(_renderer, &rect);
+    }
     rect.w = 10;
     rect.h = 10;
     rect.x = head.first;
