@@ -73,10 +73,10 @@ Direction IGraphicsSDL::CheckEvent(Direction &dr) const
     {
         switch (event.type)
         {
-            case SDL_QUIT:
+            case SDL_QUIT: // TODO: delete in the end;
             {
-               dr = stop; // TODO: remaster
-            //    break;
+               dr = stop;
+               break;
             }
             case SDL_KEYDOWN:
             {
@@ -86,30 +86,29 @@ Direction IGraphicsSDL::CheckEvent(Direction &dr) const
                     {
                         dr = left;
                         std::cout << dr;
-                        // break;
+                        break;
                     }
                     case SDLK_d:
                     {
                         dr = right;
                         std::cout << dr;
 
-                        // break;
+                        break;
                     }
                     case SDLK_w:
                     {
                         dr = up;
                         std::cout << dr;
 
-                        // break;
+                        break;
                     }
                     case SDLK_s:
                     {
                         dr = down;
                         std::cout << dr;
-                        // break;
+                        break;
                     }
-                    default:
-                        dr = up;
+
                 }
             }
             default: dr = up;
