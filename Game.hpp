@@ -43,15 +43,3 @@ class Game
 };
 
 #endif
-
-// int x = 0;
-// int y = 0;
-
-// if (dr == up)
-//     y = -1;
-// else if (dr == down)
-//     y = 1;
-// else if (dr == left)
-//     x = -1;
-// else if (dr == right)
-//     x = 1;
