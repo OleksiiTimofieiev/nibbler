@@ -62,7 +62,6 @@ void IGraphicsSDL::DrawMap(Border &border)
     SDL_RenderPresent(_renderer);
 }
 
-//TODO: make void func
 Direction IGraphicsSDL::CheckEvent(Direction &dr) const
 {
     SDL_Event event;
@@ -71,11 +70,6 @@ Direction IGraphicsSDL::CheckEvent(Direction &dr) const
     {
         switch (event.type)
         {
-            case SDL_QUIT: // TODO: delete in the end;
-            {
-               dr = stop;
-               break;
-            }
             case SDL_KEYDOWN:
             {
                 switch(event.key.keysym.sym)
@@ -88,13 +82,11 @@ Direction IGraphicsSDL::CheckEvent(Direction &dr) const
                     case SDLK_d:
                     {
                         dr = right;
-
                         break;
                     }
                     case SDLK_w:
                     {
                         dr = up;
-
                         break;
                     }
                     case SDLK_s:
@@ -117,8 +109,8 @@ void IGraphicsSDL::Draw(Snake &snake, Fruit &fruit, Score &score, Init &init)
 
 
     DrawSnake(snake);
-    SDL_RenderPresent(_renderer);
 
+    SDL_RenderPresent(_renderer);
 }
 
 void IGraphicsSDL::DrawSnake(Snake &snake)
@@ -145,9 +137,5 @@ void IGraphicsSDL::DrawSnake(Snake &snake)
     rect.y = head.second;
     
     SDL_RenderFillRect(_renderer, &rect);
-
-
-
-    
 
 }
