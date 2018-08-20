@@ -17,8 +17,8 @@ class IGraphicsSDL : public IGraphics
 
             // IGraphicsSDL &operator=(IGraphicsSDL const &ref);
 
-            // void Draw(Snake &snake, Fruit &fruit, Score &score, Init &init) const;
-            // void DrawSnake(Snake &snake) const;
+            void Draw(Snake &snake, Fruit &fruit, Score &score, Init &init) ;
+            void DrawSnake(Snake &snake) ;
             // void DelSnake(Snake &snake) const;
             Direction CheckEvent(Direction &dr) const;
             // void DrawFruit(Fruit &fruit) const;

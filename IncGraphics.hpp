@@ -22,8 +22,8 @@ class IncGraphics : public IGraphics
 
         IncGraphics &operator=(IncGraphics const &ref);
 
-        void Draw(Snake &snake, Fruit &fruit, Score &score, Init &init) const;
-        void DrawSnake(Snake &snake) const;
+        void Draw(Snake &snake, Fruit &fruit, Score &score, Init &init);
+        void DrawSnake(Snake &snake);
         void DelSnake(Snake &snake) const;
         Direction CheckEvent(Direction &dr) const; //TODO: for testing
         void DrawFruit(Fruit &fruit) const;
