@@ -76,30 +76,46 @@ Direction IGraphicsSDL::CheckEvent(Direction &dr) const
             case SDL_QUIT:
             {
                dr = stop; // TODO: remaster
+            //    break;
             }
+            case SDL_KEYDOWN:
+            {
+                switch(event.key.keysym.sym)
+                {
+                    case SDLK_a:
+                    {
+                        dr = left;
+                        std::cout << dr;
+                        // break;
+                    }
+                    case SDLK_d:
+                    {
+                        dr = right;
+                        std::cout << dr;
+
+                        // break;
+                    }
+                    case SDLK_w:
+                    {
+                        dr = up;
+                        std::cout << dr;
+
+                        // break;
+                    }
+                    case SDLK_s:
+                    {
+                        dr = down;
+                        std::cout << dr;
+                        // break;
+                    }
+                    default:
+                        dr = up;
+                }
+            }
+            default: dr = up;
         }
     }
-
-    // int key = 0;
-
-    // key = getch();
-    // // if (key == 113)
-    // // {
-    // // 	refresh();
-    // // 	system("reset");
-    // // 	exit(1);
-    // // }
-    // if (key == 115) // key W
-    //     dr = down;
-    // else if (key == 119) // key S
-    //     dr = up;
-    // else if (key == 97) // key D
-    //     dr = left;
-    // else if (key == 100) // key A
-    //     dr = right;
-    // return (dr);
-
-    return dr;
+    return (dr);
 }
 
 
