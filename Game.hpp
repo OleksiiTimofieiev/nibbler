@@ -11,7 +11,7 @@
 #include <ctime>
 #include <sys/time.h>
 
-#define FPS 10
+#define FPS 30
 #define OUTPUT(x) std::cout << (x) << std::endl;
 
 //TODO: comp form in every class;
@@ -31,8 +31,8 @@ class Game
         Init    _init;
         Border  _border;
         Score   _stat;
-        Fruit   _fruits{_init.getWidth(), _init.getHeight()}; //TODO:Check
-        Snake   _snake{_init.getWidth() / 2 / 10, _init.getHeight() / 2 / 10};
+        Fruit   _fruits{_init.getWidth(), _init.getHeight()};
+        Snake   _snake{_init.getWidth() / 2, _init.getHeight() / 2};
         Logic   _logic;
     public:
         Game();

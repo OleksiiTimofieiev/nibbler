@@ -130,8 +130,8 @@ void IGraphicsSDL::DrawSnake(Snake &snake)
         // int buf_x_coord = head.first;
         // int buf_y_coord = head.second;
 
-        rect.x = head.first * rect.w;
-        rect.y = head.second * rect.h;
+        rect.x = head.first;
+        rect.y = head.second;
 
         std::cout << head.first << std::endl;
         std::cout << head.second << std::endl << std::endl;
@@ -159,8 +159,8 @@ void IGraphicsSDL::DrawSnake(Snake &snake)
         {
             // if (tail[i].first != buf_x_coord && buf_y_coord == tail[i].second && i < to_be_changed)
             // {
-                rect.x = tail[i].first * rect.w;
-                rect.y = tail[i].second * rect.h;
+                rect.x = tail[i].first;
+                rect.y = tail[i].second;
 
 
             
