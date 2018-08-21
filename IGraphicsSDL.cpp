@@ -303,6 +303,7 @@ void IGraphicsSDL::DrawFruit(Fruit &fruit) const
 
     rect.w = 10;
     rect.h = 10;
+    
     rect.x = crd.first;
     rect.y = crd.second;
 

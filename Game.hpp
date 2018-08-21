@@ -11,7 +11,7 @@
 #include <ctime>
 #include <sys/time.h>
 
-#define FPS 30
+#define FPS 10
 #define OUTPUT(x) std::cout << (x) << std::endl;
 
 //TODO: comp form in every class;
