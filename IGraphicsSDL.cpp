@@ -47,7 +47,7 @@ IGraphicsSDL::~IGraphicsSDL()
 
 void IGraphicsSDL::DrawMap(Border &border)
 {
-    _window = SDL_CreateWindow("Snake", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, border.getWidth() * 16, border.getWidth() * 16, SDL_WINDOW_SHOWN);
+    _window = SDL_CreateWindow("Snake", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, border.getWidth() * 16, border.getHeight() * 16, SDL_WINDOW_SHOWN);
 
     if (_window == nullptr)
     {
