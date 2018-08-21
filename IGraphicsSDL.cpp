@@ -58,7 +58,7 @@ void IGraphicsSDL::DrawMap(Border &border)
     _renderer = SDL_CreateRenderer(_window, -1, 0);
 }
 
-Direction IGraphicsSDL::CheckEvent(Direction &dr) const
+Direction IGraphicsSDL::CheckEvent(Direction &dr) const // TODO: add init in order to end the game;
 {
     SDL_Event event;
 

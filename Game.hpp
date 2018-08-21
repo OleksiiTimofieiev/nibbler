@@ -11,7 +11,7 @@
 #include <ctime>
 #include <sys/time.h>
 
-#define FPS 20
+#define FPS 10
 #define OUTPUT(x) std::cout << (x) << std::endl;
 
 //TODO: comp form in every class;
@@ -21,6 +21,10 @@
 //TODO: increase fps after fruit eating
 //TODO: APIBase + func to choose lib;
 //TODO: exit handling;
+
+// TODO: user input
+// TODO: wsc key
+// TODO:wrong height / width;
 
 #ifndef GAME_HPP
 #define GAME_HPP
