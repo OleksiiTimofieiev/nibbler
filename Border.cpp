@@ -1,7 +1,7 @@
 #include "Border.hpp"
 
 Border::~Border(){};
-Border::Border() : _width(400), _height(400){}; //TODO: user input
+Border::Border() : _width(120), _height(40){}; //TODO: user input
 
 Border &Border::operator=(Border const &rhs)
 {
