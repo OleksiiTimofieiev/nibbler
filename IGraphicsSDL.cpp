@@ -1,5 +1,6 @@
 #include "IGraphicsSDL.hpp"
 
+static int change_y = 0;
 // SDL_Rect rect;
 // SDL_Rect rect2;
 // SDL_Rect rect3;
@@ -137,7 +138,7 @@ void IGraphicsSDL::DrawSnake(Snake &snake)
         SDL_SetRenderDrawColor(_renderer, 200, 100, 200, 255);
         SDL_RenderFillRect(_renderer, &rect);
 
-        for (int i = 0, buf_y = 11, buf_x = 11; i < snake.getTailLen(); i++)
+        for (int i = 0, buf_y = 12, buf_x = 12; i < snake.getTailLen(); i++)
         {
             if (tail[i].first != buf_x_coord && buf_y_coord == tail[i].second) // for stop;
             {
@@ -208,9 +209,12 @@ void IGraphicsSDL::DrawSnake(Snake &snake)
         rect.x = head.first;
         rect.y = head.second + buf_y;
 
-        int megabuff = rect.y;
+        int megabuff_y = rect.y;
 
-                           SDL_SetRenderDrawColor(_renderer, 200, 100, 200, 255);
+
+        change_y = buf_y;
+
+        SDL_SetRenderDrawColor(_renderer, 200, 100, 200, 255);
         SDL_RenderFillRect(_renderer, &rect);
 
         std::cout << buf_y << std::endl;
@@ -222,9 +226,9 @@ void IGraphicsSDL::DrawSnake(Snake &snake)
         {
             if (tail[i].first == buf_x_coord_2 && buf_y_coord_2 != tail[i].second)
             {
-                megabuff -= 12;
+                megabuff_y -= 12;
                 rect.x = tail[i].first;
-                rect.y = megabuff;
+                rect.y = megabuff_y;
                 std::cout << "rect.y -> "<< rect.y << std::endl;
             }
             else if (buf_y_coord_2 == tail[i].second && tail[i].first != buf_x_coord_2)
