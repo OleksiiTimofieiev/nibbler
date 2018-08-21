@@ -99,17 +99,15 @@ Direction IGraphicsSDL::CheckEvent(Direction &dr) const
 
 void IGraphicsSDL::Draw(Snake &snake, Fruit &fruit, Score &score, Init &init)
 {
-    (void)fruit;
     (void)score;
     (void)init;
 
     SDL_SetRenderDrawColor(_renderer, 0, 0, 0, 255); // backscreen color;
     SDL_RenderClear(_renderer);
 
-    // if (snake.getDir() != stop) //TODO: maybe do not need;
-    //     DelSnake(snake);
     DrawSnake(snake);
     DrawFruit(fruit);
+
     SDL_RenderPresent(_renderer);
 }
 
