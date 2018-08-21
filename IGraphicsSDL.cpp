@@ -1,6 +1,6 @@
 #include "IGraphicsSDL.hpp"
 
-static int change_y = 0;
+// static int change_y = 0;
 // SDL_Rect rect;
 // SDL_Rect rect2;
 // SDL_Rect rect3;
@@ -122,133 +122,170 @@ void IGraphicsSDL::DrawSnake(Snake &snake)
     std::pair<int, int> head = snake.getHeadCoords();
     std::vector<std::pair<int, int> > tail = snake.getTailCoords();
 
-    int buf_x_coord = head.first;
-    int buf_y_coord = head.second;
 
     rect.w = 10;
     rect.h = 10;
 
-    if (snake.getDir() == left)
-    {
-        rect.x = head.first;
-        rect.y = head.second + change_y;
+    // if (snake.getDir() == left)
+    // {
+        // int buf_x_coord = head.first;
+        // int buf_y_coord = head.second;
+
+        rect.x = head.first * rect.w;
+        rect.y = head.second * rect.h;
+
+        std::cout << rect.x << std::endl;
+        std::cout << rect.y << std::endl;
 
         SDL_SetRenderDrawColor(_renderer, 200, 100, 200, 255);
         SDL_RenderFillRect(_renderer, &rect);
 
-        for (int i = 0, buf_y = 12, buf_x = 12; i < snake.getTailLen(); i++)
+        // int to_be_changed = 0;
+
+        // int buf_x_coord_2 = head.first;
+        // int buf_y_coord_2 = head.second;
+
+        // for (int i = 0; i < snake.getTailLen(); i++) // get the head correction on y;
+        // {
+        //     if (buf_x_coord_2 != tail[i].first)
+        //         to_be_changed++;
+
+        //     buf_x_coord_2 = tail[i].first;
+        //     buf_y_coord_2 = tail[i].second;
+        // }
+
+        // std::cout << to_be_changed << std::endl;
+
+        for (int i = 0; i < snake.getTailLen(); i++)
         {
-            if (tail[i].first != buf_x_coord && buf_y_coord == tail[i].second) // for stop;
-            {
-                rect.x = tail[i].first + buf_x;
-                rect.y = tail[i].second + change_y;
-                buf_x += 11;
-            }
-            if (tail[i].first == buf_x_coord && buf_y_coord != tail[i].second) // for stop;
-            {
-                rect.x = tail[i].first + buf_x;
-                rect.y = tail[i].second + buf_y;
-                buf_y+=11;
-            }
+            // if (tail[i].first != buf_x_coord && buf_y_coord == tail[i].second && i < to_be_changed)
+            // {
+                rect.x = tail[i].first * rect.w;
+                rect.y = tail[i].second * rect.h;
 
-            buf_x_coord = tail[i].first;
-            buf_y_coord = tail[i].second;
+                std::cout << rect.x << std::endl;
+                std::cout << rect.y << std::endl;
+            
+                //     std::cout << "here1\n";
 
-            //TODO:del
-            // std::cout << rect.x << std::endl;
-            // std::cout << rect.y << std::endl;
-            // SDL_Delay(5000);
-            SDL_SetRenderDrawColor(_renderer, 0, 0, 200, 255);
+                //     buf_x += 12;
+                // }
+                // else if (tail[i].first == buf_x_coord && buf_y_coord != tail[i].second && i < to_be_changed)
+                // {
+                //     rect.x = tail[i].first;
+                //     rect.y = tail[i].second + buf_y + change_y;
+                //     std::cout << "here2\n";
 
-            SDL_RenderFillRect(_renderer, &rect);
-        }
-    }
-    if (snake.getDir() == stop)
-    {
-        rect.x = head.first;
-        rect.y = head.second;
+                //     buf_y += 12;
+                // }
+                // else if (tail[i].first == buf_x_coord && buf_y_coord != tail[i].second && i >= to_be_changed)
+                // {
+                //     rect.x = tail[i].first + buf_x - 12;
+                //     rect.y = tail[i].second + buf_y + change_y;
+                //     buf_y += 12;
 
-        SDL_SetRenderDrawColor(_renderer, 200, 100, 200, 255);
-        SDL_RenderFillRect(_renderer, &rect);
+                //     std::cout << "here3\n";
+                // }
 
-        for (int i = 0, buf_y = 11; i < snake.getTailLen(); i++) 
-        {
+                // buf_x_coord = tail[i].first;
+                // buf_y_coord = tail[i].second;
 
-                rect.x = tail[i].first;
-                rect.y = tail[i].second + buf_y;
-                buf_y += 11;
-
-            //TODO:del
-            // std::cout << rect.x << std::endl;
-            // std::cout << rect.y << std::endl;
-            // SDL_Delay(5000);
+                //TODO:del
+                // std::cout << rect.x << std::endl;
+                // std::cout << rect.y << std::endl;
+                // SDL_Delay(5000);
                 SDL_SetRenderDrawColor(_renderer, 0, 0, 200, 255);
 
                 SDL_RenderFillRect(_renderer, &rect);
         }
-    }
-    if (snake.getDir() == down)
-    {
-        int buf_y = 0;
-        int buf_x_coord_2 = head.first;
-        int buf_y_coord_2 = head.second;
+    // }
+    // if (snake.getDir() == stop)
+    // {
+    //     rect.x = head.first;
+    //     rect.y = head.second;
 
-        for (int i = 0; i < snake.getTailLen(); i++) // get the head correction on y;
-        {
-            if ( buf_y_coord_2 != tail[i].second )
-                buf_y++;
+    //     SDL_SetRenderDrawColor(_renderer, 200, 100, 200, 255);
+    //     SDL_RenderFillRect(_renderer, &rect);
 
-            buf_x_coord_2 = tail[i].first;
-            buf_y_coord_2 = tail[i].second;
-        }
+    //     for (int i = 0, buf_y = 11; i < snake.getTailLen(); i++) 
+    //     {
 
-        buf_y *= 12;
+    //             rect.x = tail[i].first;
+    //             rect.y = tail[i].second + buf_y;
+    //             buf_y += 11;
 
-        rect.x = head.first;
-        rect.y = head.second + buf_y;
+    //         //TODO:del
+    //         // std::cout << rect.x << std::endl;
+    //         // std::cout << rect.y << std::endl;
+    //         // SDL_Delay(5000);
+    //             SDL_SetRenderDrawColor(_renderer, 0, 0, 200, 255);
 
-        int megabuff_y = rect.y;
+    //             SDL_RenderFillRect(_renderer, &rect);
+    //     }
+    // }
+    // if (snake.getDir() == down)
+    // {
+    //     int buf_y = 0;
+    //     int buf_x_coord_2 = head.first;
+    //     int buf_y_coord_2 = head.second;
+
+    //     for (int i = 0; i < snake.getTailLen(); i++) // get the head correction on y;
+    //     {
+    //         if ( buf_y_coord_2 != tail[i].second )
+    //             buf_y++;
+
+    //         buf_x_coord_2 = tail[i].first;
+    //         buf_y_coord_2 = tail[i].second;
+    //     }
+
+    //     buf_y *= 12;
+
+    //     rect.x = head.first;
+    //     rect.y = head.second + buf_y;
+
+    //     int megabuff_y = rect.y;
 
 
-        change_y = buf_y;
+    //     change_y = buf_y;
 
-        SDL_SetRenderDrawColor(_renderer, 200, 100, 200, 255);
-        SDL_RenderFillRect(_renderer, &rect);
+    //     SDL_SetRenderDrawColor(_renderer, 200, 100, 200, 255);
+    //     SDL_RenderFillRect(_renderer, &rect);
 
-        std::cout << buf_y << std::endl;
+    //     std::cout << buf_y << std::endl;
 
-        buf_x_coord_2 = head.first;
-        buf_y_coord_2 = head.second;
+    //     buf_x_coord_2 = head.first;
+    //     buf_y_coord_2 = head.second;
 
-        for (int i = 0, buf_x = 12; i < snake.getTailLen(); i++) // 12 make a define;
-        {
-            if (tail[i].first == buf_x_coord_2 && buf_y_coord_2 != tail[i].second)
-            {
-                megabuff_y -= 12;
-                rect.x = tail[i].first;
-                rect.y = megabuff_y;
-                std::cout << "rect.y -> "<< rect.y << std::endl;
-            }
-            else if (buf_y_coord_2 == tail[i].second && tail[i].first != buf_x_coord_2)
-            {
-                rect.x = tail[i].first + buf_x;
-                rect.y = tail[i].second;
+    //     for (int i = 0, buf_x = 12; i < snake.getTailLen(); i++) // 12 make a define;
+    //     {
+    //         if (tail[i].first == buf_x_coord_2 && buf_y_coord_2 != tail[i].second)
+    //         {
+    //             megabuff_y -= 12;
+    //             rect.x = tail[i].first;
+    //             rect.y = megabuff_y;
+    //             std::cout << "rect.y -> "<< rect.y << std::endl;
+    //         }
+    //         else if (buf_y_coord_2 == tail[i].second && tail[i].first != buf_x_coord_2)
+    //         {
+    //             rect.x = tail[i].first + buf_x;
+    //             rect.y = tail[i].second;
 
-                buf_x += 12;
-            }
+    //             buf_x += 12;
+    //         }
 
-            buf_x_coord_2 = tail[i].first;
-            buf_y_coord_2 = tail[i].second;
+    //         buf_x_coord_2 = tail[i].first;
+    //         buf_y_coord_2 = tail[i].second;
 
-            //TODO:del
-            // std::cout << rect.x << std::endl;
-            // std::cout << rect.y << std::endl;
-            // SDL_Delay(5000);
+    //         //TODO:del
+    //         // std::cout << rect.x << std::endl;
+    //         // std::cout << rect.y << std::endl;
+    //         // SDL_Delay(5000);
 
-            SDL_SetRenderDrawColor(_renderer, 0, 0, 200, 255);
-            SDL_RenderFillRect(_renderer, &rect);
-        }
-    }
+    //         SDL_SetRenderDrawColor(_renderer, 0, 0, 200, 255);
+    //         SDL_RenderFillRect(_renderer, &rect);
+    //     }
+    // }
+    std::cout << std::endl;
 }
 
 void IGraphicsSDL::DelSnake(Snake &snake) const

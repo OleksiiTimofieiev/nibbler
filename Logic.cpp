@@ -52,12 +52,15 @@ void    Logic::checkFruit(Fruit & fruit, Snake & snake, Score & score)
 void    Logic::checkCollision(Snake &snake, Init &init)
 {
     // better handling;
-    if (snake.getHeadCoords().first > init.getWidth() || snake.getHeadCoords().first < 0 ||
-        snake.getHeadCoords().second > init.getHeight() || snake.getHeadCoords().second < 0)
-        {
-            std::cout << "borders collision\n"; //TODO: del;
+    std::cout << snake.getHeadCoords().first << std::endl;
+    std::cout << snake.getHeadCoords().second << std::endl;
 
-            init.setGameStatus();
+    if (snake.getHeadCoords().first * 10 > init.getWidth() || snake.getHeadCoords().first * 10 < 0 ||
+                                                 snake.getHeadCoords().second > init.getHeight() || snake.getHeadCoords().second < 0)
+    {
+        std::cout << "borders collision\n"; //TODO: del;
+
+        init.setGameStatus();
         }
     for (int i = 0; i < snake.getTailLen(); i++)
     {

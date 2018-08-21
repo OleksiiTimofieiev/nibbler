@@ -1,8 +1,8 @@
 #ifndef INIT_HPP
 #define INIT_HPP
 
-#define WIDTH 125
-#define HEIGHT 40
+#define WIDTH 400
+#define HEIGHT 400
 
 class   Init
 {
