@@ -56,7 +56,7 @@ void    Logic::checkCollision(Snake &snake, Init &init)
     std::cout << snake.getHeadCoords().second << std::endl;
 
     if (snake.getHeadCoords().first * 10 > init.getWidth() || snake.getHeadCoords().first * 10 < 0 ||
-                                                 snake.getHeadCoords().second > init.getHeight() || snake.getHeadCoords().second < 0)
+                                                 snake.getHeadCoords().second * 10 > init.getHeight() || snake.getHeadCoords().second * 10 < 0)
     {
         std::cout << "borders collision\n"; //TODO: del;
 

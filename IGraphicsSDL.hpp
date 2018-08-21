@@ -21,7 +21,7 @@ class IGraphicsSDL : public IGraphics
             void DrawSnake(Snake &snake) ;
             void DelSnake(Snake &snake) const;
             Direction CheckEvent(Direction &dr) const;
-            // void DrawFruit(Fruit &fruit) const;
+            void DrawFruit(Fruit &fruit) const;
             void DrawMap(Border &border);
     private: 
         SDL_Window *_window = nullptr;

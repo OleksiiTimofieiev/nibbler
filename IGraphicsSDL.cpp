@@ -109,7 +109,7 @@ void IGraphicsSDL::Draw(Snake &snake, Fruit &fruit, Score &score, Init &init)
     // if (snake.getDir() != stop) //TODO: maybe do not need;
     //     DelSnake(snake);
     DrawSnake(snake);
-    // DrawFruit(fruit);
+    DrawFruit(fruit);
     SDL_RenderPresent(_renderer);
 }
 
@@ -293,4 +293,20 @@ void IGraphicsSDL::DelSnake(Snake &snake) const
     (void)snake;
     SDL_SetRenderDrawColor(_renderer, 0, 0, 0, 255); // backscreen color;
     SDL_RenderClear(_renderer);
+}
+
+void IGraphicsSDL::DrawFruit(Fruit &fruit) const
+{
+    std::pair<int, int> crd = fruit.getCoords();
+
+    SDL_Rect rect;
+
+    rect.w = 10;
+    rect.h = 10;
+    rect.x = crd.first;
+    rect.y = crd.second;
+
+    SDL_SetRenderDrawColor(_renderer, 0, 0, 200, 255);
+
+    SDL_RenderFillRect(_renderer, &rect);
 }
