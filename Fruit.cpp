@@ -7,6 +7,9 @@ Fruit::Fruit(int x, int y)
 {
     _coords.first = rand() % x;
     _coords.second = rand() % y;
+
+    std::cout << "fruit x" << _coords.first <<std::endl;
+    std::cout << "fruit y" << _coords.second << std::endl;
 };
 
 Fruit &Fruit::operator=(Fruit const &rhs)

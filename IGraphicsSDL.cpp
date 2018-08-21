@@ -99,7 +99,6 @@ Direction IGraphicsSDL::CheckEvent(Direction &dr) const
 
 void IGraphicsSDL::Draw(Snake &snake, Fruit &fruit, Score &score, Init &init)
 {
-    (void)fruit;
     (void)score;
     (void)init;
 
@@ -134,8 +133,8 @@ void IGraphicsSDL::DrawSnake(Snake &snake)
         rect.x = head.first * rect.w;
         rect.y = head.second * rect.h;
 
-        std::cout << rect.x << std::endl;
-        std::cout << rect.y << std::endl;
+        std::cout << head.first << std::endl;
+        std::cout << head.second << std::endl << std::endl;
 
         SDL_SetRenderDrawColor(_renderer, 200, 100, 200, 255);
         SDL_RenderFillRect(_renderer, &rect);
@@ -163,8 +162,7 @@ void IGraphicsSDL::DrawSnake(Snake &snake)
                 rect.x = tail[i].first * rect.w;
                 rect.y = tail[i].second * rect.h;
 
-                std::cout << rect.x << std::endl;
-                std::cout << rect.y << std::endl;
+
             
                 //     std::cout << "here1\n";
 
@@ -285,7 +283,7 @@ void IGraphicsSDL::DrawSnake(Snake &snake)
     //         SDL_RenderFillRect(_renderer, &rect);
     //     }
     // }
-    std::cout << std::endl;
+    // std::cout << std::endl;
 }
 
 void IGraphicsSDL::DelSnake(Snake &snake) const
@@ -303,7 +301,7 @@ void IGraphicsSDL::DrawFruit(Fruit &fruit) const
 
     rect.w = 10;
     rect.h = 10;
-    
+
     rect.x = crd.first;
     rect.y = crd.second;
 

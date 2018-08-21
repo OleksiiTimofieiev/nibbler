@@ -31,7 +31,7 @@ class Game
         Init    _init;
         Border  _border;
         Score   _stat;
-        Fruit   _fruits{_init.getWidth() / 10, _init.getHeight() / 10}; //TODO:Check
+        Fruit   _fruits{_init.getWidth(), _init.getHeight()}; //TODO:Check
         Snake   _snake{_init.getWidth() / 2 / 10, _init.getHeight() / 2 / 10};
         Logic   _logic;
     public:
