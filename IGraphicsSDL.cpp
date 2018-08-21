@@ -117,8 +117,6 @@ void IGraphicsSDL::DrawSnake(Snake &snake)
 {
     SDL_RenderClear(_renderer);
 
-
-
     SDL_Rect rect;
 
     std::pair<int, int> head = snake.getHeadCoords();
@@ -133,7 +131,7 @@ void IGraphicsSDL::DrawSnake(Snake &snake)
     if (snake.getDir() == left)
     {
         rect.x = head.first;
-        rect.y = head.second;
+        rect.y = head.second + change_y;
 
         SDL_SetRenderDrawColor(_renderer, 200, 100, 200, 255);
         SDL_RenderFillRect(_renderer, &rect);
@@ -143,7 +141,7 @@ void IGraphicsSDL::DrawSnake(Snake &snake)
             if (tail[i].first != buf_x_coord && buf_y_coord == tail[i].second) // for stop;
             {
                 rect.x = tail[i].first + buf_x;
-                rect.y = tail[i].second;
+                rect.y = tail[i].second + change_y;
                 buf_x += 11;
             }
             if (tail[i].first == buf_x_coord && buf_y_coord != tail[i].second) // for stop;
