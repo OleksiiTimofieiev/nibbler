@@ -18,14 +18,14 @@ void    Game::gameplay()
     inc->DrawMap(_border);
     while(!_init.getGameOver())
     {
-        t1 = clock() / (CLOCKS_PER_SEC / FPS);
+        t1 = clock() / (CLOCKS_PER_SEC / _fps);
         if (t1 > t2)
         {
             inc->Draw(_snake, _fruits, _stat, _init);
             dr = inc->CheckEvent(dr);
             if (dr != stop)
                 _logic.logic(_init, _fruits, _snake, _stat, dr);
-            t2 = clock() / (CLOCKS_PER_SEC / FPS);
+            t2 = clock() / (CLOCKS_PER_SEC / _fps);
         }
     }
     // game over <-> clear or balblabla;

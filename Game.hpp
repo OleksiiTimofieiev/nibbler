@@ -11,14 +11,13 @@
 #include <ctime>
 #include <sys/time.h>
 
-#define FPS 15 // try to iterate;
 #define OUTPUT(x) std::cout << (x) << std::endl;
 
 //TODO: comp form in every class;
 //TODO: delete all comments
 //TODO: APIBase + func to choose lib;
 
-//TODO: obstacles, fps fruit, esc (enum), user input (check);
+//TODO: obstacles, fps fruit, esc (enum) = +, user input (check);
 
 #ifndef GAME_HPP
 #define GAME_HPP
@@ -32,6 +31,7 @@ class Game
         Fruit   _fruits{_init.getWidth(), _init.getHeight()};
         Snake   _snake{_init.getWidth() / 2, _init.getHeight() / 2};
         Logic   _logic;
+        int     _fps{15};
     public:
         Game();
         ~Game();
