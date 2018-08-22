@@ -15,16 +15,13 @@
 #define OUTPUT(x) std::cout << (x) << std::endl;
 
 //TODO: comp form in every class;
-//TODO: delete all comments;
-//TODO: handle stop of the program;
-//TODO: better colors;
+//TODO: delete all comments
 //TODO: increase fps after fruit eating
 //TODO: APIBase + func to choose lib;
-//TODO: exit handling;
 
-// TODO: user input
-// TODO: wsc key
-// TODO:wrong height / width; -> to the user;
+//TODO: user input
+//TODO: esc key
+//TODO: wrong height / width; -> to the user, input for square;
 
 #ifndef GAME_HPP
 #define GAME_HPP

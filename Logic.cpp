@@ -46,6 +46,7 @@ void    Logic::checkFruit(Fruit & fruit, Snake & snake, Score & score)
         fruit.setCoords(rand() % WIDTH, rand() % HEIGHT);
         score.setScore();
         snake.setTailLen();
+        setTail(snake);
     }
 }
 
@@ -53,19 +54,10 @@ void    Logic::checkCollision(Snake &snake, Init &init)
 {
     if (snake.getHeadCoords().first > init.getWidth()   || snake.getHeadCoords().first == -2 ||
         snake.getHeadCoords().second > init.getHeight() || snake.getHeadCoords().second == -2)
-    {
-        std::cout << "borders collision\n"; //TODO: del;
-
         init.setGameStatus();
-    }
     for (int i = 0; i < snake.getTailLen(); i++)
-    {
         if (snake.getTailCoords()[i] == snake.getHeadCoords())
-        {
-            std::cout << "tail collision\n"; //TODO: del;
             init.setGameStatus();
-        }
-    }
 }
 
 void    Logic::logic(Init & init, Fruit & fruit, Snake & snake, Score & score, Direction dir)
