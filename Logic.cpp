@@ -39,7 +39,7 @@ void Logic::setHead(Snake & snake)
        snake.setHeadCoords(snake.getHeadCoords().first, snake.getHeadCoords().second + 1);
 }
 
-void    Logic::checkFruit(Fruit & fruit, Snake & snake, Score & score)
+void    Logic::checkFruit(Fruit & fruit, Snake & snake, Score & score, int & fps)
 {
     if (fruit.getCoords() == snake.getHeadCoords())
     {
@@ -47,6 +47,7 @@ void    Logic::checkFruit(Fruit & fruit, Snake & snake, Score & score)
         score.setScore();
         snake.setTailLen();
         setTail(snake); //TODO: show ignat;
+        fps += FPS_CHANGE;
     }
 }
 
@@ -60,7 +61,7 @@ void    Logic::checkCollision(Snake &snake, Init &init)
             init.setGameStatus();
 }
 
-void    Logic::logic(Init & init, Fruit & fruit, Snake & snake, Score & score, Direction dir)
+void    Logic::logic(Init & init, Fruit & fruit, Snake & snake, Score & score, Direction dir, int & fps) // TODO: show fps change to Ignat;
 {
     if (dir == stop_the_game) // TODO: show Igmat
     {
@@ -71,5 +72,5 @@ void    Logic::logic(Init & init, Fruit & fruit, Snake & snake, Score & score, D
     setTail(snake);
     setHead(snake);
     checkCollision(snake, init);
-    checkFruit(fruit, snake, score);
+    checkFruit(fruit, snake, score, fps);
 }

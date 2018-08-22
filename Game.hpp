@@ -17,7 +17,7 @@
 //TODO: delete all comments
 //TODO: APIBase + func to choose lib;
 
-//TODO: obstacles, fps fruit, esc (enum) = +, user input (check);
+//TODO: obstacles, fps fruit = +, esc (enum) = +, user input (check);
 
 #ifndef GAME_HPP
 #define GAME_HPP

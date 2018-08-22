@@ -24,7 +24,7 @@ void    Game::gameplay()
             inc->Draw(_snake, _fruits, _stat, _init);
             dr = inc->CheckEvent(dr);
             if (dr != stop)
-                _logic.logic(_init, _fruits, _snake, _stat, dr);
+                _logic.logic(_init, _fruits, _snake, _stat, dr, _fps);
             t2 = clock() / (CLOCKS_PER_SEC / _fps);
         }
     }
