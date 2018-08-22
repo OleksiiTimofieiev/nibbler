@@ -28,7 +28,6 @@ void    Game::gameplay()
             t2 = clock() / (CLOCKS_PER_SEC / _fps);
         }
     }
-    // game over <-> clear or balblabla;
 }
 
 Game &Game::operator=(Game const &rhs)
