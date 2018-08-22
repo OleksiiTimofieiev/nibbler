@@ -11,7 +11,7 @@
 #include "Logic.hpp"
 #include <ctime>
 #include <sys/time.h>
-#include "/Users/hdanylev/.brew/Cellar/sfml/2.4.2_1/include/SFML/Graphics.hpp"
+#include "/Users/otimofie/.brew/Cellar/sfml/2.4.2_1/include/SFML/Graphics.hpp" // user trouble;
 
 #define OUTPUT(x) std::cout << (x) << std::endl;
 

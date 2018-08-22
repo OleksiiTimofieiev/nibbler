@@ -7,8 +7,8 @@ void    Game::gameplay()
 {
     std::cout << "Please, choose the library" << std::endl;
 
-    // IGraphics *inc = new IGraphicsSDL();
-    IGraphics * inc = new IncGraphics();
+    IGraphics *inc = new IGraphicsSDL();
+    // IGraphics * inc = new IncGraphics();
     // IGraphics *inc = new SFMLGraphics();
 
     Direction   dr = stop;
@@ -27,7 +27,7 @@ void    Game::gameplay()
             if (dr != stop)
                 _logic.logic(_init, _fruits, _snake, _stat, dr, _fps);
             inc->Draw(_snake, _fruits, _stat, _init);
-            inc->DrawMap(_border);
+            // inc->DrawMap(_border);
             t2 = clock() / (CLOCKS_PER_SEC / _fps);
         }
     }
