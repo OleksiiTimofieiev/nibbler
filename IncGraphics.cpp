@@ -18,7 +18,7 @@ IncGraphics::IncGraphics() {
 	timeout(1);
 }
 IncGraphics::IncGraphics(IncGraphics const &ref) { *this = ref; }
-IncGraphics::~IncGraphics() {} //TODO:do we need some close win stuff ?
+IncGraphics::~IncGraphics() {}
 
 IncGraphics &IncGraphics::operator=(IncGraphics const &ref)
 {
