@@ -13,14 +13,12 @@ IGraphicsSDL::~IGraphicsSDL()
 {
     SDL_DestroyRenderer(_renderer);
     SDL_DestroyWindow(_window);
-    // SDL_DestroyWindow(_window2);
     SDL_Quit();
 }
 
 void IGraphicsSDL::DrawMap(Border &border)
 {
     _window = SDL_CreateWindow("Snake", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, border.getWidth() * 16, border.getHeight() * 16, SDL_WINDOW_SHOWN);
-    // _window2 = SDL_CreateWindow("Score", 1700, 500, 270, 270, SDL_WINDOW_SHOWN);
 
     if (_window == nullptr)
     {
@@ -85,7 +83,7 @@ void IGraphicsSDL::Draw(Snake & snake, Fruit & fruit, Score & score, Init & init
     (void)score;
     (void)init;
 
-    SDL_SetRenderDrawColor(_renderer, 0, 0, 0, 255); // backscreen color;
+    SDL_SetRenderDrawColor(_renderer, 0, 0, 0, 255);
     SDL_RenderClear(_renderer);
 
     DrawSnake(snake);
