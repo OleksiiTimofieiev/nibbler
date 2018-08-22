@@ -18,6 +18,7 @@
 //TODO: APIBase + func to choose lib;
 
 //TODO: obstacles, fps fruit = +, esc (enum) = +, user input (check);
+//TODO: balancce coordinate of the main window and a score window via input limits of the library scale size;
 
 #ifndef GAME_HPP
 #define GAME_HPP
