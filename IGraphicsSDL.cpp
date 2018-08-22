@@ -31,7 +31,7 @@ void IGraphicsSDL::DrawMap(Border &border)
     _renderer = SDL_CreateRenderer(_window, -1, 0);
 }
 
-Direction IGraphicsSDL::CheckEvent(Direction &dr) const
+Direction IGraphicsSDL::CheckEvent(Direction &dr)
 {
     SDL_Event event;
 
@@ -133,7 +133,7 @@ void IGraphicsSDL::DrawSnake(Snake &snake)
     }
 }
 
-void IGraphicsSDL::DrawFruit(Fruit &fruit) const
+void IGraphicsSDL::DrawFruit(Fruit &fruit)
 {
     SDL_Rect rect;
 
@@ -147,7 +147,7 @@ void IGraphicsSDL::DrawFruit(Fruit &fruit) const
     SDL_RenderFillRect(_renderer, &rect);
 }
 
-void IGraphicsSDL::DelSnake(Snake &snake) const
+void IGraphicsSDL::DelSnake(Snake &snake)
 {
     (void)snake;
     SDL_SetRenderDrawColor(_renderer, 0, 0, 0, 255); // backscreen color;

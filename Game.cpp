@@ -8,6 +8,7 @@ void    Game::gameplay()
     std::cout << "Please, choose the library" << std::endl;
 
     IGraphicsSDL *inc = new IGraphicsSDL();
+    // IncGraphics * inc = new IncGraphics();
 
     Direction   dr = stop;
 
