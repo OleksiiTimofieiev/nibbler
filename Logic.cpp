@@ -62,7 +62,11 @@ void    Logic::checkCollision(Snake &snake, Init &init)
 
 void    Logic::logic(Init & init, Fruit & fruit, Snake & snake, Score & score, Direction dir)
 {
-    //TODO: if setdir < 4 ,else ...;
+    if (dir == stop_the_game) // TODO: show Igmat
+    {
+        std::cout << "Fatal error" << std::endl;
+        exit(0);
+    }
     setDir(dir, snake);
     setTail(snake);
     setHead(snake);

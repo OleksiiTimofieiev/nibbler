@@ -11,7 +11,8 @@ enum Direction
     left,
     right,
     up,
-    down
+    down,
+    stop_the_game,
 };
 
 class Snake

@@ -58,7 +58,7 @@ void IGraphicsSDL::DrawMap(Border &border)
     _renderer = SDL_CreateRenderer(_window, -1, 0);
 }
 
-Direction IGraphicsSDL::CheckEvent(Direction &dr) const // TODO: add init in order to end the game;
+Direction IGraphicsSDL::CheckEvent(Direction &dr) const
 {
     SDL_Event event;
 
@@ -66,6 +66,11 @@ Direction IGraphicsSDL::CheckEvent(Direction &dr) const // TODO: add init in ord
     {
         switch (event.type)
         {
+            case SDL_QUIT:
+            {
+                dr = stop_the_game;
+                break;
+            }
             case SDL_KEYDOWN:
             {
                 switch(event.key.keysym.sym)
@@ -88,6 +93,11 @@ Direction IGraphicsSDL::CheckEvent(Direction &dr) const // TODO: add init in ord
                     case SDLK_s:
                     {
                         dr = down;
+                        break;
+                    }
+                    case SDLK_q:
+                    {
+                        dr = stop_the_game;
                         break;
                     }
                 }
