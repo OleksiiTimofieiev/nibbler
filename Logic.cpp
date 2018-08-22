@@ -55,17 +55,26 @@ void    Logic::checkCollision(Snake &snake, Init &init)
 {
     if (snake.getHeadCoords().first > init.getWidth()   || snake.getHeadCoords().first < 0 ||
         snake.getHeadCoords().second > init.getHeight() || snake.getHeadCoords().second < 0)
+    {
+        std::cout << "Border type collision." << std::endl;
         init.setGameStatus();
+    }
 
     for (int i = 0; i < snake.getTailLen(); i++)
         if (snake.getTailCoords()[i] == snake.getHeadCoords())
+        {
+            std::cout << "Tail type collision." << std::endl;
             init.setGameStatus();
+        }
 
     std::vector<std::pair<int ,int> > check = snake.getObstacleCoords();
 
     for (int i = 0; i < 5; i++)
         if (snake.getHeadCoords().first == check[i].first && snake.getHeadCoords().second == check[i].second)
+        {
+            std::cout << "Obstacle type collision." << std::endl;
             init.setGameStatus();
+        }
 }
 
 void    Logic::logic(Init & init, Fruit & fruit, Snake & snake, Score & score, Direction dir, int & fps) // TODO: show fps change to Ignat;

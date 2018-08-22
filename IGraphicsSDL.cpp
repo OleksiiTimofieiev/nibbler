@@ -80,7 +80,7 @@ Direction IGraphicsSDL::CheckEvent(Direction &dr)
     return (dr);
 }
 
-void IGraphicsSDL::Draw(Snake &snake, Fruit &fruit, Score &score, Init &init)
+void IGraphicsSDL::Draw(Snake & snake, Fruit & fruit, Score & score, Init & init)
 {
     (void)score;
     (void)init;
