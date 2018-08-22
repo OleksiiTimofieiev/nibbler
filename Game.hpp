@@ -4,11 +4,13 @@
 #include "Fruit.hpp"
 #include "Snake.hpp"
 #include "IncGraphics.hpp"
+#include "SFMLGraphics.hpp"
 #include "Logic.hpp"
 #include <ctime>
 #include <sys/time.h>
+#include "/Users/hdanylev/.brew/Cellar/sfml/2.4.2_1/include/SFML/Graphics.hpp"
 
-#define FPS 10
+#define FPS 30
 #define OUTPUT(x) std::cout << (x) << std::endl;
 
 //TODO:comp form in every class;

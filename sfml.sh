@@ -1,0 +1,1 @@
+clang++ sfml.cpp -rpath ~/.brew/Cellar/sfml/2.4.2_1/lib/ -I ~/.brew/Cellar/sfml/2.4.2_1/include/ -L ~/.brew/Cellar/sfml/2.4.2_1/lib/ -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network

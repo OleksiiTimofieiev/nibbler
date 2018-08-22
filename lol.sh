@@ -1,1 +1,1 @@
-clang++ -std=c++11 Init.cpp Border.cpp Game.cpp Score.cpp Fruit.cpp Snake.cpp IncGraphics.cpp Logic.cpp main.cpp -lm -lncurses && ./a.out
+clang++ -std=c++11 -rpath ~/.brew/Cellar/sfml/2.4.2_1/lib/ -I ~/.brew/Cellar/sfml/2.4.2_1/include/ -L ~/.brew/Cellar/sfml/2.4.2_1/lib/ -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network Init.cpp Border.cpp Game.cpp Score.cpp Fruit.cpp Snake.cpp IncGraphics.cpp SFMLGraphics.cpp Logic.cpp main.cpp -lm -lncurses && ./a.out

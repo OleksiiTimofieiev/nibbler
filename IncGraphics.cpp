@@ -26,7 +26,7 @@ IncGraphics &IncGraphics::operator=(IncGraphics const &ref)
     return *this;
 }
 
-Direction IncGraphics::CheckEvent(Direction &dr) const
+Direction IncGraphics::CheckEvent(Direction &dr)
 {
 	int key = 0;
 
@@ -48,7 +48,7 @@ Direction IncGraphics::CheckEvent(Direction &dr) const
 	return (dr);
 }
 
-void IncGraphics::Draw(Snake &snake, Fruit &fruit, Score &score, Init &init) const
+void IncGraphics::Draw(Snake &snake, Fruit &fruit, Score &score, Init &init)
 {
 	int height = init.getHeight();
 	int width = init.getWidth();
@@ -63,7 +63,7 @@ void IncGraphics::Draw(Snake &snake, Fruit &fruit, Score &score, Init &init) con
 	DrawSnake(snake);
 	DrawFruit(fruit);
 }
-void IncGraphics::DelSnake(Snake &snake) const
+void IncGraphics::DelSnake(Snake &snake)
 {
 	std::pair<int, int> head = snake.getPrevHeadCoords();
 	std::vector<std::pair<int, int>> tail = snake.getPrevTailCoords();
@@ -75,7 +75,7 @@ void IncGraphics::DelSnake(Snake &snake) const
 	mvprintw(head.second, head.first, " ");
 }
 
-void IncGraphics::DrawSnake(Snake &snake) const
+void IncGraphics::DrawSnake(Snake &snake)
 {
 	std::pair<int, int> head = snake.getHeadCoords();
 	std::vector<std::pair<int, int> > tail = snake.getTailCoords();
@@ -91,13 +91,13 @@ void IncGraphics::DrawSnake(Snake &snake) const
 	attroff(COLOR_PAIR(1));
 }
 
-void IncGraphics::DrawFruit(Fruit &fruit) const
+void IncGraphics::DrawFruit(Fruit &fruit)
 {
 	std::pair<int, int> crd = fruit.getCoords();
 	mvprintw(crd.second, crd.first, "%C", L'🍎');
 }
 
-void IncGraphics::DrawMap(Border &border) const
+void IncGraphics::DrawMap(Border &border)
 {
 	int height = border.getHeight();
 	int width = border.getWidth();

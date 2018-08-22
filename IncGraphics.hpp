@@ -22,14 +22,14 @@ class IncGraphics : public IGraphics
 
         IncGraphics &operator=(IncGraphics const &ref);
 
-        void Draw(Snake &snake, Fruit &fruit, Score &score, Init &init) const;
-        void DrawSnake(Snake &snake) const;
-        void DelSnake(Snake &snake) const;
-        Direction CheckEvent(Direction &dr) const;
-        void DrawFruit(Fruit &fruit) const;
-        // void DrawWall(const IObject &) const;
+        void Draw(Snake &snake, Fruit &fruit, Score &score, Init &init);
+        void DrawSnake(Snake &snake);
+        void DelSnake(Snake &snake);
+        Direction CheckEvent(Direction &dr);
+        void DrawFruit(Fruit &fruit);
+        // void DrawWall(const IObject &);
 
-        void DrawMap(Border &border) const;
+        void DrawMap(Border &border);
 };
 
 #endif
