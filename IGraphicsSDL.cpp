@@ -133,7 +133,7 @@ void IGraphicsSDL::DrawSnake(Snake &snake)
         rect.x = tail[i].first * 16;
         rect.y = tail[i].second * 16;
 
-        if (rect.x != 0)
+
         SDL_SetRenderDrawColor(_renderer, 0, 0, 200, 255);
         SDL_RenderFillRect(_renderer, &rect);
     }
