@@ -46,7 +46,7 @@ void    Logic::checkFruit(Fruit & fruit, Snake & snake, Score & score)
         fruit.setCoords(rand() % WIDTH, rand() % HEIGHT);
         score.setScore();
         snake.setTailLen();
-        setTail(snake);
+        setTail(snake); //TODO: show ignat;
     }
 }
 
