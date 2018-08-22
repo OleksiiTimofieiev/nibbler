@@ -13,14 +13,14 @@ IGraphicsSDL::~IGraphicsSDL()
 {
     SDL_DestroyRenderer(_renderer);
     SDL_DestroyWindow(_window);
-    SDL_DestroyWindow(_window2);
+    // SDL_DestroyWindow(_window2);
     SDL_Quit();
 }
 
 void IGraphicsSDL::DrawMap(Border &border)
 {
     _window = SDL_CreateWindow("Snake", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, border.getWidth() * 16, border.getHeight() * 16, SDL_WINDOW_SHOWN);
-    _window2 = SDL_CreateWindow("Score", 1700, 500, 270, 270, SDL_WINDOW_SHOWN);
+    // _window2 = SDL_CreateWindow("Score", 1700, 500, 270, 270, SDL_WINDOW_SHOWN);
 
     if (_window == nullptr)
     {
@@ -118,6 +118,17 @@ void IGraphicsSDL::DrawSnake(Snake &snake)
 
 
         SDL_SetRenderDrawColor(_renderer, 0, 0, 200, 255);
+        SDL_RenderFillRect(_renderer, &rect);
+    }
+
+    std::vector<std::pair<int, int> > obstacles = snake.getObstacleCoords();
+
+    for (int i = 0; i < 5; i++)
+    {
+        rect.x = obstacles[i].first * 16;
+        rect.y = obstacles[i].second * 16;
+
+        SDL_SetRenderDrawColor(_renderer, 0, 200, 0, 255);
         SDL_RenderFillRect(_renderer, &rect);
     }
 }

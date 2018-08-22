@@ -21,10 +21,10 @@ void    Game::gameplay()
         t1 = clock() / (CLOCKS_PER_SEC / _fps);
         if (t1 > t2)
         {
-            inc->Draw(_snake, _fruits, _stat, _init);
             dr = inc->CheckEvent(dr);
             if (dr != stop)
                 _logic.logic(_init, _fruits, _snake, _stat, dr, _fps);
+            inc->Draw(_snake, _fruits, _stat, _init);
             t2 = clock() / (CLOCKS_PER_SEC / _fps);
         }
     }

@@ -53,11 +53,18 @@ void    Logic::checkFruit(Fruit & fruit, Snake & snake, Score & score, int & fps
 
 void    Logic::checkCollision(Snake &snake, Init &init)
 {
-    if (snake.getHeadCoords().first > init.getWidth()   || snake.getHeadCoords().first == -2 ||
-        snake.getHeadCoords().second > init.getHeight() || snake.getHeadCoords().second == -2)
+    if (snake.getHeadCoords().first > init.getWidth()   || snake.getHeadCoords().first < 0 ||
+        snake.getHeadCoords().second > init.getHeight() || snake.getHeadCoords().second < 0)
         init.setGameStatus();
+
     for (int i = 0; i < snake.getTailLen(); i++)
         if (snake.getTailCoords()[i] == snake.getHeadCoords())
+            init.setGameStatus();
+
+    std::vector<std::pair<int ,int> > check = snake.getObstacleCoords();
+
+    for (int i = 0; i < 5; i++)
+        if (snake.getHeadCoords().first == check[i].first && snake.getHeadCoords().second == check[i].second)
             init.setGameStatus();
 }
 

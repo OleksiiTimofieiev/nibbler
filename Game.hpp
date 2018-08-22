@@ -32,7 +32,7 @@ class Game
         Fruit   _fruits{_init.getWidth(), _init.getHeight()};
         Snake   _snake{_init.getWidth() / 2, _init.getHeight() / 2};
         Logic   _logic;
-        int     _fps{15};
+        int     _fps{5};
     public:
         Game();
         ~Game();
