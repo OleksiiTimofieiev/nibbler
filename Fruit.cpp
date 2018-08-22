@@ -5,6 +5,7 @@ Fruit::~Fruit(){};
 
 Fruit::Fruit(int x, int y)
 {
+    srand(clock());
     _coords.first = rand() % x;
     _coords.second = rand() % y;
 };

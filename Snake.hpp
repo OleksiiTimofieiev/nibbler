@@ -11,7 +11,8 @@ enum Direction
     left,
     right,
     up,
-    down
+    down,
+    stop_the_game,
 };
 
 class Snake
@@ -20,6 +21,8 @@ class Snake
     std::vector<std::pair<int, int> > _tail{(WIDTH * HEIGHT) - 1};
     std::pair<int, int> _prev_head_coords;
     std::vector<std::pair<int, int> > _prev_tail{(WIDTH * HEIGHT) - 1};
+
+    std::vector<std::pair<int, int> > _obstacles;
 
     int _tail_len;
     Direction _dir;
@@ -32,14 +35,15 @@ class Snake
         Snake(Snake const &src);
         Snake(int x, int y);
         std::pair<int, int> getHeadCoords();
-        std::vector<std::pair<int, int>> getTailCoords();
+        std::vector<std::pair<int, int> > getTailCoords();
+        std::vector<std::pair<int, int> > getObstacleCoords();
         Direction getDir();
         void setHeadCoords(int x, int y);
         void setDir(Direction dir);
         void setTailLen();
         void setTail();
         int getTailLen();
-        void setTail(std::vector<std::pair<int, int>> tail);
+        void setTail(std::vector<std::pair<int, int> > tail);
 
         std::vector<std::pair<int, int>> getPrevTailCoords();
         void setPrevTail(std::vector<std::pair<int, int>> tail);

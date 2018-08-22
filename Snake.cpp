@@ -15,6 +15,8 @@ Snake::Snake(int x, int y)
 
     for (int i = 0; i < 3; i++)
         _tail[i] = std::make_pair(x, ++y);
+    for (int i = 0, distance = 2; i < 5; i++, distance += 5)
+        _obstacles.push_back(std::make_pair(distance, distance));
 }
 
 Snake &Snake::operator=(Snake const &rhs)
@@ -51,3 +53,5 @@ std::pair<int, int> Snake::getPrevHeadCoords() { return _prev_head_coords;}
 
 Direction Snake::getPrevDir() { return _prev_dir; }
 void Snake::setPrevDir(Direction dir) { _prev_dir = dir; }
+
+std::vector<std::pair<int, int> > Snake::getObstacleCoords() { return _obstacles; }

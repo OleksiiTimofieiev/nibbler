@@ -1,7 +1,5 @@
 #include "Logic.hpp"
 
-//TODO: logic main;
-
 void    Logic::setDir(Direction dir,  Snake & snake) { snake.setDir(dir); }
 
 void    Logic::setTail(Snake & snake)
@@ -41,31 +39,64 @@ void Logic::setHead(Snake & snake)
        snake.setHeadCoords(snake.getHeadCoords().first, snake.getHeadCoords().second + 1);
 }
 
-void    Logic::checkFruit(Fruit & fruit, Snake & snake, Score & score)
+void    Logic::checkFruit(Fruit & fruit, Snake & snake, Score & score, int & fps)
 {
     if (fruit.getCoords() == snake.getHeadCoords())
     {
+        srand(clock());
         fruit.setCoords(rand() % WIDTH, rand() % HEIGHT);
         score.setScore();
+        setTail(snake); //TODO: show ignat;
         snake.setTailLen();
+        fps += FPS_CHANGE;
     }
 }
 
 void    Logic::checkCollision(Snake &snake, Init &init)
 {
-    // better handling;
-    if (snake.getHeadCoords().first > init.getWidth() || snake.getHeadCoords().first < 0 ||
-        snake.getHeadCoords().second > init.getHeight() || snake.getHeadCoords().second < 0)
+    if (snake.getHeadCoords().second > init.getHeight())
+        snake.setHeadCoords(snake.getHeadCoords().first, 0);
+    else if (snake.getHeadCoords().second == -1)
+        snake.setHeadCoords(snake.getHeadCoords().first, init.getHeight());
+    else if (snake.getHeadCoords().first > init.getWidth())
+        snake.setHeadCoords(0, snake.getHeadCoords().second);
+    else if (snake.getHeadCoords().first == -1)
+        snake.setHeadCoords(init.getWidth(), snake.getHeadCoords().second);
+
+    //         if (snake.getHeadCoords().first > init.getWidth() || snake.getHeadCoords().first < 0 ||
+    //             )
+    // {
+    //     std::cout << "Border type collision." << std::endl;
+    //     init.setGameStatus();
+    // }
+
+    for (int i = 0; i < snake.getTailLen(); i++)
+        if (snake.getTailCoords()[i] == snake.getHeadCoords())
+        {
+            std::cout << "Tail type collision." << std::endl;
             init.setGameStatus();
+        }
+
+    std::vector<std::pair<int ,int> > check = snake.getObstacleCoords();
+
+    for (int i = 0; i < 5; i++)
+        if (snake.getHeadCoords().first == check[i].first && snake.getHeadCoords().second == check[i].second)
+        {
+            std::cout << "Obstacle type collision." << std::endl;
+            init.setGameStatus();
+        }
 }
 
-void    Logic::logic(Init & init, Fruit & fruit, Snake & snake, Score & score, Direction dir)
+void    Logic::logic(Init & init, Fruit & fruit, Snake & snake, Score & score, Direction dir, int & fps) // TODO: show fps change to Ignat;
 {
-    //TODO: if setdir < 4 ,else ...;
-    //TODO: asdfasdf;
+    if (dir == stop_the_game) // TODO: show Igmat
+    {
+        std::cout << "Fatal error" << std::endl;
+        exit(0);
+    }
     setDir(dir, snake);
     setTail(snake);
     setHead(snake);
     checkCollision(snake, init);
-    checkFruit(fruit, snake, score);
+    checkFruit(fruit, snake, score, fps);
 }

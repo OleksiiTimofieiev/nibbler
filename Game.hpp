@@ -1,20 +1,26 @@
-#include "Init.hpp" //TODO: add a separate defin for the classes;
+#include "Init.hpp"
 #include "Border.hpp"
 #include "Score.hpp"
 #include "Fruit.hpp"
 #include "Snake.hpp"
+
 #include "IncGraphics.hpp"
 #include "SFMLGraphics.hpp"
+#include "IGraphicsSDL.hpp"
+
 #include "Logic.hpp"
 #include <ctime>
 #include <sys/time.h>
 #include "/Users/hdanylev/.brew/Cellar/sfml/2.4.2_1/include/SFML/Graphics.hpp"
 
-#define FPS 30
 #define OUTPUT(x) std::cout << (x) << std::endl;
 
-//TODO:comp form in every class;
-//TODO:delete comments;
+//TODO: comp form in every class;
+//TODO: delete all comments
+//TODO: APIBase + func to choose lib;
+
+//TODO: obstacles = +, fps fruit = +, esc (enum) = +, user input (check);
+
 
 #ifndef GAME_HPP
 #define GAME_HPP
@@ -28,6 +34,7 @@ class Game
         Fruit   _fruits{_init.getWidth(), _init.getHeight()};
         Snake   _snake{_init.getWidth() / 2, _init.getHeight() / 2};
         Logic   _logic;
+        int     _fps{9};
     public:
         Game();
         ~Game();
@@ -37,15 +44,3 @@ class Game
 };
 
 #endif
-
-// int x = 0;
-// int y = 0;
-
-// if (dr == up)
-//     y = -1;
-// else if (dr == down)
-//     y = 1;
-// else if (dr == left)
-//     x = -1;
-// else if (dr == right)
-//     x = 1;

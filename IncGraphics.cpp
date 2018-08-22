@@ -39,11 +39,11 @@ Direction IncGraphics::CheckEvent(Direction &dr)
 	// }
 	if (key == 115) // key W
 		dr = down;
-	if (key == 119) // key S
+	else if (key == 119) // key S
 		dr = up;
-	if (key == 97) 	// key D
+	else if (key == 97) 	// key D
 		dr = left;
-	if (key == 100) // key A
+	else if (key == 100) // key A
 		dr = right;
 	return (dr);
 }
@@ -51,7 +51,7 @@ Direction IncGraphics::CheckEvent(Direction &dr)
 void IncGraphics::Draw(Snake &snake, Fruit &fruit, Score &score, Init &init)
 {
 	int height = init.getHeight();
-	int width = init.getWidth();
+	// int width = init.getWidth();
 
 	attron(COLOR_PAIR (7));
 	mvprintw(height + 1, 0, "Score: ");
@@ -68,7 +68,7 @@ void IncGraphics::DelSnake(Snake &snake)
 	std::pair<int, int> head = snake.getPrevHeadCoords();
 	std::vector<std::pair<int, int>> tail = snake.getPrevTailCoords();
 
-	for (size_t i = 0; i < snake.getTailLen(); i++)
+	for (int i = 0; i < snake.getTailLen(); i++)
 	{
 		mvprintw(tail[i].second, tail[i].first, " ");
 	}
@@ -80,10 +80,10 @@ void IncGraphics::DrawSnake(Snake &snake)
 	std::pair<int, int> head = snake.getHeadCoords();
 	std::vector<std::pair<int, int> > tail = snake.getTailCoords();
 
-	for (size_t i = 0; i < snake.getTailLen(); i++)
+	for (int i = 0; i < snake.getTailLen() - 1; i++)
 	{
 		attron(COLOR_PAIR(2));
-		mvprintw(tail[i].second, tail[i].first, "0");
+		mvprintw(tail[i].second, tail[i].first, "o");
 		attroff(COLOR_PAIR(2));
 	}
 	attron(COLOR_PAIR(1));
@@ -94,7 +94,9 @@ void IncGraphics::DrawSnake(Snake &snake)
 void IncGraphics::DrawFruit(Fruit &fruit)
 {
 	std::pair<int, int> crd = fruit.getCoords();
-	mvprintw(crd.second, crd.first, "%C", L'🍎');
+	attron(COLOR_PAIR(4));
+	mvprintw(crd.second, crd.first, "0");
+	attroff(COLOR_PAIR(4));
 }
 
 void IncGraphics::DrawMap(Border &border)

@@ -1,6 +1,6 @@
 #include "SFMLGraphics.hpp"
 
-SFMLGraphics::SFMLGraphics() : N(120), M(40), size(16), w(size * N), h(size * M) {
+SFMLGraphics::SFMLGraphics() : N(50), M(50), size(16), w(size * N), h(size * M) {
 
     t1.loadFromFile("images/white.png");
     t2.loadFromFile("images/red.png");
@@ -29,6 +29,21 @@ SFMLGraphics &SFMLGraphics::operator=(SFMLGraphics const &ref) {
 
 void SFMLGraphics::Draw(Snake &snake, Fruit &fruit, Score &score, Init &init)
 {
+    Border bor;
+
+    (void)score;
+    (void)init;
+    DrawMap(bor);
+
+        // std::vector<std::pair<int, int> > _buf;
+
+        // _buf = snake.getObstacleCoords();
+
+        // for (int i = 0; i < 5; i++)
+        // {
+        //     std::cout << _buf[i].first << std::endl;
+        // }
+
     DrawSnake(snake);
     DrawFruit(fruit);
     window.display();
@@ -48,7 +63,7 @@ void SFMLGraphics::DrawSnake(Snake &snake)
 
     sprite3.setPosition(head.first * size, head.second * size);
     window.draw(sprite3);
-    for (size_t i = 0; i < snake.getTailLen(); i++)
+    for (int i = 0; i < snake.getTailLen(); i++)
     {
         sprite2.setPosition(tail[i].first * size, tail[i].second * size);
         window.draw(sprite2);
