@@ -16,12 +16,9 @@
 
 //TODO: comp form in every class;
 //TODO: delete all comments
-//TODO: increase fps after fruit eating
 //TODO: APIBase + func to choose lib;
 
-//TODO: user input
-//TODO: esc key
-//TODO: wrong height / width; -> to the user, input for square;
+//TODO: walls, fps fruit, esc (enum), user input (check);
 
 #ifndef GAME_HPP
 #define GAME_HPP
