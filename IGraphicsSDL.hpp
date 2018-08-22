@@ -25,6 +25,7 @@ class IGraphicsSDL : public IGraphics
             void DrawMap(Border &border);
     private: 
         SDL_Window *_window = nullptr;
+        SDL_Window *_window2 = nullptr;
         SDL_Renderer *_renderer = nullptr;
     };
 
