@@ -1,8 +1,8 @@
 #ifndef INIT_HPP
 #define INIT_HPP
 
-#define WIDTH 50
-#define HEIGHT 50
+#define WIDTH 20
+#define HEIGHT 20
 
 class   Init
 {
@@ -12,6 +12,7 @@ class   Init
 
     public:
         Init();
+        Init(int size);
         ~Init();
         Init &operator=(Init const &rhs);
         Init(Init const &src);

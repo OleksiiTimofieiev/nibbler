@@ -1,6 +1,8 @@
 #include "Game.hpp"
 
 Game::Game(){}
+Game::Game(int size) : _size(size) {}
+
 Game::~Game() {}
 
 void    Game::gameplay()
@@ -40,6 +42,7 @@ Game &Game::operator=(Game const &rhs)
         _stat = rhs._stat;
         _fruits = rhs._fruits;
         _snake = rhs._snake;
+        _size = rhs._size;
     }
     return *this;
 }

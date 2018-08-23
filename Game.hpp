@@ -31,8 +31,9 @@
 class Game
 {
     private:
-        Init    _init;
-        Border  _border;
+        int     _size = 5;
+        Init    _init{_size};
+        Border  _border{_size};
         Score   _stat;
         Fruit   _fruits{_init.getWidth(), _init.getHeight()};
         Snake   _snake{_init.getWidth() / 2, _init.getHeight() / 2};
@@ -40,6 +41,7 @@ class Game
         int     _fps{9};
     public:
         Game();
+        Game(int size);
         ~Game();
         Game &operator=(Game const &rhs);
         Game(Game const &src);

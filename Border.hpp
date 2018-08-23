@@ -8,6 +8,7 @@ class Border
 
     public:
         Border();
+        Border(int size);
         ~Border();
         Border &operator=(Border const &rhs);
         Border(Border const &src);

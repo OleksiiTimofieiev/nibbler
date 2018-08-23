@@ -2,7 +2,7 @@
 
 int     main(void)
 {
-    Game _game;
+    Game _game(20);
 
     _game.gameplay();
 

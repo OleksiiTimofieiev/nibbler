@@ -1,7 +1,12 @@
 #include "Border.hpp"
 
-Border::~Border(){};
-Border::Border() : _width(50), _height(50){};
+Border::Border(){}
+Border::~Border(){}
+Border::Border(int size)
+{
+    _width = size;
+    _height = size;
+} 
 
 Border &Border::operator=(Border const &rhs)
 {
