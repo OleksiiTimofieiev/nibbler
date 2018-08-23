@@ -18,7 +18,7 @@
 
 //TODO: comp form in every class;
 
-// 1. size of the board <- user input;
+// 1. add some colors to the std::cout;
 // 2. handle insuffiecient number of arguments (too big, too small, not a number, negative number) -> try | catch block;
 // 3. 'q' to escape the game;
 // 4, 'e' to change the lib;
@@ -31,10 +31,10 @@
 class Game
 {
     private:
-        int     _size = 5;
+        int     _size = 0;
         Init    _init{_size};
         Border  _border{_size};
-        Score   _stat;
+        Score   _stat; // TODO:output in the end of the game;
         Fruit   _fruits{_init.getWidth(), _init.getHeight()};
         Snake   _snake{_init.getWidth() / 2, _init.getHeight() / 2};
         Logic   _logic{_size};
