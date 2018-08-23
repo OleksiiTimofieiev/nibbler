@@ -13,6 +13,7 @@ void    Game::gameplay()
 
 
     // TODO: while loop till the correct input;
+    // TODO: get a cool func;
 
     if ( lib == 1)
         inc = new IGraphicsSDL();
@@ -37,7 +38,8 @@ void    Game::gameplay()
             if (dr == change_the_lib)
             {
                 delete inc;
-                std::cout << "Please, choose the library" << std::endl; // TODO: add some kind of usage;
+                std::cout << "Please, choose the library" << std::endl;
+                 // TODO: add some kind of usage;
                 std::cin >> lib;
 
                     if ( lib == 1)
