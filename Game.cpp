@@ -24,7 +24,10 @@ void    Game::gameplay()
         {
             dr = inc->CheckEvent(dr);
             if (dr == change_the_lib)
+            {
                 libSelect(&inc, dr);
+                inc->DrawMap(_border);
+            }
             else if (dr != stop)
                 _logic.logic(_init, _fruits, _snake, _stat, dr, _fps);
             inc->Draw(_snake, _fruits, _stat, _init);

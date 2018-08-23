@@ -14,7 +14,7 @@
 #include <sys/time.h>
 #include <regex>
 #include <iostream>
-#include "/Users/hdanylev/.brew/Cellar/sfml/2.4.2_1/include/SFML/Graphics.hpp" // TODO:user trouble;
+#include "/Users/otimofie/.brew/Cellar/sfml/2.4.2_1/include/SFML/Graphics.hpp" // TODO:user trouble;
 
 #define OUTPUT_RED(x) std::cout << "\033[1;31m" << (x) << "\x1B[0m" << std::endl;
 #define OUTPUT_GREEN(x) std::cout << "\033[1;32m" << (x) << "\x1B[0m" << std::endl;
@@ -24,6 +24,7 @@
 // TODO: 3. randomness limits for the fruit;
 // TODO: 4. destruct window of sfml;
 // TODO: 5. ncurses change lib;
+// TODO: 6. constructor of SFML;
 
 #ifndef GAME_HPP
 #define GAME_HPP
