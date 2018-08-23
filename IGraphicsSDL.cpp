@@ -66,11 +66,6 @@ Direction IGraphicsSDL::CheckEvent(Direction &dr)
                         dr = down;
                         break;
                     }
-                    case SDLK_q:
-                    {
-                        dr = stop_the_game;
-                        break;
-                    }
                 }
             }
         }
