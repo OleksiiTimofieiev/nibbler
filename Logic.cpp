@@ -63,13 +63,6 @@ void    Logic::checkCollision(Snake &snake, Init &init)
     else if (snake.getHeadCoords().first == -1)
         snake.setHeadCoords(init.getWidth(), snake.getHeadCoords().second);
 
-    //         if (snake.getHeadCoords().first > init.getWidth() || snake.getHeadCoords().first < 0 ||
-    //             )
-    // {
-    //     std::cout << "Border type collision." << std::endl;
-    //     init.setGameStatus();
-    // }
-
     for (int i = 0; i < snake.getTailLen(); i++)
         if (snake.getTailCoords()[i] == snake.getHeadCoords())
         {
