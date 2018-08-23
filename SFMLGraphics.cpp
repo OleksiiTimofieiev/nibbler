@@ -74,12 +74,16 @@ Direction SFMLGraphics::CheckEvent(Direction &dr)
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
         dr = left;
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
         dr = right;
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
         dr = down;
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
         dr = up;
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
+        dr = stop_the_game;
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
+        dr = change_the_lib;
     return (dr);
 }
 
