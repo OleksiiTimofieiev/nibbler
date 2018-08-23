@@ -56,8 +56,6 @@ Game::Game(Game const &src) { *this = src; }
 
 void Game::libSelect(IGraphics ** var, Direction & dir) // add direction;
 {
-    //TODO: size of the map;
-
     int lib;
     
     if (*var != nullptr)
@@ -120,6 +118,7 @@ int Game::map_size_check()
 
 int Game::lib_check()
 {
+    std::cin.clear();
     const std::regex check_input("^(\\d+)$");
     std::smatch result;
 
@@ -147,10 +146,10 @@ int Game::lib_check()
             if (choice >= 1 && choice <= 3)
                 checker = false;
             else
-                OUTPUT_RED("Simon says : Wrong input, Please, enter the correct lib choice: 1 - 2");
+                OUTPUT_RED("Simon says : Wrong input, Please, enter the correct lib choice: 1 - 3");
         }
         else
-            OUTPUT_RED("Simon says : Wrong input, Please, enter the correct lib choice: 1 - 2");
+            OUTPUT_RED("Simon says : Wrong input, Please, enter the correct lib choice: 1 - 3");
     }
     return (choice);
 }
