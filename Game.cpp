@@ -84,16 +84,24 @@ int Game::input_check()
     int size = 0;
     bool checker = true;
 
-    std::cout << "Please, enter the size of the board. Limit: 35 - 75 units of measurement" << std::endl;
+    std::cout << "Please, enter the size of the board. Limit: 35 - 75 points of measurement" << std::endl;
 
     while (checker)
     {
         std::cin >> size;
 
+        if (std::cin.fail())
+        {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        }
+
         if (size >= 35 && size <= 75)
             checker = false;
         else
-            std::cout << "Wrong input, Please, enter the size of the board. Limit: 35 - 75 units of measurement" << std::endl;
+        {
+            std::cout << "Wrong input, Please, enter the size of the board. Limit: 35 - 75 points of measurement" << std::endl;
+        }
     }
     return (size);
 }
