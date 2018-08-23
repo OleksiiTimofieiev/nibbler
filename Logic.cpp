@@ -94,8 +94,8 @@ void    Logic::logic(Init & init, Fruit & fruit, Snake & snake, Score & score, D
 {
     if (dir == stop_the_game)
     {
-        std::cout << "Fatal error" << std::endl;
-        exit(0);
+        std::cout << "Game was stopped." << std::endl;
+        init.setGameStatus();
     }
     setDir(dir, snake);
     setTail(snake);
