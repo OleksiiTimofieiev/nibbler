@@ -13,7 +13,6 @@ IncGraphics::IncGraphics() {
 	init_pair (3, COLOR_WHITE, COLOR_WHITE);
 	init_pair (4, COLOR_YELLOW, COLOR_YELLOW);
 	init_pair (5, COLOR_RED, COLOR_RED);
-	init_pair (6, COLOR_GREEN, COLOR_GREEN);
 	init_pair (7, COLOR_RED, COLOR_BLACK);
 	timeout(1);
 }
@@ -48,19 +47,28 @@ Direction IncGraphics::CheckEvent(Direction &dr)
 
 void IncGraphics::Draw(Snake &snake, Fruit &fruit, Score &score, Init &init)
 {
-	int height = init.getHeight();
-	// int width = init.getWidth();
-
-	attron(COLOR_PAIR (7));
-	mvprintw(height + 1, 0, "Score: ");
-	mvprintw(height + 1, 7, std::to_string(score.getScore()).c_str());
-	attroff(COLOR_PAIR (7));
-
+	(void)score;
+	(void)init;	
 	if (snake.getDir() != stop)
 		DelSnake(snake);
+	DrawObstacle(snake);
 	DrawSnake(snake);
 	DrawFruit(fruit);
+	DrawMap(init);
 }
+void IncGraphics::DrawObstacle(Snake &snake)
+{
+	std::vector<std::pair<int, int> > obs = snake.getObstacleCoords();
+
+	for (size_t i = 0; i < obs.size(); i++)
+    {
+		attron(COLOR_PAIR (4));
+		mvprintw(obs[i].second, obs[i].first, "o");		
+		attroff(COLOR_PAIR (4));
+		
+    }
+}
+
 void IncGraphics::DelSnake(Snake &snake)
 {
 	std::pair<int, int> head = snake.getPrevHeadCoords();
@@ -92,35 +100,45 @@ void IncGraphics::DrawSnake(Snake &snake)
 void IncGraphics::DrawFruit(Fruit &fruit)
 {
 	std::pair<int, int> crd = fruit.getCoords();
-	attron(COLOR_PAIR(4));
+	attron(COLOR_PAIR(5));
 	mvprintw(crd.second, crd.first, "0");
-	attroff(COLOR_PAIR(4));
+	attroff(COLOR_PAIR(5));
+}
+
+void IncGraphics::DrawMap(Init &init)
+{
+	int height = init.getHeight();
+	int width = init.getWidth();
+	
+	attron(COLOR_PAIR (3));
+	for (int j = 0; j < width; j++)
+		mvaddstr(0, j, "#");
+
+	for (int i = 0; i < height; i++) {
+		mvaddstr(i, 0, "#");
+		mvaddstr(i, width, "#");
+	}
+    
+    for (int j = 0; j < width + 1; j++)
+		mvaddstr(height, j, "#");
+	attroff(COLOR_PAIR (3));
 }
 
 void IncGraphics::DrawMap(Border &border)
 {
 	int height = border.getHeight();
 	int width = border.getWidth();
-
-	for (int j = 0; j < width; j++) {
-
-		attron(COLOR_PAIR (3));
+	
+	attron(COLOR_PAIR (3));
+	for (int j = 0; j < width; j++)
 		mvaddstr(0, j, "#");
-		attroff(COLOR_PAIR (3));
-	}
 
 	for (int i = 0; i < height; i++) {
-
-		attron(COLOR_PAIR (3));
 		mvaddstr(i, 0, "#");
 		mvaddstr(i, width, "#");
-		attroff(COLOR_PAIR (3));
 	}
     
-    for (int j = 0; j < width + 1; j++) {
-
-		attron(COLOR_PAIR (3));
+    for (int j = 0; j < width + 1; j++)
 		mvaddstr(height, j, "#");
-		attroff(COLOR_PAIR (3));
-	}
+	attroff(COLOR_PAIR (3));
 }
