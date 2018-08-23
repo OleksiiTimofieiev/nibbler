@@ -100,7 +100,7 @@ int Game::input_check()
             checker = false;
         else
         {
-            std::cout << "Wrong input, Please, enter the size of the board. Limit: 35 - 75 points of measurement" << std::endl;
+           OUTPUT_RED("Wrong input, Please, enter the size of the board. Limit: 35 - 75 points of measurement");
         }
     }
     return (size);

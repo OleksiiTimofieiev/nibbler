@@ -12,18 +12,18 @@
 #include "Logic.hpp"
 #include <ctime>
 #include <sys/time.h>
-#include "/Users/otimofie/.brew/Cellar/sfml/2.4.2_1/include/SFML/Graphics.hpp" // user trouble;
+#include "/Users/otimofie/.brew/Cellar/sfml/2.4.2_1/include/SFML/Graphics.hpp" // TODO:user trouble;
 
-#define OUTPUT(x) std::cout << (x) << std::endl;
+#define OUTPUT_RED(x) std::cout << "\033[1;31m" << (x) << "\x1B[0m" << std::endl;
 
-//TODO: comp form in every class;
-
-// 1. add some colors to the std::cout;
-// 2. handle insuffiecient number of arguments (too big, too small, not a number, negative number) -> try | catch block;
-// 3. 'q' to escape the game;
-// 4, 'e' to change the lib;
-// 5. think about sounds;
-// 6. change libraries;
+// TODO: comp form in every class which has variables;
+// TODO:1. add some colors to the std::cout;
+// TODO:2. handle insuffiecient number of arguments (too big, too small, not a number, negative number) -> try | catch block;
+// TODO:3. 'q' to escape the game;
+// TODO:4, 'e' to change the lib;
+// TODO:5. think about sounds;
+// TODO:6. change libraries;
+// TODO:7. randomness limits for the fruit;
 
 #ifndef GAME_HPP
 #define GAME_HPP
