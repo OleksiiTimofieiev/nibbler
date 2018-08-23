@@ -2,7 +2,13 @@
 
 int     main(void)
 {
-    Game _game(20);
+    int size;
+
+    std::cout << "Please, enter the size of the board." << std::endl;
+
+    std::cin >> size;
+
+    Game _game(size);
 
     _game.gameplay();
 

@@ -1,5 +1,6 @@
 #include "Logic.hpp"
 
+Logic::Logic(int size) : _size(size) {}
 void    Logic::setDir(Direction dir,  Snake & snake) { snake.setDir(dir); }
 
 void    Logic::setTail(Snake & snake)
@@ -44,7 +45,7 @@ void    Logic::checkFruit(Fruit & fruit, Snake & snake, Score & score, int & fps
     if (fruit.getCoords() == snake.getHeadCoords())
     {
         srand(clock());
-        fruit.setCoords(rand() % WIDTH, rand() % HEIGHT);
+        fruit.setCoords(rand() % _size, rand() % _size);
         score.setScore();
         snake.setTailLen();
         setTail(snake);

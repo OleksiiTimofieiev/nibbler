@@ -10,7 +10,10 @@
 
 class Logic
 {
+    private:
+        int     _size;
     public:
+        Logic(int size);
         void    setDir(Direction dir,  Snake & snake);
         void    setHead(Snake & snake);
         void    checkFruit(Fruit & fruit, Snake & snake, Score & score, int & fps);
