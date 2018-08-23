@@ -43,6 +43,7 @@ class Game
         Game &operator=(Game const &rhs);
         Game(Game const &src);
         void gameplay(); 
+        void libSelect(const IGraphics & var);
 };
 
 #endif

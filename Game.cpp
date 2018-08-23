@@ -5,10 +5,6 @@ Game::~Game() {}
 
 void    Game::gameplay()
 {
-    int lib;
-    std::cout << "Please, choose the library" << std::endl; // TODO: add some kind of usage;
-    std::cin >> lib;
-
     IGraphics *inc = nullptr;
 
 
@@ -39,7 +35,7 @@ void    Game::gameplay()
             {
                 delete inc;
                 std::cout << "Please, choose the library" << std::endl;
-                 // TODO: add some kind of usage;
+
                 std::cin >> lib;
 
                     if ( lib == 1)
@@ -73,3 +69,16 @@ Game &Game::operator=(Game const &rhs)
 }
 
 Game::Game(Game const &src) { *this = src; }
+
+void Game::libSelect(const IGraphics & var) // add direction;
+{
+    //TODO: size of the map;
+    int lib;
+    std::cout << "Please, choose the library" << std::endl;
+    
+    std::cout << "ncurses -> 1" << std::endl;
+    std::cout << "sdl -> 1" << std::endl;
+    std::cout << "sfml -> 1" << std::endl;
+    
+    std::cin >> lib;
+}
