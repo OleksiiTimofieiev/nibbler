@@ -5,10 +5,12 @@ SFMLGraphics::SFMLGraphics() : N(50), M(50), size(16), w(size * N), h(size * M) 
     t1.loadFromFile("images/white.png");
     t2.loadFromFile("images/red.png");
     t3.loadFromFile("images/green.png");
+    t4.loadFromFile("images/black.png");
 
     sprite1.setTexture(t1);
     sprite2.setTexture(t2);
     sprite3.setTexture(t3);
+    sprite4.setTexture(t4);
 }
 
 SFMLGraphics::SFMLGraphics(SFMLGraphics const &ref) { *this = ref; }
@@ -34,20 +36,25 @@ void SFMLGraphics::Draw(Snake &snake, Fruit &fruit, Score &score, Init &init)
     (void)score;
     (void)init;
     DrawMap(bor);
-
-        // std::vector<std::pair<int, int> > _buf;
-
-        // _buf = snake.getObstacleCoords();
-
-        // for (int i = 0; i < 5; i++)
-        // {
-        //     std::cout << _buf[i].first << std::endl;
-        // }
-
+    DrawObstacle(snake);
+    DrawFruit(fruit);    
     DrawSnake(snake);
-    DrawFruit(fruit);
     window.display();
 }
+
+void SFMLGraphics::DrawObstacle(Snake & snake)
+{
+    std::vector<std::pair<int, int> > obs;
+
+    obs = snake.getObstacleCoords();
+
+    for (size_t i = 0; i < obs.size(); i++)
+    {
+        sprite4.setPosition(obs[i].first * size, obs[i].second * size);
+        window.draw(sprite4);
+    }
+}
+
 
 void SFMLGraphics::DrawFruit(Fruit &fruit)
 {

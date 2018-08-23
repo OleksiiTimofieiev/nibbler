@@ -18,10 +18,12 @@ class SFMLGraphics : public IGraphics
         sf::Texture t1;
         sf::Texture t2;
         sf::Texture t3;
+        sf::Texture t4;        
 
         sf::Sprite sprite1;
         sf::Sprite sprite2;
         sf::Sprite sprite3;
+        sf::Sprite sprite4;        
 
       public:
         SFMLGraphics();
@@ -34,6 +36,7 @@ class SFMLGraphics : public IGraphics
         void DrawSnake(Snake &snake);
         Direction CheckEvent(Direction &dr);
         void DrawFruit(Fruit &fruit);
+        void DrawObstacle(Snake & snake);
         void DrawMap(Border &border);
 };
 
