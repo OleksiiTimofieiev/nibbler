@@ -13,6 +13,7 @@ enum Direction
     up,
     down,
     stop_the_game,
+    change_the_lib,
 };
 
 class Snake

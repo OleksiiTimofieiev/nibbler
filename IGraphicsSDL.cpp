@@ -66,6 +66,11 @@ Direction IGraphicsSDL::CheckEvent(Direction &dr)
                         dr = down;
                         break;
                     }
+                    case SDLK_e:
+                    {
+                        dr = change_the_lib;
+                        break;
+                    }
                 }
             }
         }

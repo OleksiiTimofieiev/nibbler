@@ -20,8 +20,9 @@
 // 1. size of the board <- user input;
 // 2. handle insuffiecient number of arguments (too big, too small, not a number, negative number) -> try | catch block;
 // 3. 'q' to escape the game;
-// 4. sounds;
-// 5. change libraries;
+// 4, 'e' to change the lib;
+// 5. think about sounds;
+// 6. change libraries;
 
 #ifndef GAME_HPP
 #define GAME_HPP

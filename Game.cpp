@@ -6,10 +6,13 @@ Game::~Game() {}
 void    Game::gameplay()
 {
     int lib;
-    std::cout << "Please, choose the library" << std::endl;
+    std::cout << "Please, choose the library" << std::endl; // TODO: add some kind of usage;
     std::cin >> lib;
 
     IGraphics *inc = nullptr;
+
+
+    // TODO: while loop till the correct input;
 
     if ( lib == 1)
         inc = new IGraphicsSDL();
@@ -31,6 +34,21 @@ void    Game::gameplay()
         if (t1 > t2)
         {
             dr = inc->CheckEvent(dr);
+            if (dr == change_the_lib)
+            {
+                delete inc;
+                std::cout << "Please, choose the library" << std::endl; // TODO: add some kind of usage;
+                std::cin >> lib;
+
+                    if ( lib == 1)
+                        inc = new IGraphicsSDL();
+                    else if ( lib == 2)
+                        inc = new IncGraphics();
+                    else if ( lib == 3 )
+                        inc = new SFMLGraphics();
+                        dr = stop;
+                continue;
+            }
             if (dr != stop)
                 _logic.logic(_init, _fruits, _snake, _stat, dr, _fps);
             inc->Draw(_snake, _fruits, _stat, _init);
