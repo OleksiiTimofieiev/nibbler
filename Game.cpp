@@ -5,20 +5,10 @@ Game::~Game() {}
 
 void    Game::gameplay()
 {
+    Direction   dr = stop;
     IGraphics *inc = nullptr;
 
-
-    // TODO: while loop till the correct input;
-    // TODO: get a cool func;
-
-    if ( lib == 1)
-        inc = new IGraphicsSDL();
-    else if ( lib == 2)
-        inc = new IncGraphics();
-    else if ( lib == 3 )
-        inc = new SFMLGraphics();
-
-    Direction   dr = stop;
+    libSelect(&inc, dr);
 
     clock_t t1;
     clock_t t2;
@@ -32,22 +22,8 @@ void    Game::gameplay()
         {
             dr = inc->CheckEvent(dr);
             if (dr == change_the_lib)
-            {
-                delete inc;
-                std::cout << "Please, choose the library" << std::endl;
-
-                std::cin >> lib;
-
-                    if ( lib == 1)
-                        inc = new IGraphicsSDL();
-                    else if ( lib == 2)
-                        inc = new IncGraphics();
-                    else if ( lib == 3 )
-                        inc = new SFMLGraphics();
-                        dr = stop;
-                continue;
-            }
-            if (dr != stop)
+                libSelect(&inc, dr);
+            else if (dr != stop)
                 _logic.logic(_init, _fruits, _snake, _stat, dr, _fps);
             inc->Draw(_snake, _fruits, _stat, _init);
             t2 = clock() / (CLOCKS_PER_SEC / _fps);
@@ -70,15 +46,32 @@ Game &Game::operator=(Game const &rhs)
 
 Game::Game(Game const &src) { *this = src; }
 
-void Game::libSelect(const IGraphics & var) // add direction;
+void Game::libSelect(IGraphics ** var, Direction & dir) // add direction;
 {
     //TODO: size of the map;
+
     int lib;
+    
+    if (*var != nullptr)
+    {
+        delete *var;
+        *var = nullptr;
+    }
+
     std::cout << "Please, choose the library" << std::endl;
-    
-    std::cout << "ncurses -> 1" << std::endl;
+
     std::cout << "sdl -> 1" << std::endl;
-    std::cout << "sfml -> 1" << std::endl;
-    
+    std::cout << "ncurses -> 2" << std::endl;
+    std::cout << "sfml -> 3" << std::endl;
+
     std::cin >> lib;
+
+    if (lib == 1)
+        *var = new IGraphicsSDL();
+    else if (lib == 2)
+        *var = new IncGraphics();
+    else if (lib == 3)
+        *var = new SFMLGraphics();
+    
+    dir = stop;
 }

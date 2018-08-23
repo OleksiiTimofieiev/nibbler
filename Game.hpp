@@ -4,6 +4,7 @@
 #include "Fruit.hpp"
 #include "Snake.hpp"
 
+#include "IGraphics.hpp"
 #include "IncGraphics.hpp"
 #include "SFMLGraphics.hpp"
 #include "IGraphicsSDL.hpp"
@@ -43,7 +44,7 @@ class Game
         Game &operator=(Game const &rhs);
         Game(Game const &src);
         void gameplay(); 
-        void libSelect(const IGraphics & var);
+        void libSelect(IGraphics ** lib, Direction & dir);
 };
 
 #endif
