@@ -45,6 +45,8 @@ Direction IncGraphics::CheckEvent(Direction &dr)
 		dr = left;
 	else if (key == 100) // key A
 		dr = right;
+	else if (key == 114) // key Q
+		dr = stop_the_game;
 	return (dr);
 }
 
