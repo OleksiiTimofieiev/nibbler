@@ -24,6 +24,8 @@
 // TODO: 3. randomness limits for the fruit;
 // TODO: 4. constructor of SFML;
 
+// TODO: 5. replace all of the bad names;
+
 #ifndef GAME_HPP
 #define GAME_HPP
 
