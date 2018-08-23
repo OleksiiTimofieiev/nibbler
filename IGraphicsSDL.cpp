@@ -13,6 +13,7 @@ IGraphicsSDL::~IGraphicsSDL()
 {
     SDL_DestroyRenderer(_renderer);
     SDL_DestroyWindow(_window);
+    free (_renderer);
     SDL_Quit();
 }
 
@@ -144,7 +145,6 @@ void IGraphicsSDL::DrawFruit(Fruit &fruit)
     rect.x = crd.first * 16;
     rect.y = crd.second * 16;
     SDL_SetRenderDrawColor(_renderer, 0, 0, 200, 255);
-
     SDL_RenderFillRect(_renderer, &rect);
 }
 

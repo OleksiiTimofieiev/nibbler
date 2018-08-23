@@ -31,8 +31,8 @@ void    Game::gameplay()
             t2 = clock() / (CLOCKS_PER_SEC / _fps);
         }
     }
-        if (_init.getGameOver() == true && inc != nullptr)
-            delete (inc);
+    if (inc != nullptr)
+        delete (inc);
 }
 
 Game &Game::operator=(Game const &rhs)
@@ -120,7 +120,7 @@ int Game::lib_check()
     const std::regex check_input("^(\\d+)$");
     std::smatch result;
 
-    std::string size;
+    std::string size = "";
     bool checker = true;
     int choice;
 
