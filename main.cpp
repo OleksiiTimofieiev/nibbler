@@ -2,7 +2,7 @@
 
 int     main(void)
 {
-    Game _game(Game::input_check());
+    Game _game(Game::map_size_check());
     
     _game.gameplay();
 

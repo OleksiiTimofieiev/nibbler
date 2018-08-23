@@ -12,6 +12,8 @@
 #include "Logic.hpp"
 #include <ctime>
 #include <sys/time.h>
+#include <regex>
+#include <iostream>
 #include "/Users/otimofie/.brew/Cellar/sfml/2.4.2_1/include/SFML/Graphics.hpp" // TODO:user trouble;
 
 #define OUTPUT_RED(x) std::cout << "\033[1;31m" << (x) << "\x1B[0m" << std::endl;
@@ -27,7 +29,7 @@
 // TODO:5. think about sounds;
 // TODO:6. change libraries;
 // TODO:7. randomness limits for the fruit;
-// TODO: regex for input;
+
 
 #ifndef GAME_HPP
 #define GAME_HPP
@@ -51,7 +53,8 @@ class Game
         Game(Game const &src);
         void gameplay(); 
         void libSelect(IGraphics ** lib, Direction & dir);
-        static int input_check();
+        static int map_size_check();
+        static int lib_check();
 };
 
 #endif

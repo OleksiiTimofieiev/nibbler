@@ -67,7 +67,7 @@ void Game::libSelect(IGraphics ** var, Direction & dir) // add direction;
     std::cout << "ncurses -> 2" << std::endl;
     std::cout << "sfml -> 3" << std::endl;
 
-    std::cin >> lib;
+    lib = lib_check();
 
     if (lib == 1)
         *var = new IGraphicsSDL();
@@ -79,27 +79,76 @@ void Game::libSelect(IGraphics ** var, Direction & dir) // add direction;
     dir = stop;
 }
 
-int Game::input_check()
+int Game::map_size_check()
 {
-    int size = 0;
+    const std::regex check_input("^(\\d+)$");
+    std::smatch result;
+
+    std::string size;
     bool checker = true;
+    int int_size;
 
     OUTPUT_GREEN("Please, enter the size of the board. Limit: 35 - 75 points of measurement");
 
     while (checker)
     {
-        std::cin >> size;
+        getline(std::cin, size);
 
-        if (std::cin.fail())
+        if ( std::regex_match(size, result, check_input) )
         {
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        }
+            try
+            {
+                int_size = std::stoi(size);
+            }
+            catch (const std::exception & ex)
+            {
+                std::cout << "Simon says : " << ex.what() << std::endl;
+            }
 
-        if (size >= 35 && size <= 75)
-            checker = false;
+            if (int_size >= 35 && int_size <= 75)
+                checker = false;
+            else
+                OUTPUT_RED("Simon says : Wrong input, Please, enter the size of the board. Limit: 35 - 75 points of measurement");
+        }
         else
-           OUTPUT_RED("Wrong input, Please, enter the size of the board. Limit: 35 - 75 points of measurement");
+            OUTPUT_RED("Simon says : Wrong input, Please, enter the size of the board. Limit: 35 - 75 points of measurement");
     }
-    return (size);
+    return (int_size);
+}
+
+int Game::lib_check()
+{
+    const std::regex check_input("^(\\d+)$");
+    std::smatch result;
+
+    std::string size;
+    bool checker = true;
+    int int_size;
+
+    OUTPUT_GREEN("Please, enter the lib choice.");
+
+    while (checker)
+    {
+        getline(std::cin, size);
+
+        if (std::regex_match(size, result, check_input))
+        {
+            try
+            {
+                int_size = std::stoi(size);
+            }
+            catch (const std::exception &ex)
+            {
+                std::cout << "Simon says : " << ex.what() << std::endl;
+            }
+
+            if (int_size >= 1 && int_size <= 3)
+                checker = false;
+            else
+                OUTPUT_RED("Simon says : Wrong input, Please, enter the correct lib choice: 1 - 2");
+        }
+        else
+            OUTPUT_RED("Simon says : Wrong input, Please, enter the correct lib choice: 1 - 2");
+    }
+    return (int_size);
 }
