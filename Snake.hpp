@@ -42,7 +42,7 @@ class Snake
         void setDir(Direction dir);
         void setTailLen();
         void setTail();
-        int getTailLen();
+        int  getTailLen();
         void setTail(std::vector<std::pair<int, int> > tail);
 
         std::vector<std::pair<int, int>> getPrevTailCoords();

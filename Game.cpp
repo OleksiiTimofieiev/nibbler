@@ -5,11 +5,18 @@ Game::~Game() {}
 
 void    Game::gameplay()
 {
+    int lib;
     std::cout << "Please, choose the library" << std::endl;
+    std::cin >> lib;
 
-    IGraphics *inc = new IGraphicsSDL();
-    // IGraphics * inc = new IncGraphics();
-    // IGraphics *inc = new SFMLGraphics();
+    IGraphics *inc = nullptr;
+
+    if ( lib == 1)
+        inc = new IGraphicsSDL();
+    else if ( lib == 2)
+        inc = new IncGraphics();
+    else if ( lib == 3 )
+        inc = new SFMLGraphics();
 
     Direction   dr = stop;
 

@@ -46,8 +46,8 @@ void    Logic::checkFruit(Fruit & fruit, Snake & snake, Score & score, int & fps
         srand(clock());
         fruit.setCoords(rand() % WIDTH, rand() % HEIGHT);
         score.setScore();
-        setTail(snake);
         snake.setTailLen();
+        setTail(snake);
         fps += FPS_CHANGE;
     }
 }
