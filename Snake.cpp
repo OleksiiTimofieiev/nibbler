@@ -15,7 +15,7 @@ Snake::Snake(int x, int y)
 
     for (int i = 0; i < 3; i++)
         _tail[i] = std::make_pair(x, ++y);
-    for (int i = 0, distance = 2; i < 5; i++, distance += 7)
+    for (int i = 0, distance = 2; i < 5; i++, distance += 6)
         _obstacles.push_back(std::make_pair(distance, distance));
 }
 

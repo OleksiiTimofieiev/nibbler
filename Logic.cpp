@@ -8,7 +8,6 @@ void    Logic::setTail(Snake & snake)
     std::pair<int, int> prev{snake.getTailCoords()[0].first, snake.getTailCoords()[0].second};
     std::pair<int, int> prev2{0, 0};
 
-
     std::vector<std::pair<int, int> > _tail = snake.getTailCoords();
 
     snake.setPrevTail(_tail);
