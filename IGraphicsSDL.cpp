@@ -1,5 +1,10 @@
 #include "IGraphicsSDL.hpp"
 
+extern "C" IGraphics *NewDisplay(void)
+{
+    return (new IGraphicsSDL());
+}
+
 IGraphicsSDL::IGraphicsSDL()
 {
     if (SDL_Init(SDL_INIT_VIDEO) != 0)

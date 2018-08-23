@@ -1,6 +1,6 @@
 #include "SFMLGraphics.hpp"
 
-SFMLGraphics::SFMLGraphics() : N(50), M(50), size(16), w(size * N), h(size * M) // TODO: fix the constructor;
+SFMLGraphics::SFMLGraphics() : N(50), M(50), size(16), w(size * N), h(size * M)
 {
 
     t1.loadFromFile("images/white.png");
