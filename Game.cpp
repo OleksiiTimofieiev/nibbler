@@ -84,7 +84,7 @@ int Game::input_check()
     int size = 0;
     bool checker = true;
 
-    std::cout << "Please, enter the size of the board. Limit: 35 - 75 points of measurement" << std::endl;
+    OUTPUT_GREEN("Please, enter the size of the board. Limit: 35 - 75 points of measurement");
 
     while (checker)
     {

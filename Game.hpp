@@ -15,6 +15,9 @@
 #include "/Users/otimofie/.brew/Cellar/sfml/2.4.2_1/include/SFML/Graphics.hpp" // TODO:user trouble;
 
 #define OUTPUT_RED(x) std::cout << "\033[1;31m" << (x) << "\x1B[0m" << std::endl;
+#define OUTPUT_GREEN(x) std::cout << "\033[1;32m" << (x) << "\x1B[0m" << std::endl;
+
+// OUTPUT("\033[1;32mNo lexical errors have been detected => [ avm ] ✓\x1B[0m")
 
 // TODO: comp form in every class which has variables;
 // TODO:1. add some colors to the std::cout;
