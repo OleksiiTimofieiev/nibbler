@@ -12,19 +12,18 @@
 #include "Logic.hpp"
 #include <ctime>
 #include <sys/time.h>
-#include "/Users/hdanylev/.brew/Cellar/sfml/2.4.2_1/include/SFML/Graphics.hpp" // TODO:user trouble;
+#include <regex>
+#include <iostream>
+#include "/Users/otimofie/.brew/Cellar/sfml/2.4.2_1/include/SFML/Graphics.hpp" // TODO:user trouble;
 
 #define OUTPUT_RED(x) std::cout << "\033[1;31m" << (x) << "\x1B[0m" << std::endl;
 #define OUTPUT_GREEN(x) std::cout << "\033[1;32m" << (x) << "\x1B[0m" << std::endl;
 
-// OUTPUT("\033[1;32mNo lexical errors have been detected => [ avm ] ✓\x1B[0m")
-
-// TODO: comp form in every class which has variables;
-// TODO:5. think about sounds;
-// TODO:6. change libraries;
-// TODO:7. randomness limits for the fruit;
-// TODO: regex for input;
-// TODO: segfault, when you choose the library with numbers
+// TODO: 1. comp form in every class which has variables;
+// TODO: 2. think about sounds;
+// TODO: 3. randomness limits for the fruit;
+// TODO: 4. destruct window of sfml;
+// TODO: 5. ncurses change lib;
 
 #ifndef GAME_HPP
 #define GAME_HPP
@@ -48,7 +47,8 @@ class Game
         Game(Game const &src);
         void gameplay(); 
         void libSelect(IGraphics ** lib, Direction & dir);
-        static int input_check();
+        static int map_size_check();
+        static int lib_check();
 };
 
 #endif
