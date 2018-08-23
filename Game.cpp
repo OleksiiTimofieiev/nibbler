@@ -99,9 +99,7 @@ int Game::input_check()
         if (size >= 35 && size <= 75)
             checker = false;
         else
-        {
            OUTPUT_RED("Wrong input, Please, enter the size of the board. Limit: 35 - 75 points of measurement");
-        }
     }
     return (size);
 }
