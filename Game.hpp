@@ -16,19 +16,12 @@
 #define OUTPUT(x) std::cout << (x) << std::endl;
 
 //TODO: comp form in every class;
-//TODO: delete all comments
-//TODO: APIBase + func to choose lib;
 
-//TODO: obstacles = +, fps fruit = +, esc (enum) = +, user input (check);
-
-// 1. size of the board;
+// 1. size of the board <- user input;
 // 2. handle insuffiecient number of arguments (too big, too small, not a number, negative number) -> try | catch block;
 // 3. 'q' to escape the game;
 // 4. sounds;
-
-
-// change libraries;
-
+// 5. change libraries;
 
 #ifndef GAME_HPP
 #define GAME_HPP
