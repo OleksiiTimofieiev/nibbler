@@ -12,7 +12,7 @@
 #include "Logic.hpp"
 #include <ctime>
 #include <sys/time.h>
-#include "/Users/otimofie/.brew/Cellar/sfml/2.4.2_1/include/SFML/Graphics.hpp" // TODO:user trouble;
+#include "/Users/hdanylev/.brew/Cellar/sfml/2.4.2_1/include/SFML/Graphics.hpp" // TODO:user trouble;
 
 #define OUTPUT_RED(x) std::cout << "\033[1;31m" << (x) << "\x1B[0m" << std::endl;
 #define OUTPUT_GREEN(x) std::cout << "\033[1;32m" << (x) << "\x1B[0m" << std::endl;
@@ -20,14 +20,11 @@
 // OUTPUT("\033[1;32mNo lexical errors have been detected => [ avm ] ✓\x1B[0m")
 
 // TODO: comp form in every class which has variables;
-// TODO:1. add some colors to the std::cout;
-// TODO:2. handle insuffiecient number of arguments (too big, too small, not a number, negative number) -> try | catch block;
-// TODO:3. 'q' to escape the game;
-// TODO:4, 'e' to change the lib;
 // TODO:5. think about sounds;
 // TODO:6. change libraries;
 // TODO:7. randomness limits for the fruit;
 // TODO: regex for input;
+// TODO: segfault, when you choose the library with numbers
 
 #ifndef GAME_HPP
 #define GAME_HPP

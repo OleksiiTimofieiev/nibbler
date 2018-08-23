@@ -1,7 +1,17 @@
 #include "Logic.hpp"
 
 Logic::Logic(int size) : _size(size) {}
-void    Logic::setDir(Direction dir,  Snake & snake) { snake.setDir(dir); }
+void    Logic::setDir(Direction dir,  Snake & snake) {
+
+    if (dir == left && snake.getDir() != right)
+        snake.setDir(dir);
+    else if (dir == right && snake.getDir() != left)
+        snake.setDir(dir);
+    else if (dir == down && snake.getDir() != up)
+        snake.setDir(dir);
+    else if (dir == up && snake.getDir() != down)
+        snake.setDir(dir);
+}
 
 void    Logic::setTail(Snake & snake)
 {

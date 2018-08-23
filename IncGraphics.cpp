@@ -31,22 +31,18 @@ Direction IncGraphics::CheckEvent(Direction &dr)
 	int key = 0;
 
 	key = getch();
-	// if (key == 113)
-	// {
-	// 	refresh();
-	// 	system("reset");
-	// 	exit(1);
-	// }
-	if (key == 115) // key W
+	if (key == 115)      // key W
 		dr = down;
 	else if (key == 119) // key S
 		dr = up;
-	else if (key == 97) 	// key D
+	else if (key == 97)  // key D
 		dr = left;
 	else if (key == 100) // key A
 		dr = right;
-	else if (key == 114) // key Q
+	else if (key == 113) // key Q
 		dr = stop_the_game;
+	else if (key == 101) // key E
+		dr = change_the_lib;
 	return (dr);
 }
 
