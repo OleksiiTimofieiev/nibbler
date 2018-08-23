@@ -27,6 +27,7 @@
 // TODO:5. think about sounds;
 // TODO:6. change libraries;
 // TODO:7. randomness limits for the fruit;
+// TODO: regex for input;
 
 #ifndef GAME_HPP
 #define GAME_HPP
