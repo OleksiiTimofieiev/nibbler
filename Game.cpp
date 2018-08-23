@@ -123,7 +123,7 @@ int Game::lib_check()
 
     std::string size;
     bool checker = true;
-    int int_size;
+    int choice;
 
     OUTPUT_GREEN("Please, enter the lib choice.");
 
@@ -135,14 +135,14 @@ int Game::lib_check()
         {
             try
             {
-                int_size = std::stoi(size);
+                choice = std::stoi(size);
             }
             catch (const std::exception &ex)
             {
                 std::cout << "Simon says : " << ex.what() << std::endl;
             }
 
-            if (int_size >= 1 && int_size <= 3)
+            if (choice >= 1 && choice <= 3)
                 checker = false;
             else
                 OUTPUT_RED("Simon says : Wrong input, Please, enter the correct lib choice: 1 - 2");
@@ -150,5 +150,5 @@ int Game::lib_check()
         else
             OUTPUT_RED("Simon says : Wrong input, Please, enter the correct lib choice: 1 - 2");
     }
-    return (int_size);
+    return (choice);
 }
