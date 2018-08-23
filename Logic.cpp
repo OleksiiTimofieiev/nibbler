@@ -46,7 +46,7 @@ void    Logic::checkFruit(Fruit & fruit, Snake & snake, Score & score, int & fps
         srand(clock());
         fruit.setCoords(rand() % WIDTH, rand() % HEIGHT);
         score.setScore();
-        setTail(snake); //TODO: show ignat;
+        setTail(snake);
         snake.setTailLen();
         fps += FPS_CHANGE;
     }
@@ -87,9 +87,9 @@ void    Logic::checkCollision(Snake &snake, Init &init)
         }
 }
 
-void    Logic::logic(Init & init, Fruit & fruit, Snake & snake, Score & score, Direction dir, int & fps) // TODO: show fps change to Ignat;
+void    Logic::logic(Init & init, Fruit & fruit, Snake & snake, Score & score, Direction dir, int & fps)
 {
-    if (dir == stop_the_game) // TODO: show Igmat
+    if (dir == stop_the_game)
     {
         std::cout << "Fatal error" << std::endl;
         exit(0);
