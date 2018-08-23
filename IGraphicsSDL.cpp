@@ -2,7 +2,7 @@
 
 IGraphicsSDL::IGraphicsSDL()
 {
-    if (SDL_Init(SDL_INIT_VIDEO) == 0)
+    if (SDL_Init(SDL_INIT_VIDEO) != 0)
     {
         std::cout << "Failed to create a window. Program will be terminated." << std::endl;
         exit(0);
@@ -13,7 +13,8 @@ IGraphicsSDL::~IGraphicsSDL()
 {
     SDL_DestroyRenderer(_renderer);
     SDL_DestroyWindow(_window);
-    free (_renderer);
+    _renderer = nullptr;
+    _window = nullptr;
     SDL_Quit();
 }
 
