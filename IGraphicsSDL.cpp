@@ -71,6 +71,11 @@ Direction IGraphicsSDL::CheckEvent(Direction &dr)
                         dr = change_the_lib;
                         break;
                     }
+                    case SDLK_q:
+                    {
+                        dr = stop_the_game;
+                        break;
+                    }
                 }
             }
         }

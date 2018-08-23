@@ -47,6 +47,7 @@ class Game
         Game(Game const &src);
         void gameplay(); 
         void libSelect(IGraphics ** lib, Direction & dir);
+        static int input_check();
 };
 
 #endif
