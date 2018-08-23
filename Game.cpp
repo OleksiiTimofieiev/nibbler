@@ -54,7 +54,7 @@ void Game::libSelect(IGraphics ** var, Direction & dir) // add direction;
     
     if (*var != nullptr)
     {
-        delete *var;
+        delete (*var);
         *var = nullptr;
     }
 
