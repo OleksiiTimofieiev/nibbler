@@ -24,6 +24,7 @@
 // TODO: 3. randomness limits for the fruit;
 // TODO: 4. destruct window of sfml;
 // TODO: 5. ncurses change lib;
+// TODO: 6. constructor of SFML;
 
 #ifndef GAME_HPP
 #define GAME_HPP

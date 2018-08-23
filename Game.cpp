@@ -24,15 +24,18 @@ void    Game::gameplay()
         {
             dr = inc->CheckEvent(dr);
             if (dr == change_the_lib)
+            {
                 libSelect(&inc, dr);
+                inc->DrawMap(_border);
+            }
             else if (dr != stop)
                 _logic.logic(_init, _fruits, _snake, _stat, dr, _fps);
             inc->Draw(_snake, _fruits, _stat, _init);
             t2 = clock() / (CLOCKS_PER_SEC / _fps);
         }
     }
-        if (_init.getGameOver() == true && inc != nullptr)
-            delete (inc);
+    if (inc != nullptr)
+        delete (inc);
 }
 
 Game &Game::operator=(Game const &rhs)
@@ -120,7 +123,7 @@ int Game::lib_check()
     const std::regex check_input("^(\\d+)$");
     std::smatch result;
 
-    std::string size;
+    std::string size = "";
     bool checker = true;
     int choice;
 

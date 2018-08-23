@@ -14,7 +14,7 @@ SFMLGraphics::SFMLGraphics() : N(50), M(50), size(16), w(size * N), h(size * M) 
 }
 
 SFMLGraphics::SFMLGraphics(SFMLGraphics const &ref) { *this = ref; }
-SFMLGraphics::~SFMLGraphics() { window.close(); system("reset"); }
+SFMLGraphics::~SFMLGraphics() { window.clear(); window.close(); system("reset"); }
 
 SFMLGraphics &SFMLGraphics::operator=(SFMLGraphics const &ref) {
 
