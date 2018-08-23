@@ -17,7 +17,7 @@ IncGraphics::IncGraphics() {
 	timeout(1);
 }
 IncGraphics::IncGraphics(IncGraphics const &ref) { *this = ref; }
-IncGraphics::~IncGraphics() { system("reset");}
+IncGraphics::~IncGraphics() { refresh(); endwin(); system("reset"); }
 
 IncGraphics &IncGraphics::operator=(IncGraphics const &ref)
 {
