@@ -10,7 +10,6 @@ class IGraphics
         virtual void DrawFruit(Fruit &fruit) = 0;
         virtual void DrawMap(Border &border) = 0;
         virtual ~IGraphics() {};
-
 };
 
 #endif
