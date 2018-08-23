@@ -30,6 +30,8 @@ void    Game::gameplay()
             inc->Draw(_snake, _fruits, _stat, _init);
             t2 = clock() / (CLOCKS_PER_SEC / _fps);
         }
+        if (_init.getGameOver() == true)
+            delete (inc);
     }
 }
 

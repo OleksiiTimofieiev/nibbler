@@ -6,5 +6,7 @@ int     main(void)
     
     _game.gameplay();
 
+    system("leaks a.out");
+
     return (0);
 }
