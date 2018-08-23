@@ -28,6 +28,8 @@ class IncGraphics : public IGraphics
         Direction CheckEvent(Direction &dr);
         void DrawFruit(Fruit &fruit);
         void DrawMap(Border &border);
+        void DrawMap(Init &init);        
+        void DrawObstacle(Snake &snake);
 };
 
 #endif
