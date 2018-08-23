@@ -30,9 +30,9 @@ void    Game::gameplay()
             inc->Draw(_snake, _fruits, _stat, _init);
             t2 = clock() / (CLOCKS_PER_SEC / _fps);
         }
-        if (_init.getGameOver() == true)
-            delete (inc);
     }
+        if (_init.getGameOver() == true && inc != nullptr)
+            delete (inc);
 }
 
 Game &Game::operator=(Game const &rhs)
@@ -58,10 +58,7 @@ void Game::libSelect(IGraphics ** var, Direction & dir) // add direction;
     int lib;
     
     if (*var != nullptr)
-    {
-        delete (*var);
-        *var = nullptr;
-    }
+        delete(*var);
 
     std::cout << "Please, choose the library" << std::endl;
 

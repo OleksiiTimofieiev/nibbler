@@ -5,7 +5,6 @@
 #include "Game.hpp"
 #include "IGraphics.hpp"
 #include "/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL.h"
-// #include "/Users/otimofie/.brew/Cellar/sdl2_ttf/2.0.14/include/SDL2/SDL_ttf.h" // delete this sutf
 #include <iostream>
 
 class IGraphicsSDL : public IGraphics
