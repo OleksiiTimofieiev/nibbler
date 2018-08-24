@@ -30,9 +30,11 @@ $(NAME): $(OBJ) $(INC)
 
 clean:
 	@rm -rf $(OBJ)
+	@ echo "\033[33mcleaned (ncurses)\033[39m"
 
 fclean:	clean
 	@rm -rf $(NAME)
+	@ echo "\033[33mcleaned all (ncurses)\033[39m"
 
 re:		fclean all
 

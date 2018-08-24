@@ -27,42 +27,34 @@ INC_DIR		=	../includes
 
 OBJ_FILES 	=	$(SRC_FILES:.cpp=.cpp.o)
 
-GREEN		=	\033[32m
-YELLOW		=	\033[33m
-RED			=	\033[31m
-RESET		=	\033[39m
-
 all: sfml $(NAME)
-
-%.cpp.o:%.cpp
-	@ $(CLANG++) $(FLAGS) -c -o $@ $< -I $(INC_DIR) -I $(SFML_INC)
 
 $(NAME): $(OBJ_FILES)
 	@ $(CLANG++) $(FLAGS) -o $@ $(OBJ_FILES) $(SFML_LINK) $(LIB_FLAG) -I $(SFML_INC)
 
-sfml:
-	mkdir -p $(SFML_DIR)
-	test -d SFML/SFML-2.5.0-macOS-clang && echo "$(YELLOW)File SFML already exist$(RESET)" || make sfml_download
+%.cpp.o:%.cpp
+	@ $(CLANG++) $(FLAGS) -c -o $@ $< -I $(INC_DIR) -I $(SFML_INC)
 
-sfml_download:
-	echo "$(GREEN)SFML: download SFML files$(RESET)"
-
+sfml_dl:
+	echo "\033[32m... loading SFML\033[39m"
 	curl -OL http://www.sfml-dev.org/files/SFML-2.5.0-macOS-clang.tar.gz
 	tar zxvfC 'SFML-2.5.0-macOS-clang.tar.gz' $(SFML_DIR)
 	rm -rf SFML-2.5.0-macOS-clang.tar.gz
 	cd $(SFML_FRM) && ln -s ../extlibs/freetype.framework
 
+sfml:
+	mkdir -p $(SFML_DIR)
+	test -d SFML/SFML-2.5.0-macOS-clang && echo "$(YELLOW)File SFML already exist$(RESET)" || make sfml_dl
+
 clean:
 	@ rm -rf $(OBJ_FILES)
-	@ echo "$(RED)SFML: Object removed$(RESET)"
-
 	@ rm -rf $(SFML_DIR)
-	@ echo "$(RED)SFML: Directory removed$(RESET)"
+	@ echo "\033[33mcleaned (SFML)\033[39m"
 
 fclean: clean
 	@ rm -rf $(NAME)
-	@ echo "$(RED)SFML: Binary file removed$(RESET)"
+	@ echo "\033[33mcleaned all (SFML)\033[39m"
 
 re: fclean all
 
-.PHONY: all sfml sfml_download clean fclean re
+.PHONY: all sfml sfml_dl clean fclean re
