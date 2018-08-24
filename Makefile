@@ -46,7 +46,7 @@ obj:
 $(OBJ_DIR)%.cpp.o:$(SRC_DIR)%.cpp
 	$(CLANG++) $(FLAGS) -c $< -o $@ -I $(INC_DIR)
 
-$(NAME): ncurses $(OBJS) $(HDRS)
+$(NAME): ncurses sfml $(OBJS) $(HDRS)
 	@$(CLANG++) $(FLAGS) $(DL_FLAG) $(OBJS) -o $(NAME) $(LINK)
 
 ncurses:
@@ -57,21 +57,21 @@ ncurses:
 # 	@make -C ./lib_sdl/
 # 	@echo "$(GREEN)Build SDL: OK$(RESET)"
 
-# sfml:
-# 	@make -C ./lib_sfml/
-# 	@echo "$(GREEN)Build SFML: OK$(RESET)"
+sfml:
+	@make -C ./sfml_lib/
+	@echo "$(GREEN)Build SFML: OK$(RESET)"
 
 clean:
 	@make -C ncurses_lib clean
 	# @make -C lib_sdl clean
-	# @make -C lib_sfml clean
+	@make -C sfml_lib clean
 	@rm -rf $(OBJ)
 	@rm -rf $(OBJ_DIR)
 
 fclean: clean
 	@make -C ncurses_lib fclean
 	# @make -C lib_sdl fclean
-	# @make -C lib_sfml fclean
+	@make -C sfml_lib fclean
 	@rm -rf $(NAME)
 	@echo "$(RED)Attention: $(RESET)$(NAME) was removed"
 

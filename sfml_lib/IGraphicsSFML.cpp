@@ -1,6 +1,11 @@
 #include "IGraphicsSFML.hpp"
 
-IGraphicsSFML::IGraphicsSFML() : N(0), M(0), size(16), w(size * N), h(size * M) {
+extern "C" IGraphics *NewDisplay(void)
+{
+    return (new IGraphicsSFML());
+}
+
+IGraphicsSFML::IGraphicsSFML() : N(55), M(55), size(16), w(size * N), h(size * M) {
 
     t1.loadFromFile("images/white.png");
     t2.loadFromFile("images/red.png");

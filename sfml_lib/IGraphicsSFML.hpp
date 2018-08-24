@@ -1,9 +1,9 @@
 #ifndef IGraphicsSFML_HPP
 # define IGraphicsSFML_HPP
 
-# include "Game.hpp"
-# include "IGraphics.hpp"
-# include "/Users/otimofie/.brew/Cellar/sfml/2.4.2_1/include/SFML/Graphics.hpp"
+# include "../includes/Game.hpp"
+# include "../includes/IGraphics.hpp"
+# include "SFML/SFML-2.5.0-macOS-clang/include/SFML/Graphics.hpp"
 
 class IGraphicsSFML : public IGraphics
 {
