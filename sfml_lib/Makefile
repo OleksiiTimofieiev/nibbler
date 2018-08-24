@@ -44,7 +44,7 @@ sfml_dl:
 
 sfml:
 	mkdir -p $(SFML_DIR)
-	make sfml_dl
+	test -d SFML/SFML-2.5.0-macOS-clang && echo "$(YELLOW)File SFML already exist$(RESET)" || make sfml_dl
 
 clean:
 	@ rm -rf $(OBJ_FILES)
