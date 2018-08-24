@@ -5,21 +5,7 @@ extern "C" IGraphics *NewDisplay(void)
     return (new IGraphicsSFML());
 }
 
-IGraphicsSFML::IGraphicsSFML() : N(55), M(55), size(16), w(size * N), h(size * M) {
-
-    t1.loadFromFile("images/white.png");
-    t2.loadFromFile("images/red.png");
-    t3.loadFromFile("images/green.png");
-    t4.loadFromFile("images/black.png");
-
-    sprite1.setTexture(t1);
-    sprite2.setTexture(t2);
-    sprite3.setTexture(t3);
-    sprite4.setTexture(t4);
-}
-
-IGraphicsSFML::IGraphicsSFML(int n, int m) : N(n), M(m), size(16), w(size * N), h(size * M)
-{
+IGraphicsSFML::IGraphicsSFML() : N(0), M(0), size(16), w(size * N), h(size * M) {
 
     t1.loadFromFile("images/white.png");
     t2.loadFromFile("images/red.png");
@@ -54,6 +40,13 @@ void IGraphicsSFML::Draw(Snake &snake, Fruit &fruit, Score &score, Init &init)
 
     (void)score;
     (void)init;
+    if (N == 0)
+    {
+        N = init.getHeight();
+        M = init.getWidth();
+        w = size * N;
+        h = size * M;
+    }
     DrawMap(bor);
     DrawObstacle(snake);
     DrawFruit(fruit);    
