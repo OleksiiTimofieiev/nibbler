@@ -39,7 +39,7 @@ $(NAME): $(OBJ_FILES)
 
 sdl:
 	@ mkdir -p $(SDL_DIR)
-	@ test -f SDL/SDL2.framework/SDL2 && echo ""\033[33mFile $(SDL2) already exist\033[39m" || make sdl2_download
+	@ test -f SDL/SDL2.framework/SDL2 && echo "\033[33mFile $(SDL2) already exist\033[39m" || make sdl2_download
 
 sdl2_download:
 	echo "\033[32m... loading SDL\033[39m"
