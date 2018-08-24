@@ -16,10 +16,13 @@ void    Game::gameplay()
     clock_t t2;
 
     t2 = 0;
+    
     _lib->DrawMap(_border);
+
     while(!_init.getGameOver())
     {
         t1 = clock() / (CLOCKS_PER_SEC / _fps);
+
         if (t1 > t2)
         {
             dr = _lib->CheckEvent(dr);
@@ -34,7 +37,7 @@ void    Game::gameplay()
 
             _lib->Draw(_snake, _fruits, _stat, _init);
         }
-            t2 = clock() / (CLOCKS_PER_SEC / _fps);
+        t2 = clock() / (CLOCKS_PER_SEC / _fps);
     }
     if (_lib != nullptr)
         delete (_lib);
