@@ -55,6 +55,9 @@ Game &Game::operator=(Game const &rhs)
         _fruits = rhs._fruits;
         _snake = rhs._snake;
         _size = rhs._size;
+        _fps = rhs._fps;
+        _lib = rhs._lib;
+        _dl = rhs._dl;
     }
     return *this;
 }
