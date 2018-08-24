@@ -74,7 +74,7 @@ void Game::libSelect(IGraphics ** var, Direction & dir) // add direction;
     else if (lib == 2)
         *var = new IncGraphics();
     else if (lib == 3)
-        *var = new SFMLGraphics();
+        *var = new SFMLGraphics(_init.getHeight(), _init.getWidth());
     
     dir = stop;
 }

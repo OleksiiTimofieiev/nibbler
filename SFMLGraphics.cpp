@@ -1,6 +1,23 @@
 #include "SFMLGraphics.hpp"
 
+<<<<<<< HEAD
 SFMLGraphics::SFMLGraphics() : N(50), M(50), size(16), w(size * N), h(size * M)
+=======
+SFMLGraphics::SFMLGraphics() : N(0), M(0), size(16), w(size * N), h(size * M) {
+
+    t1.loadFromFile("images/white.png");
+    t2.loadFromFile("images/red.png");
+    t3.loadFromFile("images/green.png");
+    t4.loadFromFile("images/black.png");
+
+    sprite1.setTexture(t1);
+    sprite2.setTexture(t2);
+    sprite3.setTexture(t3);
+    sprite4.setTexture(t4);
+}
+
+SFMLGraphics::SFMLGraphics(int n, int m) : N(n), M(m), size(16), w(size * N), h(size * M)
+>>>>>>> hdanylev
 {
 
     t1.loadFromFile("images/white.png");

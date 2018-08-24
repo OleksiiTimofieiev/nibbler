@@ -27,6 +27,7 @@ class SFMLGraphics : public IGraphics
 
       public:
         SFMLGraphics();
+        SFMLGraphics(int n, int m);
         SFMLGraphics(SFMLGraphics const &ref);
         ~SFMLGraphics();
         
