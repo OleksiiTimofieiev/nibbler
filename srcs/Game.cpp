@@ -56,31 +56,6 @@ Game &Game::operator=(Game const &rhs)
 
 Game::Game(Game const &src) { *this = src; }
 
-// void Game::libSelect(IGraphics ** var, Direction & dir) // add direction;
-// {
-//     int lib;
-    
-//     if (*var != nullptr)
-//         delete(*var);
-
-//     std::cout << "Please, choose the library" << std::endl;
-
-//     std::cout << "sdl -> 1" << std::endl;
-//     std::cout << "ncurses -> 2" << std::endl;
-//     std::cout << "sfml -> 3" << std::endl;
-
-//     lib = lib_check();
-
-//     if (lib == 1)
-//         *var = new IGraphicsSDL();
-//     else if (lib == 2)
-//         *var = new IGraphicsNCURSES();
-//     else if (lib == 3)
-//         *var = new IGraphicsSFML(_init.getHeight(), _init.getWidth());
-    
-//     dir = stop;
-// }
-
 int Game::map_size_check()
 {
     const std::regex check_input("^(\\d+)$");
@@ -158,7 +133,7 @@ int Game::lib_check()
 
 void			Game::LibSelect(Direction & dir)
 {
-	IGraphics	*(*create)();
+	IGraphics	*(*create)() = nullptr;
 
     if (_lib != nullptr)
         delete(_lib);
@@ -169,34 +144,19 @@ void			Game::LibSelect(Direction & dir)
     std::cout << "ncurses -> 2" << std::endl;
     std::cout << "sfml -> 3" << std::endl;
     
-	if (lib_check() == 2)
-	{
-		// this->_dl_number = 0;
-		this->_dl = dlopen("./ncurses_lib/ncurses_lib.so", RTLD_LAZY | RTLD_LOCAL);
-	}
-	else if (lib_check() == 1)
-	{
-		// this->_dl_number = 1;
+	if (lib_check() == 1)
 		this->_dl = dlopen("./sdl_lib/sdl_lib.so", RTLD_LAZY | RTLD_LOCAL);
-	}
+	else if (lib_check() == 2)
+		this->_dl = dlopen("./ncurses_lib/ncurses_lib.so", RTLD_LAZY | RTLD_LOCAL);
 	else if (lib_check() == 3)
-	{
-		// this->_dl_number = 2;
 		this->_dl = dlopen("./sfml_lib/sfml_lib.so", RTLD_LAZY | RTLD_LOCAL);
-	}
 
-	// this->_interface.SetLibNumber(this->_dl_number);
-
-	if (this->_dl == NULL)
-	{
+        
+	if (this->_dl == nullptr)
 		std::cerr << "open_lib: dlopen : "<< dlerror() << std::endl;
-	}
-
-	if (( create = reinterpret_cast<IGraphics* (*)()>(dlsym(this->_dl, "NewDisplay")) ) == NULL)
-	{
-		std::cerr << "open_lib: dlsym : " << dlerror() << std::endl;
-	}
-
+	else if (( create = reinterpret_cast<IGraphics* (*)()>(dlsym(this->_dl, "NewDisplay")) ) == nullptr)
+        std::cerr << "open_lib: dlsym : " << dlerror() << std::endl;
+        
 	this->_lib = create();
 
     dir = stop;

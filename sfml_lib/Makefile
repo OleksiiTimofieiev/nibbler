@@ -42,7 +42,7 @@ $(NAME): $(OBJ_FILES)
 
 sfml:
 	mkdir -p $(SFML_DIR)
-	make sfml_download
+	test -d SFML/SFML-2.5.0-macOS-clang && echo "$(YELLOW)File SFML already exist$(RESET)" || make sfml_download
 
 sfml_download:
 	echo "$(GREEN)SFML: download SFML files$(RESET)"
