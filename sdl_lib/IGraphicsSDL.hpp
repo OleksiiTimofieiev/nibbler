@@ -4,7 +4,7 @@
 // #include "Game.hpp"
 #include "../includes/Game.hpp"
 #include "../includes/IGraphics.hpp"
-#include "/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL.h"
+#include "./SDL/SDL2.framework/Versions/A/Headers/SDL.h"
 #include <iostream>
 
 class IGraphicsSDL : public IGraphics

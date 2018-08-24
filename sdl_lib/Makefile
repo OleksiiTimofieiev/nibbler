@@ -1,0 +1,68 @@
+NAME 		=	sdl_lib.so
+
+COM			=	clang++
+FLAGS		=	-std=c++11 -Wall -Wextra -Werror -O3
+
+SDL_DIR		=	./SDL
+SDL_FRM		=	-F $(SDL_DIR)
+SDL_LINK	=	-framework SDL2
+
+PWD			= 	$(shell pwd)
+LIB_FLAG	=	-shared  -rpath $(PWD)/$(SDL_DIR) -nostartfiles -dynamiclib
+
+SRC_FILES	=	../srcs/Border.cpp \
+				../srcs/Fruit.cpp  \
+				../srcs/Init.cpp   \
+				../srcs/Game.cpp   \
+				../srcs/Logic.cpp  \
+				../srcs/main.cpp   \
+				../srcs/Score.cpp  \
+				../srcs/Snake.cpp  \
+				IGraphicsSDL.cpp
+
+INC_FILES	=	IGraphicsSDL.hpp
+
+INC_DIR		=	../includes
+
+OBJ_FILES	= 	$(SRC_FILES:.cpp=.cpp.o)
+
+GREEN		=	\033[32m
+YELLOW		=	\033[33m
+RED			=	\033[31m
+RESET		=	\033[39m
+
+SDL2 		=	SDL2
+
+all: sdl $(NAME)
+
+%.cpp.o:%.cpp
+	@ $(COM) $(FLAGS) $(SDL_FRM) -c -o $@ $< -I $(INC_DIR)
+
+$(NAME): $(OBJ_FILES)
+	@ $(COM) $(FLAGS) $(SDL_FRM) $(SDL_LINK) $(LIB_FLAG) $(OBJ_FILES) -o $(NAME)
+
+sdl:
+	@ mkdir -p $(SDL_DIR)
+	@ test -f SDL/SDL2.framework/SDL2 && echo "$(YELLOW)File $(SDL2) already exist$(RESET)" || make sdl2_download
+
+sdl2_download:
+	@ echo "$(GREEN)SDL: download SDL2.framework$(RESET)"
+	@ curl -o sdl2.dmg https://www.libsdl.org/release/SDL2-2.0.8.dmg
+	@ hdiutil attach sdl2.dmg;
+	@ cd ; cp -R -i ../../../Volumes/SDL2/SDL2.framework $(PWD)/$(SDL_DIR)/SDL2.framework; hdiutil eject ../../../Volumes/SDL2;
+	@ rm -rf sdl2.dmg
+
+clean:
+	@ rm -rf $(OBJ_FILES)
+	@ echo "$(RED)SDL: Object removed$(RESET)"
+
+	@ rm -fr $(SDL_DIR)
+	@ echo "$(RED)SDL: Directory removed$(RESET)"
+
+fclean:	clean
+	@ rm -rf $(NAME)
+	@ echo "$(RED)SDL: Binary file removed$(RESET)"
+	
+re:	fclean all
+
+.PHONY: all sdl clean fclean re
