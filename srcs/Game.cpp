@@ -58,6 +58,7 @@ Game &Game::operator=(Game const &rhs)
         _fps = rhs._fps;
         _lib = rhs._lib;
         _dl = rhs._dl;
+        _logic = rhs._logic;
     }
     return *this;
 }
