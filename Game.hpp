@@ -21,7 +21,6 @@
 
 // TODO: 1. comp form in every class which has variables;
 // TODO: 2. think about sounds;
-// TODO: 3. randomness limits for the fruit;
 // TODO: 4. destruct window of sfml;
 // TODO: 5. ncurses change lib;
 // TODO: 6. constructor of SFML;

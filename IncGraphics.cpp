@@ -63,7 +63,7 @@ void IncGraphics::DrawObstacle(Snake &snake)
 	for (size_t i = 0; i < obs.size(); i++)
     {
 		attron(COLOR_PAIR (4));
-		mvprintw(obs[i].second, obs[i].first, "o");		
+		mvprintw(obs[i].second + 1, obs[i].first + 1, "o");		
 		attroff(COLOR_PAIR (4));
 		
     }
@@ -76,9 +76,9 @@ void IncGraphics::DelSnake(Snake &snake)
 
 	for (int i = 0; i < snake.getTailLen(); i++)
 	{
-		mvprintw(tail[i].second, tail[i].first, " ");
+		mvprintw(tail[i].second + 1, tail[i].first + 1, " ");
 	}
-	mvprintw(head.second, head.first, " ");
+	mvprintw(head.second + 1, head.first + 1, " ");
 }
 
 void IncGraphics::DrawSnake(Snake &snake)
@@ -89,11 +89,11 @@ void IncGraphics::DrawSnake(Snake &snake)
 	for (int i = 0; i < snake.getTailLen() - 1; i++)
 	{
 		attron(COLOR_PAIR(2));
-		mvprintw(tail[i].second, tail[i].first, "o");
+		mvprintw(tail[i].second + 1, tail[i].first + 1, "o");
 		attroff(COLOR_PAIR(2));
 	}
 	attron(COLOR_PAIR(1));
-	mvprintw(head.second, head.first, "X");
+	mvprintw(head.second + 1, head.first + 1, "X");
 	attroff(COLOR_PAIR(1));
 }
 
@@ -101,7 +101,7 @@ void IncGraphics::DrawFruit(Fruit &fruit)
 {
 	std::pair<int, int> crd = fruit.getCoords();
 	attron(COLOR_PAIR(5));
-	mvprintw(crd.second, crd.first, "0");
+	mvprintw(crd.second + 1, crd.first + 1, "0");
 	attroff(COLOR_PAIR(5));
 }
 
@@ -109,19 +109,19 @@ void IncGraphics::DrawMap(Init &init)
 {
 	int height = init.getHeight();
 	int width = init.getWidth();
-	
-	attron(COLOR_PAIR (3));
-	for (int j = 0; j < width; j++)
+
+	attron(COLOR_PAIR(3));
+	for (int j = 0; j < width + 2; j++)
 		mvaddstr(0, j, "#");
 
-	for (int i = 0; i < height; i++) {
+	for (int i = 0; i < height + 2; i++)
+	{
 		mvaddstr(i, 0, "#");
-		mvaddstr(i, width, "#");
+		mvaddstr(i, width + 2, "#");
 	}
-    
-    for (int j = 0; j < width + 1; j++)
-		mvaddstr(height, j, "#");
-	attroff(COLOR_PAIR (3));
+	for (int j = 0; j < width + 3; j++)
+		mvaddstr(height + 2, j, "#");
+	attroff(COLOR_PAIR(3));
 }
 
 void IncGraphics::DrawMap(Border &border)
@@ -130,15 +130,14 @@ void IncGraphics::DrawMap(Border &border)
 	int width = border.getWidth();
 	
 	attron(COLOR_PAIR (3));
-	for (int j = 0; j < width; j++)
+	for (int j = 0; j < width + 2; j++)
 		mvaddstr(0, j, "#");
 
-	for (int i = 0; i < height; i++) {
+	for (int i = 0; i < height + 2; i++) {
 		mvaddstr(i, 0, "#");
-		mvaddstr(i, width, "#");
-	}
-    
-    for (int j = 0; j < width + 1; j++)
-		mvaddstr(height, j, "#");
+		mvaddstr(i, width + 2, "#");
+	}    
+    for (int j = 0; j < width + 3; j++)
+		mvaddstr(height + 2, j, "#");
 	attroff(COLOR_PAIR (3));
 }
