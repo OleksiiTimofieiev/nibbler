@@ -36,8 +36,8 @@ void    Game::gameplay()
                 _logic.logic(_init, _fruits, _snake, _stat, dr, _fps);
 
             _lib->Draw(_snake, _fruits, _stat, _init);
-        }
         t2 = clock() / (CLOCKS_PER_SEC / _fps);
+        }
     }
     if (_lib != nullptr)
         delete (_lib);
