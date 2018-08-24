@@ -1,5 +1,5 @@
-#ifndef IGraphicsNCURSES_HPP
-# define IGraphicsNCURSES_HPP
+#ifndef IGRAPHICSNCURSES_HPP
+# define IGRAPHICSNCURSES_HPP
 
 # include "../includes/Game.hpp"
 # include "../includes/IGraphics.hpp"

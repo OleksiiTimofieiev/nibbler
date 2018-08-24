@@ -1,4 +1,4 @@
-#include "Logic.hpp"
+#include "../includes/Logic.hpp"
 
 Logic::Logic(int size) : _size(size) {}
 void    Logic::setDir(Direction dir,  Snake & snake) {

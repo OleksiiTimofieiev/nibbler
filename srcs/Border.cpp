@@ -1,4 +1,4 @@
-#include "Border.hpp"
+#include "../includes/Border.hpp"
 
 Border::Border(){}
 Border::~Border(){}

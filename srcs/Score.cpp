@@ -1,4 +1,4 @@
-#include "Score.hpp"
+#include "../includes/Score.hpp"
 
 Score::~Score(){};
 Score::Score() : _score(0){};

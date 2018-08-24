@@ -1,11 +1,18 @@
 NAME 		=	ncurses_lib.so
 
-CLANG++			=	clang++++
-FLAGS		=	-Wall -Wextra -Werror -O3 -std=c++11
+CLANG++			=	clang++
+FLAGS		=	-std=c++11 -Wall -Wextra -Werror -O3
+LIB_FLAGS	=	-shared -nostartfiles -dynamiclib -lm -lncurses
 
-LIB_FLAGS	=	-shared -nostartfiles -dynamiclib -lncurses
-
-SRC	=	IGraphicsNCURSES.cpp
+SRC	=	../srcs/Border.cpp \
+  		../srcs/Fruit.cpp  \
+		../srcs/Init.cpp   \
+  		../srcs/Game.cpp   \
+  		../srcs/Logic.cpp  \
+  		../srcs/main.cpp   \
+  		../srcs/Score.cpp  \
+  		../srcs/Snake.cpp  \
+		IGraphicsNCURSES.cpp
 
 INC	=	IGraphicsNCURSES.hpp
 

@@ -1,4 +1,4 @@
-#include "Game.hpp"
+#include "../includes/Game.hpp"
 
 Game::Game(){}
 Game::Game(int size) : _size(size) {}
@@ -8,34 +8,36 @@ Game::~Game() {}
 void    Game::gameplay()
 {
     Direction   dr = stop;
-    IGraphics *inc = nullptr;
+    // IGraphics *inc = nullptr;
 
-    libSelect(&inc, dr);
+    // libSelect(&inc, dr);
+    OpenLib(2);
+    
 
     clock_t t1;
     clock_t t2;
 
     t2 = 0;
-    inc->DrawMap(_border);
+    _lib->DrawMap(_border);
     while(!_init.getGameOver())
     {
         t1 = clock() / (CLOCKS_PER_SEC / _fps);
         if (t1 > t2)
         {
-            dr = inc->CheckEvent(dr);
+            dr = _lib->CheckEvent(dr);
             if (dr == change_the_lib)
             {
-                libSelect(&inc, dr);
-                inc->DrawMap(_border);
+                // libSelect(&inc, dr);
+                _lib->DrawMap(_border);
             }
             else if (dr != stop)
                 _logic.logic(_init, _fruits, _snake, _stat, dr, _fps);
-            inc->Draw(_snake, _fruits, _stat, _init);
+            _lib->Draw(_snake, _fruits, _stat, _init);
             t2 = clock() / (CLOCKS_PER_SEC / _fps);
         }
     }
-    if (inc != nullptr)
-        delete (inc);
+    if (_lib != nullptr)
+        delete (_lib);
 }
 
 Game &Game::operator=(Game const &rhs)
@@ -54,30 +56,30 @@ Game &Game::operator=(Game const &rhs)
 
 Game::Game(Game const &src) { *this = src; }
 
-void Game::libSelect(IGraphics ** var, Direction & dir) // add direction;
-{
-    int lib;
+// void Game::libSelect(IGraphics ** var, Direction & dir) // add direction;
+// {
+//     int lib;
     
-    if (*var != nullptr)
-        delete(*var);
+//     if (*var != nullptr)
+//         delete(*var);
 
-    std::cout << "Please, choose the library" << std::endl;
+//     std::cout << "Please, choose the library" << std::endl;
 
-    std::cout << "sdl -> 1" << std::endl;
-    std::cout << "ncurses -> 2" << std::endl;
-    std::cout << "sfml -> 3" << std::endl;
+//     std::cout << "sdl -> 1" << std::endl;
+//     std::cout << "ncurses -> 2" << std::endl;
+//     std::cout << "sfml -> 3" << std::endl;
 
-    lib = lib_check();
+//     lib = lib_check();
 
-    if (lib == 1)
-        *var = new IGraphicsSDL();
-    else if (lib == 2)
-        *var = new IGraphicsNCURSES();
-    else if (lib == 3)
-        *var = new IGraphicsSFML(_init.getHeight(), _init.getWidth());
+//     if (lib == 1)
+//         *var = new IGraphicsSDL();
+//     else if (lib == 2)
+//         *var = new IGraphicsNCURSES();
+//     else if (lib == 3)
+//         *var = new IGraphicsSFML(_init.getHeight(), _init.getWidth());
     
-    dir = stop;
-}
+//     dir = stop;
+// }
 
 int Game::map_size_check()
 {
@@ -152,4 +154,40 @@ int Game::lib_check()
             OUTPUT_RED("Simon says : Wrong input, Please, enter the correct lib choice: 1 - 3");
     }
     return (choice);
+}
+
+void			Game::OpenLib(int lib)
+{
+	IGraphics	*(*create)();
+
+
+	if (lib == 2)
+	{
+		// this->_dl_number = 0;
+		this->_dl = dlopen("./ncurses_lib/ncurses_lib.so", RTLD_LAZY | RTLD_LOCAL);
+	}
+	else if (lib == 1)
+	{
+		// this->_dl_number = 1;
+		this->_dl = dlopen("./sdl_lib/sdl_lib.so", RTLD_LAZY | RTLD_LOCAL);
+	}
+	else if (lib == 3)
+	{
+		// this->_dl_number = 2;
+		this->_dl = dlopen("./sfml_lib/sfml_lib.so", RTLD_LAZY | RTLD_LOCAL);
+	}
+
+	// this->_interface.SetLibNumber(this->_dl_number);
+
+	if (this->_dl == NULL)
+	{
+		std::cerr << "open_lib: dlopen : "<< dlerror() << std::endl;
+	}
+
+	if (( create = reinterpret_cast<IGraphics* (*)()>(dlsym(this->_dl, "NewDisplay")) ) == NULL)
+	{
+		std::cerr << "open_lib: dlsym : " << dlerror() << std::endl;
+	}
+
+	this->_lib = create();
 }

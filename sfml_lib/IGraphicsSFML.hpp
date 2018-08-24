@@ -3,6 +3,7 @@
 
 # include "Game.hpp"
 # include "IGraphics.hpp"
+# include "/Users/otimofie/.brew/Cellar/sfml/2.4.2_1/include/SFML/Graphics.hpp"
 
 class IGraphicsSFML : public IGraphics
 {

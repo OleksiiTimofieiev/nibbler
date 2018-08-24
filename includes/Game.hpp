@@ -1,3 +1,6 @@
+#ifndef GAME_HPP
+# define GAME_HPP
+
 #include "Init.hpp"
 #include "Border.hpp"
 #include "Score.hpp"
@@ -5,16 +8,15 @@
 #include "Snake.hpp"
 
 #include "IGraphics.hpp"
-#include "IGraphicsNCURSES.hpp"
-#include "IGraphicsSFML.hpp"
-#include "IGraphicsSDL.hpp"
 
 #include "Logic.hpp"
 #include <ctime>
 #include <sys/time.h>
 #include <regex>
-#include <iostream>
-#include "/Users/otimofie/.brew/Cellar/sfml/2.4.2_1/include/SFML/Graphics.hpp" // TODO:user trouble;
+#include <iostream> // TODO:user trouble;
+
+#include <dlfcn.h>
+
 
 #define OUTPUT_RED(x) std::cout << "\033[1;31m" << (x) << "\x1B[0m" << std::endl;
 #define OUTPUT_GREEN(x) std::cout << "\033[1;32m" << (x) << "\x1B[0m" << std::endl;
@@ -25,9 +27,6 @@
 // TODO: 4. constructor of SFML;
 
 // TODO: 5. replace all of the bad names;
-
-#ifndef GAME_HPP
-#define GAME_HPP
 
 class Game
 {
@@ -40,6 +39,8 @@ class Game
         Snake   _snake{_init.getWidth() / 2, _init.getHeight() / 2};
         Logic   _logic{_size};
         int     _fps{9};
+        IGraphics*			_lib;
+        void*				_dl;
     public:
         Game();
         Game(int size);
@@ -47,9 +48,10 @@ class Game
         Game &operator=(Game const &rhs);
         Game(Game const &src);
         void gameplay(); 
-        void libSelect(IGraphics ** lib, Direction & dir);
+        // void libSelect(IGraphics ** lib, Direction & dir);
         static int map_size_check();
         static int lib_check();
+        void			OpenLib(int lib);
 };
 
 #endif

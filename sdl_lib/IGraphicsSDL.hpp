@@ -2,8 +2,8 @@
 #define IGRAPHICSSDL_HPP
 
 // #include "Game.hpp"
-#include "Game.hpp"
-#include "IGraphics.hpp"
+#include "../includes/Game.hpp"
+#include "../includes/IGraphics.hpp"
 #include "/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL.h"
 #include <iostream>
 
