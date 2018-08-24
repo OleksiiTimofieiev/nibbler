@@ -1,10 +1,10 @@
-#ifndef SFMLGRAPHICS_HPP
-# define SFMLGRAPHICS_HPP
+#ifndef IGraphicsSFML_HPP
+# define IGraphicsSFML_HPP
 
 # include "Game.hpp"
 # include "IGraphics.hpp"
 
-class SFMLGraphics : public IGraphics
+class IGraphicsSFML : public IGraphics
 {
     private:
         int N;
@@ -26,12 +26,12 @@ class SFMLGraphics : public IGraphics
         sf::Sprite sprite4;        
 
       public:
-        SFMLGraphics();
-        SFMLGraphics(int n, int m);
-        SFMLGraphics(SFMLGraphics const &ref);
-        ~SFMLGraphics();
+        IGraphicsSFML();
+        IGraphicsSFML(int n, int m);
+        IGraphicsSFML(IGraphicsSFML const &ref);
+        ~IGraphicsSFML();
         
-        SFMLGraphics &operator=(SFMLGraphics const &ref);
+        IGraphicsSFML &operator=(IGraphicsSFML const &ref);
 
         void Draw(Snake &snake, Fruit &fruit, Score &score, Init &init);
         void DrawSnake(Snake &snake);

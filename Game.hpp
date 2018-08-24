@@ -5,8 +5,8 @@
 #include "Snake.hpp"
 
 #include "IGraphics.hpp"
-#include "IncGraphics.hpp"
-#include "SFMLGraphics.hpp"
+#include "IGraphicsNCURSES.hpp"
+#include "IGraphicsSFML.hpp"
 #include "IGraphicsSDL.hpp"
 
 #include "Logic.hpp"
@@ -21,16 +21,10 @@
 
 // TODO: 1. comp form in every class which has variables;
 // TODO: 2. think about sounds;
-<<<<<<< HEAD
 // TODO: 3. randomness limits for the fruit;
 // TODO: 4. constructor of SFML;
 
 // TODO: 5. replace all of the bad names;
-=======
-// TODO: 4. destruct window of sfml;
-// TODO: 5. ncurses change lib;
-// TODO: 6. constructor of SFML;
->>>>>>> hdanylev
 
 #ifndef GAME_HPP
 #define GAME_HPP

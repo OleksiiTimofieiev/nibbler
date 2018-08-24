@@ -1,9 +1,6 @@
-#include "SFMLGraphics.hpp"
+#include "IGraphicsSFML.hpp"
 
-<<<<<<< HEAD
-SFMLGraphics::SFMLGraphics() : N(50), M(50), size(16), w(size * N), h(size * M)
-=======
-SFMLGraphics::SFMLGraphics() : N(0), M(0), size(16), w(size * N), h(size * M) {
+IGraphicsSFML::IGraphicsSFML() : N(0), M(0), size(16), w(size * N), h(size * M) {
 
     t1.loadFromFile("images/white.png");
     t2.loadFromFile("images/red.png");
@@ -16,8 +13,7 @@ SFMLGraphics::SFMLGraphics() : N(0), M(0), size(16), w(size * N), h(size * M) {
     sprite4.setTexture(t4);
 }
 
-SFMLGraphics::SFMLGraphics(int n, int m) : N(n), M(m), size(16), w(size * N), h(size * M)
->>>>>>> hdanylev
+IGraphicsSFML::IGraphicsSFML(int n, int m) : N(n), M(m), size(16), w(size * N), h(size * M)
 {
 
     t1.loadFromFile("images/white.png");
@@ -31,10 +27,10 @@ SFMLGraphics::SFMLGraphics(int n, int m) : N(n), M(m), size(16), w(size * N), h(
     sprite4.setTexture(t4);
 }
 
-SFMLGraphics::SFMLGraphics(SFMLGraphics const &ref) { *this = ref; }
-SFMLGraphics::~SFMLGraphics() { window.clear(); window.close(); system("reset"); }
+IGraphicsSFML::IGraphicsSFML(IGraphicsSFML const &ref) { *this = ref; }
+IGraphicsSFML::~IGraphicsSFML() { window.clear(); window.close(); system("reset"); }
 
-SFMLGraphics &SFMLGraphics::operator=(SFMLGraphics const &ref) {
+IGraphicsSFML &IGraphicsSFML::operator=(IGraphicsSFML const &ref) {
 
     this->N = ref.N;
     this->M = ref.M;
@@ -47,7 +43,7 @@ SFMLGraphics &SFMLGraphics::operator=(SFMLGraphics const &ref) {
     return *this;
 }
 
-void SFMLGraphics::Draw(Snake &snake, Fruit &fruit, Score &score, Init &init)
+void IGraphicsSFML::Draw(Snake &snake, Fruit &fruit, Score &score, Init &init)
 {
     Border bor;
 
@@ -60,7 +56,7 @@ void SFMLGraphics::Draw(Snake &snake, Fruit &fruit, Score &score, Init &init)
     window.display();
 }
 
-void SFMLGraphics::DrawObstacle(Snake & snake)
+void IGraphicsSFML::DrawObstacle(Snake & snake)
 {
     std::vector<std::pair<int, int> > obs;
 
@@ -74,14 +70,14 @@ void SFMLGraphics::DrawObstacle(Snake & snake)
 }
 
 
-void SFMLGraphics::DrawFruit(Fruit &fruit)
+void IGraphicsSFML::DrawFruit(Fruit &fruit)
 {
     std::pair<int, int> crd = fruit.getCoords();
     sprite2.setPosition(crd.first * size, crd.second * size);
     window.draw(sprite2);
 }
 
-void SFMLGraphics::DrawSnake(Snake &snake)
+void IGraphicsSFML::DrawSnake(Snake &snake)
 {
     std::pair<int, int> head = snake.getHeadCoords();
     std::vector<std::pair<int, int>> tail = snake.getTailCoords();
@@ -95,7 +91,7 @@ void SFMLGraphics::DrawSnake(Snake &snake)
     }
 }
 
-Direction SFMLGraphics::CheckEvent(Direction &dr)
+Direction IGraphicsSFML::CheckEvent(Direction &dr)
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
         dr = left;
@@ -112,7 +108,7 @@ Direction SFMLGraphics::CheckEvent(Direction &dr)
     return (dr);
 }
 
-void SFMLGraphics::DrawMap(Border &border)
+void IGraphicsSFML::DrawMap(Border &border)
 {
     (void)border;
     sf::Event e;

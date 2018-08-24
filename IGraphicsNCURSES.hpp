@@ -1,5 +1,5 @@
-#ifndef INCGRAPHICS_HPP
-# define INCGRAPHICS_HPP
+#ifndef IGraphicsNCURSES_HPP
+# define IGraphicsNCURSES_HPP
 
 # include "Game.hpp"
 # include "IGraphics.hpp"
@@ -13,14 +13,14 @@
 # include <locale.h>
 # include <wchar.h>
 
-class IncGraphics : public IGraphics
+class IGraphicsNCURSES : public IGraphics
 {
     public:
-        IncGraphics();
-        IncGraphics(IncGraphics const &);
-        ~IncGraphics();
+        IGraphicsNCURSES();
+        IGraphicsNCURSES(IGraphicsNCURSES const &);
+        ~IGraphicsNCURSES();
 
-        IncGraphics &operator=(IncGraphics const &ref);
+        IGraphicsNCURSES &operator=(IGraphicsNCURSES const &ref);
 
         void Draw(Snake &snake, Fruit &fruit, Score &score, Init &init);
         void DrawSnake(Snake &snake);

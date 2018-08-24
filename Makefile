@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hdanylev <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: otimofie <otimofie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/18 17:07:17 by hdanylev          #+#    #+#              #
-#    Updated: 2018/06/20 22:19:07 by hdanylev         ###   ########.fr        #
+#    Updated: 2018/08/24 10:02:42 by otimofie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-clang++ -std=c++11 Init.cpp Border.cpp Game.cpp Score.cpp Fruit.cpp Snake.cpp IncGraphics.cpp Logic.cpp main.cpp -lncurses && ./a.out
+clang++ -std=c++11 Init.cpp Border.cpp Game.cpp Score.cpp Fruit.cpp Snake.cpp IGraphicsNCURSES.cpp Logic.cpp main.cpp -lncurses && ./a.out
 
     # name of the executable file
 

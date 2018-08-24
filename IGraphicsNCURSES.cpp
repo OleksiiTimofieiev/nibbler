@@ -1,6 +1,6 @@
-#include "IncGraphics.hpp"
+#include "IGraphicsNCURSES.hpp"
 
-IncGraphics::IncGraphics() {
+IGraphicsNCURSES::IGraphicsNCURSES() {
 
 	setlocale(LC_ALL, "");
 	initscr();
@@ -16,16 +16,16 @@ IncGraphics::IncGraphics() {
 	init_pair (7, COLOR_RED, COLOR_BLACK);
 	timeout(1);
 }
-IncGraphics::IncGraphics(IncGraphics const &ref) { *this = ref; }
-IncGraphics::~IncGraphics() { erase(); refresh(); endwin(); system("reset"); }
+IGraphicsNCURSES::IGraphicsNCURSES(IGraphicsNCURSES const &ref) { *this = ref; }
+IGraphicsNCURSES::~IGraphicsNCURSES() { erase(); refresh(); endwin(); system("reset"); }
 
-IncGraphics &IncGraphics::operator=(IncGraphics const &ref)
+IGraphicsNCURSES &IGraphicsNCURSES::operator=(IGraphicsNCURSES const &ref)
 {
     (void)ref;
     return *this;
 }
 
-Direction IncGraphics::CheckEvent(Direction &dr)
+Direction IGraphicsNCURSES::CheckEvent(Direction &dr)
 {
 	int key = 0;
 
@@ -45,7 +45,7 @@ Direction IncGraphics::CheckEvent(Direction &dr)
 	return (dr);
 }
 
-void IncGraphics::Draw(Snake &snake, Fruit &fruit, Score &score, Init &init)
+void IGraphicsNCURSES::Draw(Snake &snake, Fruit &fruit, Score &score, Init &init)
 {
 	(void)score;
 	(void)init;	
@@ -56,7 +56,7 @@ void IncGraphics::Draw(Snake &snake, Fruit &fruit, Score &score, Init &init)
 	DrawFruit(fruit);
 	DrawMap(init);
 }
-void IncGraphics::DrawObstacle(Snake &snake)
+void IGraphicsNCURSES::DrawObstacle(Snake &snake)
 {
 	std::vector<std::pair<int, int> > obs = snake.getObstacleCoords();
 
@@ -69,7 +69,7 @@ void IncGraphics::DrawObstacle(Snake &snake)
     }
 }
 
-void IncGraphics::DelSnake(Snake &snake)
+void IGraphicsNCURSES::DelSnake(Snake &snake)
 {
 	std::pair<int, int> head = snake.getPrevHeadCoords();
 	std::vector<std::pair<int, int>> tail = snake.getPrevTailCoords();
@@ -81,7 +81,7 @@ void IncGraphics::DelSnake(Snake &snake)
 	mvprintw(head.second + 1, head.first + 1, " ");
 }
 
-void IncGraphics::DrawSnake(Snake &snake)
+void IGraphicsNCURSES::DrawSnake(Snake &snake)
 {
 	std::pair<int, int> head = snake.getHeadCoords();
 	std::vector<std::pair<int, int> > tail = snake.getTailCoords();
@@ -97,7 +97,7 @@ void IncGraphics::DrawSnake(Snake &snake)
 	attroff(COLOR_PAIR(1));
 }
 
-void IncGraphics::DrawFruit(Fruit &fruit)
+void IGraphicsNCURSES::DrawFruit(Fruit &fruit)
 {
 	std::pair<int, int> crd = fruit.getCoords();
 	attron(COLOR_PAIR(5));
@@ -105,7 +105,7 @@ void IncGraphics::DrawFruit(Fruit &fruit)
 	attroff(COLOR_PAIR(5));
 }
 
-void IncGraphics::DrawMap(Init &init)
+void IGraphicsNCURSES::DrawMap(Init &init)
 {
 	int height = init.getHeight();
 	int width = init.getWidth();
@@ -124,7 +124,7 @@ void IncGraphics::DrawMap(Init &init)
 	attroff(COLOR_PAIR(3));
 }
 
-void IncGraphics::DrawMap(Border &border)
+void IGraphicsNCURSES::DrawMap(Border &border)
 {
 	int height = border.getHeight();
 	int width = border.getWidth();
