@@ -7,10 +7,8 @@ Game::~Game() {}
 
 void    Game::gameplay()
 {
-    Direction   dr = stop;
-    // IGraphics *inc = nullptr;
+    Direction   dr;
 
-    // libSelect(&inc, dr);
     LibSelect(dr);
     
 
@@ -25,6 +23,7 @@ void    Game::gameplay()
         if (t1 > t2)
         {
             dr = _lib->CheckEvent(dr);
+
             if (dr == change_the_lib)
             {
                 LibSelect(dr);
@@ -32,9 +31,10 @@ void    Game::gameplay()
             }
             else if (dr != stop)
                 _logic.logic(_init, _fruits, _snake, _stat, dr, _fps);
+
             _lib->Draw(_snake, _fruits, _stat, _init);
-            t2 = clock() / (CLOCKS_PER_SEC / _fps);
         }
+            t2 = clock() / (CLOCKS_PER_SEC / _fps);
     }
     if (_lib != nullptr)
         delete (_lib);
@@ -95,7 +95,6 @@ int Game::map_size_check()
 
 int Game::lib_check()
 {
-    std::cin.clear();
     const std::regex check_input("^(\\d+)$");
     std::smatch result;
 
