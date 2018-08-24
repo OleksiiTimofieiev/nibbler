@@ -51,7 +51,7 @@ class Game
         // void libSelect(IGraphics ** lib, Direction & dir);
         static int map_size_check();
         static int lib_check();
-        void			OpenLib(int lib);
+        void			LibSelect(Direction & dir);
 };
 
 #endif

@@ -11,7 +11,7 @@ void    Game::gameplay()
     // IGraphics *inc = nullptr;
 
     // libSelect(&inc, dr);
-    OpenLib(2);
+    LibSelect(dr);
     
 
     clock_t t1;
@@ -27,7 +27,7 @@ void    Game::gameplay()
             dr = _lib->CheckEvent(dr);
             if (dr == change_the_lib)
             {
-                // libSelect(&inc, dr);
+                LibSelect(dr);
                 _lib->DrawMap(_border);
             }
             else if (dr != stop)
@@ -156,22 +156,30 @@ int Game::lib_check()
     return (choice);
 }
 
-void			Game::OpenLib(int lib)
+void			Game::LibSelect(Direction & dir)
 {
 	IGraphics	*(*create)();
 
+    if (_lib != nullptr)
+        delete(_lib);
 
-	if (lib == 2)
+    std::cout << "Please, choose the library" << std::endl;
+
+    std::cout << "sdl -> 1" << std::endl;
+    std::cout << "ncurses -> 2" << std::endl;
+    std::cout << "sfml -> 3" << std::endl;
+    
+	if (lib_check() == 2)
 	{
 		// this->_dl_number = 0;
 		this->_dl = dlopen("./ncurses_lib/ncurses_lib.so", RTLD_LAZY | RTLD_LOCAL);
 	}
-	else if (lib == 1)
+	else if (lib_check() == 1)
 	{
 		// this->_dl_number = 1;
 		this->_dl = dlopen("./sdl_lib/sdl_lib.so", RTLD_LAZY | RTLD_LOCAL);
 	}
-	else if (lib == 3)
+	else if (lib_check() == 3)
 	{
 		// this->_dl_number = 2;
 		this->_dl = dlopen("./sfml_lib/sfml_lib.so", RTLD_LAZY | RTLD_LOCAL);
@@ -190,4 +198,6 @@ void			Game::OpenLib(int lib)
 	}
 
 	this->_lib = create();
+
+    dir = stop;
 }
