@@ -1,5 +1,19 @@
 #include "../includes/Logic.hpp"
 
+Logic::Logic() {};
+Logic::~Logic() {}
+
+Logic &Logic::operator=(Logic const &rhs)
+{
+    if (this != &rhs)
+    {
+        _size = rhs._size;
+    }
+    return *this;
+}
+
+Logic::Logic(Logic const &src) { *this = src; }
+
 Logic::Logic(int size) : _size(size) {}
 void    Logic::setDir(Direction dir,  Snake & snake) {
 

@@ -13,7 +13,11 @@ class Logic
     private:
         int     _size;
     public:
+        Logic();
+        ~Logic();
         Logic(int size);
+        Logic &operator=(Logic const &rhs);
+        Logic(Logic const &src);
         void    setDir(Direction dir,  Snake & snake);
         void    setHead(Snake & snake);
         void    checkFruit(Fruit & fruit, Snake & snake, Score & score, int & fps);
