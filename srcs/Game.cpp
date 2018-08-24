@@ -41,6 +41,8 @@ void    Game::gameplay()
     }
     if (_lib != nullptr)
         delete (_lib);
+   _stat.show();
+    
 }
 
 Game &Game::operator=(Game const &rhs)

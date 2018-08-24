@@ -19,3 +19,9 @@ Score::Score(Score const &src)
 
 int Score::getScore() { return _score; }
 void    Score::setScore() { _score += 10;}
+
+void Score::show()
+{
+    std::cout << "Your score is: " << _score << std::endl;
+    std::cout << "Your reached level is: " << _score / 10 << std::endl;
+}

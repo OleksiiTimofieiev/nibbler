@@ -6,7 +6,5 @@ int     main(void)
     
     _game.gameplay();
 
-    system("leaks nibbler");
-
     return (0);
 }

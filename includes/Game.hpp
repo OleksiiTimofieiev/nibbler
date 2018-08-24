@@ -48,7 +48,6 @@ class Game
         Game &operator=(Game const &rhs);
         Game(Game const &src);
         void gameplay(); 
-        // void libSelect(IGraphics ** lib, Direction & dir);
         static int map_size_check();
         static int lib_check();
         void			LibSelect(Direction & dir);

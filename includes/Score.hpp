@@ -1,6 +1,8 @@
 #ifndef SCORE_HPP
 #define SCORE_HPP
 
+#include <iostream>
+
 class Score
 {
     int _score;
@@ -12,6 +14,7 @@ class Score
         Score(Score const &src);
         int getScore();
         void    setScore();
+        void    show();
 };
 
 #endif
