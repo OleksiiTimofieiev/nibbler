@@ -101,9 +101,9 @@ int Game::lib_check()
     const std::regex check_input("^(\\d+)$");
     std::smatch result;
 
-    std::string size = "";
+    std::string size;
     bool checker = true;
-    int choice;
+    int choice = 0;
 
     OUTPUT_GREEN("Please, enter the lib choice.");
 
@@ -121,7 +121,6 @@ int Game::lib_check()
             {
                 std::cout << "Simon says : " << ex.what() << std::endl;
             }
-
             if (choice >= 1 && choice <= 3)
                 checker = false;
             else
@@ -135,6 +134,7 @@ int Game::lib_check()
 
 void			Game::LibSelect(Direction & dir)
 {
+    int check = 0;
 	IGraphics	*(*create)() = nullptr;
 
     if (_lib != nullptr)
@@ -145,15 +145,16 @@ void			Game::LibSelect(Direction & dir)
     std::cout << "sdl -> 1" << std::endl;
     std::cout << "ncurses -> 2" << std::endl;
     std::cout << "sfml -> 3" << std::endl;
+
+    check = lib_check();
     
-	if (lib_check() == 1)
-		this->_dl = dlopen("./sdl_lib/sdl_lib.so", RTLD_LAZY | RTLD_LOCAL);
-	else if (lib_check() == 2)
+    if (check == 1)
+        this->_dl = dlopen("./sdl_lib/sdl_lib.so", RTLD_LAZY | RTLD_LOCAL);
+    else if (check == 2)
 		this->_dl = dlopen("./ncurses_lib/ncurses_lib.so", RTLD_LAZY | RTLD_LOCAL);
-	else if (lib_check() == 3)
+	else if (check == 3)
 		this->_dl = dlopen("./sfml_lib/sfml_lib.so", RTLD_LAZY | RTLD_LOCAL);
 
-        
 	if (this->_dl == nullptr)
 		std::cerr << "open_lib: dlopen : "<< dlerror() << std::endl;
 	else if (( create = reinterpret_cast<IGraphics* (*)()>(dlsym(this->_dl, "NewDisplay")) ) == nullptr)
