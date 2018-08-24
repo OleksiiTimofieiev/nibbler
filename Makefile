@@ -1,9 +1,9 @@
 NAME		=	nibbler
 
-CLANG++			=	clang++
+CLANG++		=	clang++
 FLAGS		=	-std=c++11 -Wall -Wextra -Werror -O3
 
-DL_FLAG		=	-rdynamic
+DL			=	-rdynamic
 LINK		=	-ldl
 
 SRC_DIR		=	./srcs/
@@ -33,11 +33,6 @@ SRCS 		=	$(addprefix $(SRC_DIR), $(SRC))
 HDRS 		=	$(addprefix $(INC_DIR), $(INC))
 OBJS 		= 	$(addprefix $(OBJ_DIR), $(OBJ))
 
-GREEN		=	\033[32m
-RESET		=	\033[39m
-YELLOW		=	\033[33m
-RED 		=	\033[31m
-
 all: obj $(NAME)
 
 obj:
@@ -46,20 +41,20 @@ obj:
 $(OBJ_DIR)%.cpp.o:$(SRC_DIR)%.cpp
 	$(CLANG++) $(FLAGS) -c $< -o $@ -I $(INC_DIR)
 
-$(NAME): ncurses sfml sdl $(OBJS) $(HDRS)
-	@$(CLANG++) $(FLAGS) $(DL_FLAG) $(OBJS) -o $(NAME) $(LINK)
-
-ncurses:
-	@make -C ./ncurses_lib/
-	@echo "$(GREEN)Build Ncurses: OK$(RESET)"
-
-sdl:
-	@make -C ./sdl_lib/
-	@echo "$(GREEN)Build SDL: OK$(RESET)"
+$(NAME): ncss sfml sdl $(OBJS) $(HDRS)
+	@$(CLANG++) $(FLAGS) $(DL) $(OBJS) -o $(NAME) $(LINK)
 
 sfml:
 	@make -C ./sfml_lib/
-	@echo "$(GREEN)Build SFML: OK$(RESET)"
+	@echo "\033[32mSFML Builded\033[39m"
+
+sdl:
+	@make -C ./sdl_lib/
+	@echo "\033[32mSDL Builded\033[39m"
+
+ncss:
+	@make -C ./ncurses_lib/
+	@echo "\033[32mNcurses Builded\033[39m"
 
 clean:
 	@make -C ncurses_lib clean
@@ -68,12 +63,12 @@ clean:
 	@rm -rf $(OBJ)
 	@rm -rf $(OBJ_DIR)
 
-fclean: clean
+fclean:
 	@make -C ncurses_lib fclean
 	@make -C sdl_lib fclean
 	@make -C sfml_lib fclean
 	@rm -rf $(NAME)
-	@echo "$(RED)Attention: $(RESET)$(NAME) was removed"
+	@echo "\033[33mCLEANED ALL\033[39m"
 
 re:		fclean all
 
