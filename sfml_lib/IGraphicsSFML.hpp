@@ -24,7 +24,7 @@ class IGraphicsSFML : public IGraphics
         sf::Sprite sprite1;
         sf::Sprite sprite2;
         sf::Sprite sprite3;
-        sf::Sprite sprite4;        
+        sf::Sprite sprite4;
 
       public:
         IGraphicsSFML();

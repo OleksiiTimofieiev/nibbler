@@ -63,10 +63,11 @@ void Logic::setHead(Snake & snake)
        snake.setHeadCoords(snake.getHeadCoords().first, snake.getHeadCoords().second + 1);
 }
 
-void    Logic::checkFruit(Fruit & fruit, Snake & snake, Score & score, int & fps)
+void Logic::checkFruit(Fruit &fruit, Snake &snake, Score &score, int &fps, IMusic *music)
 {
     if (fruit.getCoords() == snake.getHeadCoords())
     {
+        music->playEating();
         srand(clock());
         fruit.setCoords(rand() % _size, rand() % _size);
         score.setScore();
@@ -76,7 +77,7 @@ void    Logic::checkFruit(Fruit & fruit, Snake & snake, Score & score, int & fps
     }
 }
 
-void    Logic::checkCollision(Snake &snake, Init &init)
+void Logic::checkCollision(Snake &snake, Init &init, IMusic *music)
 {
     if (snake.getHeadCoords().second > init.getHeight())
         snake.setHeadCoords(snake.getHeadCoords().first, 0);
@@ -90,6 +91,7 @@ void    Logic::checkCollision(Snake &snake, Init &init)
     for (int i = 0; i < snake.getTailLen(); i++)
         if (snake.getTailCoords()[i] == snake.getHeadCoords())
         {
+            music->playCollision();
             std::cout << "Tail type collision." << std::endl;
             init.setGameStatus();
         }
@@ -99,12 +101,13 @@ void    Logic::checkCollision(Snake &snake, Init &init)
     for (int i = 0; i < 5; i++)
         if (snake.getHeadCoords().first == check[i].first && snake.getHeadCoords().second == check[i].second)
         {
+            music->playCollision();
             std::cout << "Obstacle type collision." << std::endl;
             init.setGameStatus();
         }
 }
 
-void    Logic::logic(Init & init, Fruit & fruit, Snake & snake, Score & score, Direction dir, int & fps)
+void Logic::logic(Init &init, Fruit &fruit, Snake &snake, Score &score, Direction dir, int &fps, IMusic *music)
 {
     if (dir == stop_the_game)
     {
@@ -114,6 +117,6 @@ void    Logic::logic(Init & init, Fruit & fruit, Snake & snake, Score & score, D
     setDir(dir, snake);
     setTail(snake);
     setHead(snake);
-    checkCollision(snake, init);
-    checkFruit(fruit, snake, score, fps);
+    checkCollision(snake, init, music);
+    checkFruit(fruit, snake, score, fps, music);
 }

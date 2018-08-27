@@ -41,7 +41,7 @@ obj:
 $(OBJ_DIR)%.cpp.o:$(SRC_DIR)%.cpp
 	$(CLANG++) $(FLAGS) -c $< -o $@ -I $(INC_DIR)
 
-$(NAME): ncss sfml sdl $(OBJS) $(HDRS)
+$(NAME): ncss sfml sdl music $(OBJS) $(HDRS)
 	@$(CLANG++) $(FLAGS) $(DL) $(OBJS) -o $(NAME) $(LINK)
 
 sfml:
@@ -56,10 +56,16 @@ ncss:
 	@make -C ./ncurses_lib/
 	@echo "\033[32mNcurses Builded\033[39m"
 
+music:
+	@make -C ./music_lib/
+	@echo "\033[32mMusic Builded\033[39m"
+
 clean:
 	@make -C ncurses_lib clean
 	@make -C sdl_lib clean
 	@make -C sfml_lib clean
+	@make -C music_lib clean
+	
 	@rm -rf $(OBJ)
 	@rm -rf $(OBJ_DIR)
 
@@ -67,9 +73,11 @@ fclean:
 	@make -C ncurses_lib fclean
 	@make -C sdl_lib fclean
 	@make -C sfml_lib fclean
+	@make -C music_lib fclean
+	
 	@rm -rf $(NAME)
 	@echo "\033[33mCLEANED ALL\033[39m"
 
 re:		fclean all
 
-.PHONY: all ncurses sdl sfml clean fclean re
+.PHONY: all ncurses sdl sfml music clean fclean re

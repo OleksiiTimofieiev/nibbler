@@ -8,17 +8,13 @@ Game::~Game() {}
 void    Game::gameplay()
 {
     Direction   dr;
-
-    LibSelect(dr);
-    
-
     clock_t t1;
     clock_t t2;
 
     t2 = 0;
-    
+    GetMusic();
+    LibSelect(dr);
     _lib->DrawMap(_border);
-
     while(!_init.getGameOver())
     {
         t1 = clock() / (CLOCKS_PER_SEC / _fps);
@@ -33,7 +29,7 @@ void    Game::gameplay()
                 _lib->DrawMap(_border);
             }
             else if (dr != stop)
-                _logic.logic(_init, _fruits, _snake, _stat, dr, _fps);
+                _logic.logic(_init, _fruits, _snake, _stat, dr, _fps, _music);
 
             _lib->Draw(_snake, _fruits, _stat, _init);
         t2 = clock() / (CLOCKS_PER_SEC / _fps);
@@ -61,6 +57,19 @@ Game &Game::operator=(Game const &rhs)
         _logic = rhs._logic;
     }
     return *this;
+}
+void Game::GetMusic(void)
+{
+    IMusic *(*create)() = nullptr;
+
+    this->_dl_musoc = dlopen("./music_lib/music_lib.so", RTLD_LAZY | RTLD_LOCAL);
+
+    if (this->_dl_musoc == nullptr)
+        std::cerr << "open_lib: dlopen : " << dlerror() << std::endl;
+    else if ((create = reinterpret_cast<IMusic *(*)()>(dlsym(this->_dl_musoc, "PlayMusic"))) == nullptr)
+        std::cerr << "open_lib: dlsym : " << dlerror() << std::endl;
+
+    this->_music = create();
 }
 
 Game::Game(Game const &src) { *this = src; }

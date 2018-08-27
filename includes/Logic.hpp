@@ -1,6 +1,7 @@
 #ifndef LOGIC_HPP
-#define LOGIC_HPP
+# define LOGIC_HPP
 
+#include "IMusic.hpp"
 #include "Snake.hpp"
 #include "Fruit.hpp"
 #include "Score.hpp"
@@ -21,10 +22,10 @@ class Logic
         
         void    setDir(Direction dir,  Snake & snake);
         void    setHead(Snake & snake);
-        void    checkFruit(Fruit & fruit, Snake & snake, Score & score, int & fps);
-        void    logic(Init & init, Fruit & fruit, Snake & snake, Score & score, Direction dir, int & fps);
+        void    checkFruit(Fruit &fruit, Snake &snake, Score &score, int &fps, IMusic *music);
+        void    logic(Init & init, Fruit & fruit, Snake & snake, Score & score, Direction dir, int & fps, IMusic *music);
         void    setTail(Snake & snake);
-        void    checkCollision(Snake & snake, Init & init);
+        void    checkCollision(Snake &snake, Init &init, IMusic *music);
 };
 
 #endif
